@@ -1,0 +1,7 @@
+<h1>Wallets</h1>
+
+<ul>
+<% @wallets.each do |wallet| %>
+  <li> <%= link_to wallet.name, wallet %> </li>
+  <% end %>
+</ul>
