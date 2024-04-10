@@ -1,0 +1,2 @@
+class WalletGoalsController < ApplicationController
+end
