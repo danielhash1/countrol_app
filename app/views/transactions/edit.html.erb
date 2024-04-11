@@ -1,9 +1,9 @@
 <div class="container">
 <%= simple_form_for (@transaction) do |f| %>
-  <%= f.input :name%>
+  <%= f.input :title %>
   <%= f.input :description%>
-  <%= f.input :date%>
-  <%= f.input :amount%>
+  <%= f.input :date %>
+  <%= f.input :amount %>
   <%= f.input :category, collection: Category.all%>
   <%= f.submit class: "btn btn-success mt-3 lh-lg w-100" %>
 <% end %>
