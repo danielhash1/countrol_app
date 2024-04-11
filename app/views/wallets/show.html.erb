@@ -1,0 +1,13 @@
+<h1><%= @wallet.name %></h1>
+
+
+
+<p>
+  <strong>Balance:</strong>
+</p>
+
+<ul>
+  <% @wallets.each do |wallet| %>
+    <li> <%= link_to wallet.name, wallet_path(wallet) %> </li>
+  <% end %>
+</ul>

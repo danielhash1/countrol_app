@@ -32,6 +32,7 @@ goal1 = Goal.create(title: 'Save for vacation', amount: 1000, date: Date.new(202
 goal2 = Goal.create(title: 'Buy a new phone', amount: 800, date: Date.new(2024, 10, 31), completed: false)
 
 # Create wallets
+wallet0 = Wallet.create(name: "Main", user_id: user1.id)
 wallet1 = Wallet.create(name: "Savings", user_id: user1.id)
 wallet2 = Wallet.create(name: "Checking", user_id: user2.id)
 
