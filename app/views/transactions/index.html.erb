@@ -1,10 +1,13 @@
 <div class="container">
 <ul>
   <% @transactions.each do |transaction| %>
-    <li><%= transaction.name %></li>
-    <li><%= transaction.description %></li>
-    <li><%= transaction.date %></li>
-    <li><%= transaction.amount %></li>
+    <li>
+      <h3> <%= transaction.title %> </h3>
+      <p> <%= transaction.transaction_type %> </p>
+      <p> <%= transaction.date %> </p>
+      <p> <%= transaction.amount %> </p>
+      <%= link_to "Show", transaction_path(transaction), class:"btn btn-primary" %>
+    </li>
   <% end %>
 </ul>
 </div>

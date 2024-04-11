@@ -41,7 +41,7 @@ end
 private
 
   def transaction_params
-    params.require(:transaction).permit(:name, :description, :date, :amount)
+    params.require(:transaction).permit(:title, :description, :date, :amount)
   end
 
 end
