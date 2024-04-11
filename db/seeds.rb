@@ -36,8 +36,8 @@ wallet1 = Wallet.create(name: "Savings", user_id: user1.id)
 wallet2 = Wallet.create(name: "Checking", user_id: user2.id)
 
 # Create transactions
-transaction1 = Transaction.create(goal: goal1, wallet_id: wallet1, category: category1, title: 'Lunch', description: 'Bought lunch with friends', amount: 20, date: Date.new(2024, 4, 10), name: 'Expense')
-transaction2 = Transaction.create(goal: goal2, wallet_id: wallet2, category: category3, title: 'New headphones', description: 'Bought new headphones online', amount: 50, date: Date.new(2024, 4, 9), name: 'Expense')
+transaction1 = Transaction.create(goal: goal1, wallet_id: wallet1, category: category1, title: 'Lunch', description: 'Bought lunch with friends', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 0)
+transaction2 = Transaction.create(goal: goal2, wallet_id: wallet2, category: category3, title: 'New headphones', description: 'Bought new headphones online', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 1)
 
 # Create wallet goals
 wallet_goal1 = WalletGoal.create(wallet_id: wallet1, goal_id: goal1)
