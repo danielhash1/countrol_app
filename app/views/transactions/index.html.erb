@@ -1,2 +1,10 @@
-<h1>Hi Jiregna</h1>
-<p>ITS DANIEL</p>
+<div class="container">
+<ul>
+  <% @transactions.each do |transaction| %>
+    <li><%= transaction.name %></li>
+    <li><%= transaction.description %></li>
+    <li><%= transaction.date %></li>
+    <li><%= transaction.amount %></li>
+  <% end %>
+</ul>
+</div>
