@@ -1,6 +1,9 @@
+<%= link_to '<i class="fa-solid fa-chevron-left"></i> Back'.html_safe, goals_path %>
+
+<a href="">Share <i class="fa-solid fa-link"></i></a>
 <h1><%= @goal.title %></h1>
 
 <a href="">Add saving</a>
 
-<p>Goal:<%= @goal.amount %></p>
+<p>Goal:<b><%= @goal.amount %></b></p>
 <p>End date: <%= @goal.date %></p>

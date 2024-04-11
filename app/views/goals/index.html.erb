@@ -1,5 +1,7 @@
 <h1>Goals</h1>
 
+<%= link_to '<i class="fa-solid fa-plus"></i> Add a Goal'.html_safe, new_goal_path %>
+
 <ul>
 <% @goals.each do |goal| %>
   <li> <%= link_to goal.title, goal %> </li>

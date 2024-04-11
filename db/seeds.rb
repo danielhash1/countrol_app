@@ -39,14 +39,15 @@ goal2 = Goal.create(title: 'Buy a new phone', amount: 800, date: Date.new(2024, 
 puts "#{Goal.count} goals created"
 
 # Create wallets
+wallet0 = Wallet.create(name: "Main", user_id: user1.id)
 wallet1 = Wallet.create(name: "Savings", user_id: user1.id)
 wallet2 = Wallet.create(name: "Checking", user_id: user2.id)
 
 puts "#{Wallet.count} wallets created"
 
 # Create transactions
-transaction1 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Lunch', description: 'Bought lunch with friends', amount: 20, date: Date.new(2024, 4, 10), name: 'Expense')
-transaction2 = Transaction.create(goal_id: goal2.id, wallet_id: wallet2.id, category_id: category3.id, title: 'New headphones', description: 'Bought new headphones online', amount: 50, date: Date.new(2024, 4, 9), name: 'Expense')
+transaction1 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Lunch', description: 'Bought lunch with friends', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 0)
+transaction2 = Transaction.create(goal: goal2, wallet: wallet2, category: category3, title: 'New headphones', description: 'Bought new headphones online', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 1)
 
 puts "#{Transaction.count} transactions created"
 

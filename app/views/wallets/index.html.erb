@@ -1,7 +1,9 @@
 <h1>Wallets</h1>
 
+<%= link_to "Add Wallet", new_wallet_path %>
+
 <ul>
-<% @wallets.each do |wallet| %>
-  <li> <%= link_to wallet.name, wallet %> </li>
+  <% @wallets.each do |wallet| %>
+    <li> <%= link_to wallet.name, wallet %> </li>
   <% end %>
 </ul>
