@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :goals, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :transactions, only: [:new, :create]
   end
+  resources :categories, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 end

@@ -1,0 +1,9 @@
+<div class="container">
+  <%= simple_form_for (@category) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :icon %>
+    <%= f.submit class: "btn btn-success mt-3 lh-lg w-100" %>
+  <% end %>
+
+  <%= link_to "Go Back", categories_path(@category), class: "btn btn-secondary btn-lg mt-3 w-100" %>
+</div>
