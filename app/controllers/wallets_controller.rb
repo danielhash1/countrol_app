@@ -7,6 +7,7 @@ class WalletsController < ApplicationController
 
   def show
     @wallet = current_user.wallets.where(name: "Main").first
+    @transactions = @wallet.transactions
     if params[:id]
       @wallet = Wallet.find(params[:id])
     end
@@ -20,6 +21,7 @@ class WalletsController < ApplicationController
 
   def create
     @wallet = current_user.wallets.new(wallet_params)
+
 
     if @wallet.save
       flash[:notice] = "Wallet was successfully created."
