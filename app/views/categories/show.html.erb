@@ -1,0 +1,14 @@
+<%= link_to '<i class="fa-solid fa-chevron-left"></i> Back'.html_safe, categories_path %>
+
+<h1> <%= @category.name %> </h1>
+
+<p><%= @category.icon %></p>
+
+<div class="transaction-links d-flex justify-content-center mt-4">
+  <%= link_to "Edit", edit_category_path, class: "btn btn-warning rounded-0" %>
+  <%= link_to "Delete",
+    category_path(@category),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+    class: "btn btn-secondary rounded-0"
+  %>
+</div>
