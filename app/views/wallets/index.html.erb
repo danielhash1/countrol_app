@@ -5,5 +5,9 @@
 <ul>
   <% @wallets.each do |wallet| %>
     <li> <%= link_to wallet.name, wallet %> </li>
+    <%= link_to 'Edit', edit_wallet_path(wallet) %>
+    <%= link_to "Delete",
+          wallet_path(wallet),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
   <% end %>
 </ul>
