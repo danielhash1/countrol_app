@@ -32,6 +32,28 @@ class WalletsController < ApplicationController
     end
   end
 
+  def edit
+    @wallet = current_user.wallets.find(params[:id])
+  end
+
+  def update
+    @wallet = current_user.wallets.find(params[:id])
+    if @wallet.update(wallet_params)
+      flash[:notice] = "Wallet was successfully updated."
+      redirect_to wallets_path
+    else
+      flash[:alert] = "Failed to update wallet."
+      render :edit
+    end
+  end
+
+  def destroy
+    @wallet = current_user.wallets.find(params[:id])
+    @wallet.destroy
+    flash[:notice] = "Wallet was successfully destroyed."
+    redirect_to wallets_path
+  end
+
   private
 
   def wallet_params
