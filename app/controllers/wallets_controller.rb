@@ -6,6 +6,7 @@ class WalletsController < ApplicationController
   end
 
   def show
+
     @wallet = current_user.wallets.where(name: "Main").first
     @transactions = @wallet.transactions
     if params[:id]
