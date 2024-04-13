@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   resources :wallets, only: [:index, :show, :new, :create]
   resources :transactions, only: [:index, :show, :edit, :new, :create, :update, :destroy]
-  resources :goals, only: [:index, :show, :new, :create] do
+  resources :goals, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :transactions, only: [:new, :create]
   end
 end

@@ -7,3 +7,12 @@
 
 <p>Goal:<b><%= @goal.amount %></b></p>
 <p>End date: <%= @goal.date %></p>
+
+<div class="transaction-links d-flex justify-content-center mt-4">
+  <%= link_to "Edit", edit_goal_path, class: "btn btn-warning rounded-0" %>
+  <%= link_to "Delete",
+    goal_path(@goal),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+    class: "btn btn-secondary rounded-0"
+  %>
+</div>
