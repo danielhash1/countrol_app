@@ -3,8 +3,9 @@
 
 <p>
   <strong>Balance:</strong>
+  <!-- TODO: add link to showing the sum of saldo -->
+  <h3><%= @wallet.balance %></h3>
 </p>
-# TODO: add link to showing the sum of saldo
 
 <ul class="d-flex gap-5">
   <li><%= link_to "Transactions", transactions_path(@wallet) %></li>
