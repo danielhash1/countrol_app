@@ -4,11 +4,6 @@
 
 <p>
   <strong>Balance:</strong>
-  <h3><%= @transactions.amount %></em></h3>
 </p>
+# TODO: add link to showing the sum of saldo
 
-<ul>
-  <% @wallets.each do |wallet| %>
-    <li> <%= link_to wallet.name, wallet_path(wallet) %> </li>
-  <% end %>
-</ul>

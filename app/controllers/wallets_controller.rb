@@ -1,27 +1,21 @@
 class WalletsController < ApplicationController
+  before_action :set_wallets, only: [:show, :edit, :update, :destroy]
   def index
     @wallets = current_user.wallets
-
-   # @selected_wallet = Wallet.find(params[:wallet_id]) if params[:wallet_id]
   end
 
   def show
-    @wallet = current_user.wallets.where(name: "Main").first
-    @transactions = @wallet.transactions
-    if params[:id]
-      @wallet = Wallet.find(params[:id])
-    end
+    @wallet = Wallet.find(params[:id])
     @wallets = current_user.wallets
   end
 
   def new
     @wallet = Wallet.new
-
+    @wallets = current_user.wallets
   end
 
   def create
     @wallet = current_user.wallets.new(wallet_params)
-
 
     if @wallet.save
       flash[:notice] = "Wallet was successfully created."
@@ -33,11 +27,11 @@ class WalletsController < ApplicationController
   end
 
   def edit
-    @wallet = current_user.wallets.find(params[:id])
+    @wallet = Wallet.find(params[:id])
   end
 
   def update
-    @wallet = current_user.wallets.find(params[:id])
+    @wallet = Wallet.find(params[:id])
     if @wallet.update(wallet_params)
       flash[:notice] = "Wallet was successfully updated."
       redirect_to wallets_path
@@ -48,13 +42,17 @@ class WalletsController < ApplicationController
   end
 
   def destroy
-    @wallet = current_user.wallets.find(params[:id])
+    @wallet = Wallet.find(params[:id])
     @wallet.destroy
     flash[:notice] = "Wallet was successfully destroyed."
     redirect_to wallets_path
   end
 
   private
+
+  def set_wallets
+    @wallets = current_user.wallets
+  end
 
   def wallet_params
     params.require(:wallet).permit(:name)
