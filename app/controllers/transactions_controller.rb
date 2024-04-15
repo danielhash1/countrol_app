@@ -15,8 +15,8 @@ def create
   @transaction = Transaction.new(transaction_params)
   @goal = Goal.find(params[:goal_id])
   @transaction.goal = @goal
-  @transaction.category = params[:category]
-  # @wallet = @goal.wallets.where(user: current_user).first
+  # @transaction.category = params[:category]
+  @wallet = @goal.wallets.where(user: current_user).first
   @transaction.wallet = @wallet
 
 if @transaction.save
@@ -42,7 +42,7 @@ end
 private
 
   def transaction_params
-    params.require(:transaction).permit(:title, :description, :date, :amount, :category)
+    params.require(:transaction).permit(:title, :description, :date, :amount)
   end
 
 end
