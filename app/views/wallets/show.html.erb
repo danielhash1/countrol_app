@@ -1,11 +1,5 @@
 <h1><%= @wallet.name %></h1>
 
-<%= link_to 'Wallets', wallets_path %>
-<ul>
-  <% @wallets.each do |wallet| %>
-    <li> <%= link_to wallet.name, wallet_path(wallet) %> </li>
-  <% end %>
-</ul>
 
 <p>
   <strong>Balance:</strong>
