@@ -6,7 +6,9 @@ class WalletsController < ApplicationController
   end
 
   def show
+
     @wallet = current_user.wallets.where(name: "Main").first
+    @transactions = @wallet.transactions
     if params[:id]
       @wallet = Wallet.find(params[:id])
     end
@@ -21,6 +23,7 @@ class WalletsController < ApplicationController
   def create
     @wallet = current_user.wallets.new(wallet_params)
 
+
     if @wallet.save
       flash[:notice] = "Wallet was successfully created."
       redirect_to wallets_path
@@ -28,6 +31,28 @@ class WalletsController < ApplicationController
       flash[:alert] = "Failed to create wallet."
       render :new
     end
+  end
+
+  def edit
+    @wallet = current_user.wallets.find(params[:id])
+  end
+
+  def update
+    @wallet = current_user.wallets.find(params[:id])
+    if @wallet.update(wallet_params)
+      flash[:notice] = "Wallet was successfully updated."
+      redirect_to wallets_path
+    else
+      flash[:alert] = "Failed to update wallet."
+      render :edit
+    end
+  end
+
+  def destroy
+    @wallet = current_user.wallets.find(params[:id])
+    @wallet.destroy
+    flash[:notice] = "Wallet was successfully destroyed."
+    redirect_to wallets_path
   end
 
   private

@@ -1,8 +1,8 @@
-<%= link_to '<i class="fa-solid fa-chevron-left"></i> Back'.html_safe, goals_path %>
+<%= link_to '<i class="fa-solid fa-chevron-left"></i> Back'.html_safe, wallet_goals_path %>
 
 <h1>Set a New Goal</h1>
 
-<%= simple_form_for(@goal) do |f| %>
+<%= simple_form_for([@wallet, @goal]) do |f| %>
   <%= f.input :title %>
   <%= f.input :amount %>
   <%= f.input :date %>
