@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :transactions, only: [:index, :show, :edit, :new, :create, :update, :destroy]
   resources :wallets, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :goals, only: [:show, :index, :new, :create]
+    
   end
   resources :goals, only: [:new, :create, :edit, :update, :destroy] do
     resources :transactions, only: [:new, :create]
