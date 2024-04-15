@@ -6,6 +6,7 @@ end
 def show
   @transaction = Transaction.find(params[:id])
 end
+
 def new
   @goal = Goal.find(params[:goal_id])
   @transaction = Transaction.new
@@ -15,7 +16,8 @@ def create
   @transaction = Transaction.new(transaction_params)
   @goal = Goal.find(params[:goal_id])
   @transaction.goal = @goal
-  @wallet = @goal.wallets.where(user: current_user).first
+
+  @wallet = @goal.wallets.where(user_id: current_user.id).first
   @transaction.wallet = @wallet
   @transaction.category_id = params[:transaction][:category]
   if @transaction.save
