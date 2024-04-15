@@ -11,12 +11,27 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
+          <!-- select wallet code-->
+          <% if @wallet&.persisted? && current_page?(wallet_path(@wallet)) %>
+            <div class="btn-group">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false">
+                <%= @wallet.name %>
+              </button>
+              <ul class="dropdown-menu">
+                <% @wallets.each do |wallet| %>
+                  <li><%= link_to wallet.name, wallet_path(wallet), class: 'dropdown-item' %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <!-- end select wallet code-->
           <li class="nav-item active">
             <%= link_to "Home", "#", class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
+
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>

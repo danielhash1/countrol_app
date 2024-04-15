@@ -9,16 +9,12 @@
 
 <p>
   <strong>Balance:</strong>
-  <h3><%= number_to_currency(@wallet.transactions.sum(:amount)) %></h3>
 </p>
-
-
-
+# TODO: add link to showing the sum of saldo
 
 <ul class="d-flex gap-5">
   <li><%= link_to "Transactions", transactions_path(@wallet) %></li>
   <li><%= link_to "Home", wallet_path(@wallet) %></li>
 
   <li><%= link_to "Goals", wallet_goals_path(@wallet) %></li>
-
 </ul>
