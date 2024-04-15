@@ -1,14 +1,24 @@
 <h1><%= @wallet.name %></h1>
 
 <%= link_to 'Wallets', wallets_path %>
-
-<p>
-  <strong>Balance:</strong>
-  <h3><%= @transactions.amount %></em></h3>
-</p>
-
 <ul>
   <% @wallets.each do |wallet| %>
     <li> <%= link_to wallet.name, wallet_path(wallet) %> </li>
   <% end %>
+</ul>
+
+<p>
+  <strong>Balance:</strong>
+  <h3><%= number_to_currency(@wallet.transactions.sum(:amount)) %></h3>
+</p>
+
+
+
+
+<ul class="d-flex gap-5">
+  <li><%= link_to "Transactions", transactions_path(@wallet) %></li>
+  <li><%= link_to "Home", wallet_path(@wallet) %></li>
+
+  <li><%= link_to "Goals", wallet_goals_path(@wallet) %></li>
+
 </ul>

@@ -3,6 +3,7 @@
   <% @transactions.each do |transaction| %>
     <li>
       <h3> <%= transaction.title %> </h3>
+      <p> <%= transaction.category.name %> </p>
       <p> <%= transaction.transaction_type %> </p>
       <p> <%= transaction.date %> </p>
       <p> <%= transaction.amount %> </p>
