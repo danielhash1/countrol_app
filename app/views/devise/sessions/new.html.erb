@@ -4,19 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-    <link rel="stylesheet" href="./index.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Krona One:wght@400&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
-    />
+    <%# <%= stylesheet_link_tag 'global', media: 'all' %> 
+    <%# <%= stylesheet_link_tag 'index', media: 'all' %> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Krona One:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" />
   </head>
   <body>
     <div class="sign-in-page">
@@ -28,12 +20,7 @@
           </div>
         </div>
         <section class="layer-1-wrapper">
-          <img
-            class="layer-1-icon"
-            loading="lazy"
-            alt=""
-            src="./public/layer-1.svg"
-          />
+          <%= image_tag 'sign_in/layer-1.svg', class: 'layer-1-icon', loading: 'lazy', alt: '' %>
         </section>
         <section class="frame-parent">
           <div class="sign-in-your-account-wrapper">
@@ -53,22 +40,18 @@
               <div class="bg-parent">
                 <div class="bg1">
                   <div class="bg-item"></div>
-                  <input class="email" placeholder="Email..." type="email" />
+                  <input class="email" placeholder="Email..." type="text" />
 
                   <div class="icon-wrapper">
-                    <img class="icon" alt="" src="./public/icon@2x.png" />
+                    <%= image_tag 'sign_in/icon@2x.png', class: 'icon', alt: '' %>
                   </div>
                 </div>
                 <div class="bg2">
                   <div class="bg-inner"></div>
-                  <input
-                    class="password"
-                    placeholder="Password"
-                    type="password"
-                  />
+                  <input class="password" placeholder="Password" type="text" />
 
                   <div class="icon-container">
-                    <img class="icon1" alt="" src="./public/icon-1.svg" />
+                    <%= image_tag 'sign_in/icon-1.svg', class: 'icon1', alt: '' %>
                   </div>
                 </div>
               </div>
@@ -83,10 +66,10 @@
             <div class="facebook-parent">
               <button class="facebook">
                 <div class="facebook-child"></div>
-                <img class="vector-icon" alt="" src="./public/vector.svg" />
+                <%= image_tag 'sign_in/vector.svg', class: 'vector-icon', alt: '' %>
               </button>
               <div class="button-parent">
-                <button class="button" autofocus="{true}" id="button">
+                <button class="button" id="button">
                   <div class="bg3">
                     <div class="rectangle-div"></div>
                     <b class="sign-in1">Sign In</b>
@@ -99,20 +82,11 @@
                   <div class="social-media-icons">
                     <div class="apple">
                       <div class="apple-child"></div>
-                      <img
-                        class="vector-icon1"
-                        loading="lazy"
-                        alt=""
-                        src="./public/vector-1.svg"
-                      />
+                      <%= image_tag 'sign_in/vector-1.svg', class: 'vector-icon1', loading: 'lazy', alt: '' %>
                     </div>
                     <button class="google">
                       <div class="google-child"></div>
-                      <img
-                        class="vector-icon2"
-                        alt=""
-                        src="./public/vector-2.svg"
-                      />
+                      <%= image_tag 'sign_in/vector-2.svg', class: 'vector-icon2', alt: '' %>
                     </button>
                   </div>
                 </div>
@@ -121,7 +95,7 @@
             <div class="text-wrapper">
               <div class="text" id="textContainer">
                 <div class="dont-have-an-container">
-                  <span>Don’t have an account? </span>
+                  <span>Don't have an account? </span>
                   <span class="sign-up">Sign Up</span>
                 </div>
               </div>
@@ -145,6 +119,6 @@
           // Please sync "Sign Up Page" to the project
         });
       }
-      </script>
+    </script>
   </body>
 </html>
