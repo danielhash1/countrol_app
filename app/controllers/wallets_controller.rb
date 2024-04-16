@@ -7,10 +7,11 @@ class WalletsController < ApplicationController
   def show
     @wallet = Wallet.find(params[:id])
     @wallets = current_user.wallets
+    @transactions = Transaction.all
   end
 
   def new
-    @wallet = Wallet.new
+    @wallet = Wallet.new 
     @wallets = current_user.wallets
   end
 

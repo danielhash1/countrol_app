@@ -11,12 +11,10 @@ Rails.application.routes.draw do
   # root "posts#index"
   resources :transactions, only: [:index, :show, :edit, :new, :create, :update, :destroy]
   resources :wallets, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+    resources :transactions, only: [:new, :create, :index]
     resources :goals, only: [:show, :index, :new, :create]
-    
   end
-  resources :goals, only: [:new, :create, :edit, :update, :destroy] do
-    resources :transactions, only: [:new, :create]
 
-  end
+  # resources :goals, only: :destroy
   resources :categories, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 end

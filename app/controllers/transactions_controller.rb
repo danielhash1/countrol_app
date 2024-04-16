@@ -1,30 +1,37 @@
 class TransactionsController < ApplicationController
 def index
-  @transactions = Transaction.all
+  @wallet = Wallet.find(params[:wallet_id])
+  @transactions = Transaction.where(wallet: @wallet)
 end
 
 def show
   @transaction = Transaction.find(params[:id])
 end
+
 def new
-  # @goal = Goal.find(params[:goal_id])
+  @wallet = Wallet.find(params[:wallet_id])
   @transaction = Transaction.new
 end
 
 def create
   @transaction = Transaction.new(transaction_params)
-  @goal = Goal.find(params[:goal_id])
-  @transaction.goal = @goal
-  # @transaction.category = params[:category]
-  @wallet = @goal.wallets.where(user: current_user).first
+  @transaction.category_id = params[:transaction][:category_id]
+
+  @wallet = Wallet.find(params[:wallet_id])
   @transaction.wallet = @wallet
 
-if @transaction.save
+  # @wallet = @goal.wallets.where(user: current_user).first
+  # @goal = @wallet.goals.where(user: current_user).first
+  # @transaction.goal = @goal
+
+  if @transaction.save
     redirect_to transaction_path(@transaction)
   else
     render :new, status: :unprocessable_entity
   end
 end
+
+
 
   def edit
     @transaction = Transaction.find(params[:id])
@@ -42,7 +49,7 @@ end
 private
 
   def transaction_params
-    params.require(:transaction).permit(:title, :description, :date, :amount)
+    params.require(:transaction).permit(:title, :description, :date, :amount, :category_id)
   end
 
 end

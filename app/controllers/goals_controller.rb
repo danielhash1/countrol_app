@@ -8,7 +8,7 @@ class GoalsController < ApplicationController
 
   def show
     @goal = Goal.find(params[:id])
-    
+    @wallet = Wallet.find(params[:wallet_id])
   end
 
   def new
@@ -38,13 +38,16 @@ class GoalsController < ApplicationController
   def update
     @goal = Goal.find(params[:id])
     @goal.update(goal_params)
-    redirect_to goal_path(@goal)
+
+    redirect_to wallet_goal_path(@goal)
   end
 
   def destroy
+    @wallet = Wallet.find(params[:wallet_id])
     @goal = Goal.find(params[:id])
     @goal.destroy
-    redirect_to goals_path
+
+    redirect_to wallet_goals_path(@wallet)
   end
 
   private
