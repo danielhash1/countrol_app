@@ -31,7 +31,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_15_161436) do
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.bigint "goal_id"
+    t.bigint "goal_id", null: false
     t.bigint "wallet_id", null: false
     t.bigint "category_id", null: false
     t.string "title"

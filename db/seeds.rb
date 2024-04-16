@@ -47,7 +47,15 @@ puts "#{Wallet.count} wallets created"
 
 # Create transactions
 transaction1 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Lunch', description: 'Bought lunch with friends', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 0)
-transaction2 = Transaction.create(goal: goal2, wallet: wallet2, category: category3, title: 'New headphones', description: 'Bought new headphones online', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 1)
+transaction2 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'New headphones', description: 'Bought new headphones online', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 1)
+transaction3 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Plane', description: 'Flights on the biggest plane', amount: 1235, date: Date.new(2024, 4, 10), transaction_type: 0)
+transaction4 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'Freelance', description: 'Customer is happt, I have my money paid', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 0)
+transaction5 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Lunch', description: 'Bought lunch with friends', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 0)
+transaction6 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'New headphones', description: 'Bought new headphones online', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 1)
+transaction7 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Lunch', description: 'Bought lunch with friends', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 0)
+transaction8 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'New headphones', description: 'Bought new headphones online', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 1)
+
+
 
 puts "#{Transaction.count} transactions created"
 
