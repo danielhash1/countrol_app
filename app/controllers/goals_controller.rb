@@ -43,7 +43,6 @@ class GoalsController < ApplicationController
   end
 
   def destroy
-    # raise
     @wallet = Wallet.find(params[:wallet_id])
     @goal = Goal.find(params[:id])
     @goal.destroy
