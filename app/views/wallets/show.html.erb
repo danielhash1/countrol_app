@@ -8,6 +8,10 @@
       <p>Total Balance</p>
       <h3><strong>$14,345</strong></h3>
 
+  <p>
+    <strong>Balance:</strong>
+    <h3><%= @wallet.balance %></h3>
+  </p>
       <div class="new-transaction-links d-flex justify-content-center gap-5">
         <%= link_to "+", new_transaction_path, class:"link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
         <%= link_to "-", new_transaction_path, class:"link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
