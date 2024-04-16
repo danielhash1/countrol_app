@@ -4,20 +4,16 @@
   </div>
 
   <div class="general-info d-flex justify-content-center mt-2 mb-5">
-    <div class="balance">
+    <div class="balance text-center">
       <p>Total Balance</p>
-      <h3><strong>$14,345</strong></h3>
-
-  <p>
-    <strong>Balance:</strong>
-    <h3><%= @wallet.balance %></h3>
-  </p>
-      <div class="new-transaction-links d-flex justify-content-center gap-5">
-        <%= link_to "+", new_transaction_path, class:"link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
-        <%= link_to "-", new_transaction_path, class:"link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
-      </div>
+      <p class="text fs-1">$<%= @wallet.balance %></p>
     </div>
   </div>
+
+    <div class="new-transaction-links d-flex justify-content-center gap-5">
+      <%= link_to "+", new_transaction_path, class:"link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
+      <%= link_to "-", new_transaction_path, class:"link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
+    </div>
 
   <div class="graph-stats" height="400px">
   <p></p>
@@ -26,20 +22,29 @@
   <div class="transactions">
    <div class="headlines d-flex justify-content-between">
     <h4>Recent Activity</h4>
-    <p><%= link_to "See All", transactions_path %></p>
+    <p><%= link_to "See All", transactions_path, class:"link-offset-2 link-underline link-underline-opacity-0" %></p>
    </div>
     <div class="transaction-cards">
     <ul class="list-unstyled">
       <% @transactions.each do |transaction| %>
 
-      <%= link_to transaction_path(transaction) do %>
-        <li class="d-flex justify-content-between border border-black rounded-5">
-          <div class="name-category">
-            <h5><%= transaction.title %></h5>
-            <p><%= transaction.category.name %></p>
+      <%= link_to transaction_path(transaction), class:"link-offset-2 link-underline link-underline-opacity-0" do %>
+        <li class="d-flex justify-content-between border align-items-center border-black rounded-5 p-2 px-4 mb-2">
+          <div class="d-flex gap-4 align-items-center">
+            <span class="text fs-1"><%= transaction.category.icon %></span>
+
+            <div class="name-category">
+              <p class="text fs-5 mb-0 text-black"><%= transaction.title %></p>
+              <p class="text-secondary"><%= transaction.category.name %></p>
+            </div>
           </div>
 
-          <p><strong><%= transaction.amount %></strong></p>
+          <% if transaction.transaction_type == "income" %>
+          <p class="text fs-6 mb-0 text-success fw-lighter"><strong>+<%= transaction.amount %></strong></p>
+          <% else %>
+          <p class="text fs-6 mb-0 text-danger fw-lighter"><strong>-<%= transaction.amount %></strong></p>
+          <% end %>
+
         </li>
         <% end %>
       <% end %>
