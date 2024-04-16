@@ -33,13 +33,14 @@ class GoalsController < ApplicationController
 
   def edit
     @goal = Goal.find(params[:id])
+    @wallet = Wallet.find(params[:wallet_id])
   end
 
   def update
     @goal = Goal.find(params[:id])
+    @wallet = Wallet.find(params[:wallet_id])
     @goal.update(goal_params)
-
-    redirect_to wallet_goal_path(@goal)
+    redirect_to wallet_goal_path(@wallet, @goal)
   end
 
   def destroy
