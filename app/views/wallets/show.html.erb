@@ -1,14 +1,48 @@
-<h1><%= @wallet.name %></h1>
+<div class="container">
+  <div class="wallet-select mt-4 d-flex justify-content-center">
+    <p class="border rounded-pill border-black p-1 px-3"><%= @wallet.name %> Wallet</p>
+  </div>
 
 
-<p>
-  <strong>Balance:</strong>
-</p>
-# TODO: add link to showing the sum of saldo
 
-<ul class="d-flex gap-5">
-  <li><%= link_to "Transactions", transactions_path(@wallet) %></li>
-  <li><%= link_to "Home", wallet_path(@wallet) %></li>
+  <div class="general-info d-flex justify-content-center mt-2 mb-5">
+    <div class="balance">
+      <p>Total Balance</p>
+      <h3><strong>$14,345</strong></h3>
 
-  <li><%= link_to "Goals", wallet_goals_path(@wallet) %></li>
-</ul>
+      <div class="new-transaction-links d-flex justify-content-center gap-5">
+        <%= link_to "+", new_transaction_path, class:"link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
+        <%= link_to "-", new_transaction_path, class:"link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="graph-stats" height="400px">
+  <p></p>
+  </div>
+
+  <div class="transactions">
+   <div class="headlines d-flex justify-content-between">
+    <h4>Recent Activity</h4>
+    <p><%= link_to "See All", transactions_path %></p>
+   </div>
+    <div class="transaction-cards">
+    <ul class="list-unstyled">
+      <% @transactions.each do |transaction| %>
+
+      <%= link_to transaction_path(transaction) do %>
+        <li class="d-flex justify-content-between border border-black rounded-5">
+          <div class="name-category">
+            <h5><%= transaction.title %></h5>
+            <p><%= transaction.category.name %></p>
+          </div>
+
+          <p><strong><%= transaction.amount %></strong></p>
+        </li>
+        <% end %>
+      <% end %>
+    </ul>
+    </div>
+  </div>
+
+</div>
