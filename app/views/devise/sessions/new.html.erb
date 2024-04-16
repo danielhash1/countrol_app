@@ -1,20 +1,150 @@
-<h2>Log in</h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Krona One:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+    />
+  </head>
+  <body>
+    <div class="sign-in-page">
+      <main class="bg">
+        <div class="bg-child"></div>
+        <div class="logo-mini-wrapper">
+          <div class="logo-mini">
+            <div class="countrol">Countrol</div>
+          </div>
+        </div>
+        <section class="layer-1-wrapper">
+          <img
+            class="layer-1-icon"
+            loading="lazy"
+            alt=""
+            src="./public/layer-1.svg"
+          />
+        </section>
+        <section class="frame-parent">
+          <div class="sign-in-your-account-wrapper">
+            <h1 class="sign-in-your-container">
+              <p class="sign-in">Sign in</p>
+              <p class="your-account">your account</p>
+            </h1>
+          </div>
+          <div class="deliver-your-order-container">
+            <p class="deliver-your-order">
+              Deliver your order around the world
+            </p>
+            <p class="without-hesitation">without hesitation.</p>
+          </div>
+          <div class="frame-wrapper">
+            <div class="frame-group">
+              <div class="bg-parent">
+                <div class="bg1">
+                  <div class="bg-item"></div>
+                  <input class="email" placeholder="Email..." type="email" />
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
+                  <div class="icon-wrapper">
+                    <img class="icon" alt="" src="./public/icon@2x.png" />
+                  </div>
+                </div>
+                <div class="bg2">
+                  <div class="bg-inner"></div>
+                  <input
+                    class="password"
+                    placeholder="Password"
+                    type="password"
+                  />
 
-<%= render "devise/shared/links" %>
+                  <div class="icon-container">
+                    <img class="icon1" alt="" src="./public/icon-1.svg" />
+                  </div>
+                </div>
+              </div>
+              <div class="password-icon">
+                <div class="forgot-password">Forgot Password?</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="frame-section">
+          <div class="frame-container">
+            <div class="facebook-parent">
+              <button class="facebook">
+                <div class="facebook-child"></div>
+                <img class="vector-icon" alt="" src="./public/vector.svg" />
+              </button>
+              <div class="button-parent">
+                <button class="button" autofocus="{true}" id="button">
+                  <div class="bg3">
+                    <div class="rectangle-div"></div>
+                    <b class="sign-in1">Sign In</b>
+                  </div>
+                </button>
+                <div class="link-to-sign-up-button">
+                  <div class="or-sign-in-with-wrapper">
+                    <div class="or-sign-in">Or sign in with</div>
+                  </div>
+                  <div class="social-media-icons">
+                    <div class="apple">
+                      <div class="apple-child"></div>
+                      <img
+                        class="vector-icon1"
+                        loading="lazy"
+                        alt=""
+                        src="./public/vector-1.svg"
+                      />
+                    </div>
+                    <button class="google">
+                      <div class="google-child"></div>
+                      <img
+                        class="vector-icon2"
+                        alt=""
+                        src="./public/vector-2.svg"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-wrapper">
+              <div class="text" id="textContainer">
+                <div class="dont-have-an-container">
+                  <span>Don’t have an account? </span>
+                  <span class="sign-up">Sign Up</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      var button = document.getElementById("button");
+      if (button) {
+        button.addEventListener("click", function (e) {
+          // Please sync "Mine Page" to the project
+        });
+      }
+      
+      var textContainer = document.getElementById("textContainer");
+      if (textContainer) {
+        textContainer.addEventListener("click", function (e) {
+          // Please sync "Sign Up Page" to the project
+        });
+      }
+      </script>
+  </body>
+</html>
