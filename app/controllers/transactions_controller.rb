@@ -1,4 +1,5 @@
 class TransactionsController < ApplicationController
+  
 def index
   @wallet = Wallet.find(params[:wallet_id])
   @transactions = Transaction.where(wallet: @wallet)
@@ -6,6 +7,7 @@ end
 
 def show
   @transaction = Transaction.find(params[:id])
+  @wallet = @transaction.wallet
 end
 
 def new
