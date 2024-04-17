@@ -23,7 +23,6 @@ class TransactionsController < ApplicationController
     @transaction.goal_id = params[:transaction][:goal_id]
     @wallet = Wallet.find(params[:wallet_id])
     @transaction.wallet = @wallet
-
     # @wallet = @goal.wallets.where(user: current_user).first
     # @goal = @wallet.goals.where(user: current_user).first
     # @transaction.goal = @goal

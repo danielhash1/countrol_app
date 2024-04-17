@@ -40,9 +40,14 @@ puts "#{Goal.count} goals created"
 
 # Create wallets
 wallet0 = Wallet.create(name: "Main", user_id: user1.id)
+wallet0_goal = Goal.create(title: 'Main', amount: 0, date: Date.today, completed: false)
+WalletGoal.create(wallet: wallet0, goal: wallet0_goal)
 wallet1 = Wallet.create(name: "Savings", user_id: user1.id)
+wallet1_goal = Goal.create(title: 'Main', amount: 0, date: Date.today, completed: false)
+WalletGoal.create(wallet: wallet1, goal: wallet1_goal)
 wallet2 = Wallet.create(name: "Checking", user_id: user2.id)
-
+wallet2_goal = Goal.create(title: 'Main', amount: 0, date: Date.today, completed: false)
+WalletGoal.create(wallet: wallet2, goal: wallet2_goal)
 puts "#{Wallet.count} wallets created"
 
 # Create transactions
