@@ -13,8 +13,9 @@
   </div>
 
     <div class="new-transaction-links d-flex justify-content-center gap-5">
-      <%= link_to "+", new_wallet_transaction_path(@wallet), class:"link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
-      <%= link_to "-", new_wallet_transaction_path(@wallet), class:"link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
+      <%#= link_to "+", new_wallet_transaction_path(@wallet), class:"link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
+      <%= link_to "+", new_wallet_transaction_path(@wallet, transaction_type: 'income'), class:"link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
+      <%= link_to "-", new_wallet_transaction_path(@wallet, transaction_type: 'expense'), class:"link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
     </div>
 
   <div class="graph-stats" height="400px">

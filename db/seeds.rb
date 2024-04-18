@@ -68,7 +68,6 @@ puts "#{Transaction.count} transactions created"
 wallet_goal1 = WalletGoal.create(wallet: wallet1, goal: goal1)
 wallet_goal2 = WalletGoal.create(wallet: wallet2, goal: goal2)
 
-
 puts "#{WalletGoal.count} Wallet goals created"
 
 puts "Seed data has been created successfully!"

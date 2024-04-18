@@ -21,10 +21,8 @@ class GoalsController < ApplicationController
     @goal = Goal.new(goal_params)
     @wallet = Wallet.find(params[:wallet_id])
 
-
     if @goal.save
       @wallet.goals << @goal
-
 
       redirect_to wallet_goals_path(@wallet)
     else
@@ -52,25 +50,7 @@ class GoalsController < ApplicationController
     redirect_to wallet_goals_path(@wallet)
   end
 
-  def add_transaction
-    @goal = Goal.find(params[:id])
-    @wallet = Wallet.find(params[:wallet_id])
-    @transaction = Transaction.new(transaction_params)
-    @transaction.wallet = @wallet
-    @transaction.goal = @goal
-    @transaction.transaction_type = 'income'
-    if @transaction.save
-      redirect_to wallet_goal_path(@wallet, @goal), notice: 'Transaction was successfully added.'
-    else
-      render :show
-    end
-  end
-
   private
-
-  def transaction_params
-    params.require(:transaction).permit(:title, :description, :date, :amount, :category_id)
-  end
 
   def goal_params
     params.require(:goal).permit(:title, :amount, :date, :wallet_id)
