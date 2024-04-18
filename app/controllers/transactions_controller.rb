@@ -12,6 +12,8 @@ end
 def show
   @wallet = Wallet.find(params[:wallet_id])
   @transaction = Transaction.find(params[:id])
+  @wallet = Wallet.find(params[:wallet_id])
+
 end
 
   def new

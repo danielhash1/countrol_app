@@ -16,9 +16,10 @@ Rails.application.routes.draw do
   resources :goals, only: [:new, :create, :edit, :update, :destroy] do
     resources :transactions, only: [:new, :create]
   end
-  resources :wallets, only: [:show, :new, :create, :edit, :update, :destroy] do
-    resources :transactions, only: [:new, :create, :index]
+  resources :wallets, only: [ :show, :new, :create, :edit, :update, :destroy] do
+    resources :transactions, only: [:new, :create, :index, :show]
     resources :goals
+    resources :categories, only: [:new, :create, :index, :show, :edit, :update]
   end
   resources :categories, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 end
