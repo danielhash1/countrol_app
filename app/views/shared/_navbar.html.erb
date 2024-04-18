@@ -1,5 +1,5 @@
 
-
+  <% if @wallet %>
   <ul class="d-flex gap-5 list-unstyled justify-content-center">
 
     <li><%= link_to wallet_transactions_path(@wallet), class:"fs-2 link-offset-2 link-underline link-underline-opacity-0 text-black" do %>
@@ -18,3 +18,4 @@
     </li>
 
   </ul>
+<% end %>
