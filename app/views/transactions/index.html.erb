@@ -1,14 +1,55 @@
 <div class="container">
-<ul>
-  <% @transactions.each do |transaction| %>
-    <li>
-      <h3> <%= transaction.title %> </h3>
-      <p> <%= transaction.category.name %> </p>
-      <p> <%= transaction.transaction_type %> </p>
-      <p> <%= transaction.date %> </p>
-      <p> <%= transaction.amount %> </p>
-      <%= link_to "Show", transaction_path(transaction), class:"btn btn-primary" %>
-    </li>
-  <% end %>
-</ul>
+
+<div class="transactions">
+
+   <div class="headlines d-flex justify-content-between">
+
+    <p><%= link_to "All", wallet_transactions_path(@wallet), class:"link-offset-2 link-underline link-underline-opacity-0" %></p>
+    <p><%= link_to "Expense", wallet_transactions_path(@wallet, filter: "expense"), class:"link-offset-2 link-underline link-underline-opacity-0" %></p>
+    <p><%= link_to "Income", wallet_transactions_path(@wallet, filter: "income"), class:"link-offset-2 link-underline link-underline-opacity-0" %></p>
+
+
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle p-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Filter By
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" link_to, wallet_transactions_path>Day</a></li>
+    <li><a class="dropdown-item" link_to, wallet_transactions_path>Month</a></li>
+    <li><a class="dropdown-item" link_to, wallet_transactions_path>Year</a></li>
+  </ul>
+</div>
+   </div>
+
+
+    <div class="transaction-cards">
+    <ul class="list-unstyled">
+      <% @transactions.each do |transaction| %>
+
+      <%= link_to transaction_path(transaction), class:"link-offset-2 link-underline link-underline-opacity-0" do %>
+        <li class="d-flex justify-content-between border align-items-center border-black rounded-5 p-2 px-4 mb-2">
+          <div class="d-flex gap-4 align-items-center">
+            <span class="text fs-1"><%= transaction.category.icon %></span>
+
+            <div class="name-category">
+              <p class="text fs-5 mb-0 text-black"><%= transaction.title %></p>
+              <p class="text-secondary"><%= transaction.category.name %></p>
+            </div>
+          </div>
+
+          <% if transaction.transaction_type == "income" %>
+          <p class="text fs-6 mb-0 text-success fw-lighter"><strong>+<%= transaction.amount %></strong></p>
+          <% else %>
+          <p class="text fs-6 mb-0 text-danger fw-lighter"><strong>-<%= transaction.amount %></strong></p>
+          <% end %>
+
+        </li>
+        <% end %>
+      <% end %>
+    </ul>
+    </div>
+  </div>
+
+</div>
+</div>
 </div>

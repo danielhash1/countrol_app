@@ -6,7 +6,15 @@
         <span class="text-center flex-grow-1"><h1 class="mb-0">Transaction History</h1></span>
       </div>
     </div>
-
+<div class="container">
+  <h2><%= @transaction.title %></h2>
+  <p><%= @transaction.transaction_type %></p>
+  <p><%= @transaction.description %></p>
+  <p><%= @transaction.date %></p>
+  <p><%= @transaction.amount %></p>
+  <p><%= @transaction.category.name %></p>
+  <p> <%= @transaction.created_at %></p>
+</div>
     <div class="col-12 d-flex justify-content-center align-items-center mb-1">
       <div class="d-flex align-items-center justify-content-center" style="width: 335px; height: 100px;">
         <div class="balance" style="text-align: center;">
@@ -51,7 +59,7 @@
 
     <div class="transaction-links d-flex justify-content-center mt-4">
       <div class="d-flex justify-content-between" style="width: 200px;">
-        <p><%= link_to ("<i class='fa fa-pencil'></i> Edit").html_safe, edit_transaction_path, class: "btn btn-warning rounded-0" %></p>
+        <p><%= link_to ("<i class='fa fa-pencil'></i> Edit").html_safe, edit_wallet_transaction_path(@wallet), class: "btn btn-warning rounded-0" %></p>
         <p><%= link_to ("<i class='fa fa-trash'></i> Delete").html_safe,
           transaction_path(@transaction),
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
