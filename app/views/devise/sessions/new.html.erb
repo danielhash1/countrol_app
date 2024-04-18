@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-    <%# <%= stylesheet_link_tag 'global', media: 'all' %> 
-    <%# <%= stylesheet_link_tag 'index', media: 'all' %> 
+    <%# <%= stylesheet_link_tag 'global', media: 'all' %>
+    <%# <%= stylesheet_link_tag 'index', media: 'all' %>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Krona One:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" />
@@ -61,47 +61,22 @@
             </div>
           </div>
         </section>
-        <section class="frame-section">
-          <div class="frame-container">
-            <div class="facebook-parent">
-              <button class="facebook">
-                <div class="facebook-child"></div>
-                <%= image_tag 'sign_in/vector.svg', class: 'vector-icon', alt: '' %>
-              </button>
-              <div class="button-parent">
-                <button class="button" id="button">
-                  <div class="bg3">
-                    <div class="rectangle-div"></div>
-                    <b class="sign-in1">Sign In</b>
-                  </div>
-                </button>
-                <div class="link-to-sign-up-button">
-                  <div class="or-sign-in-with-wrapper">
-                    <div class="or-sign-in">Or sign in with</div>
-                  </div>
-                  <div class="social-media-icons">
-                    <div class="apple">
-                      <div class="apple-child"></div>
-                      <%= image_tag 'sign_in/vector-1.svg', class: 'vector-icon1', loading: 'lazy', alt: '' %>
-                    </div>
-                    <button class="google">
-                      <div class="google-child"></div>
-                      <%= image_tag 'sign_in/vector-2.svg', class: 'vector-icon2', alt: '' %>
-                    </button>
-                  </div>
-                </div>
-              </div>
+        <div class="button-wrapper">
+          <button class="button" id="button">
+            <div class="bg3">
+              <div class="rectangle-div"></div>
+              <b class="sign-in1">Sign In</b>
             </div>
-            <div class="text-wrapper">
-              <div class="text" id="textContainer">
-                <div class="dont-have-an-container">
-                  <span>Don't have an account? </span>
-                  <span class="sign-up">Sign Up</span>
-                </div>
-              </div>
+          </button>
+        </div>
+        <div class="text-wrapper">
+          <div class="text" id="textContainer">
+            <div class="dont-have-an-container">
+              <span>Don't have an account? </span>
+              <span class="sign-up">Sign Up</span>
             </div>
           </div>
-        </section>
+        </div>
       </main>
     </div>
 
