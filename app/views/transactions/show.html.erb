@@ -6,7 +6,15 @@
         <span class="text-center flex-grow-1"><h1 class="mb-0">Transaction History</h1></span>
       </div>
     </div>
-
+<div class="container">
+  <h2><%= @transaction.title %></h2>
+  <p><%= @transaction.transaction_type %></p>
+  <p><%= @transaction.description %></p>
+  <p><%= @transaction.date %></p>
+  <p><%= @transaction.amount %></p>
+  <p><%= @transaction.category.name %></p>
+  <p> <%= @transaction.created_at %></p>
+</div>
     <div class="col-12 d-flex justify-content-center align-items-center mb-1">
       <div class="d-flex align-items-center justify-content-center" style="width: 335px; height: 100px;">
         <div class="balance" style="text-align: center;">
