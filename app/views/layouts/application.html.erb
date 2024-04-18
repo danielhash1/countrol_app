@@ -11,12 +11,15 @@
   </head>
 
   <body>
-    <%= render "shared/header" %>
-
-    <%= render "shared/flashes" %>
-    <%= yield %>
 
 
-    <%# <%= render "shared/navbar" %>
+    <%# <%= render "shared/flashes" %>
+
+
+<div class="page-container">
+ <div class="header-container"><%= render "shared/header" %></div>
+ <div class="content-container"><%= yield %></div>
+ <div class="navbar-container"><%= render "shared/navbar" %></div>
+</div>
   </body>
 </html>

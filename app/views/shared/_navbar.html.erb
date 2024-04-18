@@ -1,8 +1,20 @@
 
 
-  <ul class="d-flex gap-5 list-unstyled ">
-    <li><%= link_to "Transactions", transactions_path(@wallet), class:"link-offset-2 link-underline link-underline-opacity-0" %></li>
-    <li><%= link_to "Home", wallet_path(@wallet), class:"link-offset-2 link-underline link-underline-opacity-0" %></li>
+  <ul class="d-flex gap-5 list-unstyled justify-content-center">
 
-    <li><%= link_to "Goals", wallet_goals_path(@wallet), class:"link-offset-2 link-underline link-underline-opacity-0" %></li>
+    <li><%= link_to wallet_transactions_path(@wallet), class:"fs-2 link-offset-2 link-underline link-underline-opacity-0 text-black" do %>
+      <i class="fa-solid fa-chart-bar"></i>
+      <% end %>
+    </li>
+
+    <li><%= link_to wallet_path(@wallet), class:"fs-2 link-offset-2 link-underline link-underline-opacity-0 text-black" do %>
+      <i class="fa-solid fa-house"></i>
+      <% end %>
+    </li>
+
+    <li><%= link_to wallet_goals_path(@wallet), class:"fs-2 link-offset-2 link-underline link-underline-opacity-0 text-black" do %>
+      <i class="fa-solid fa-chart-pie"></i>
+      <% end %>
+    </li>
+
   </ul>
