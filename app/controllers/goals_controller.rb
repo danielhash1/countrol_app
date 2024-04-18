@@ -70,7 +70,7 @@ class GoalsController < ApplicationController
 
   def transaction_params
     params.require(:transaction).permit(:title, :description, :date, :amount, :category_id)
-  private
+  end
 
   def goal_params
     params.require(:goal).permit(:title, :amount, :date, :wallet_id)
