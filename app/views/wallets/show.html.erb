@@ -1,9 +1,33 @@
 <div class="container">
-  <div class="wallet-select mt-4 d-flex justify-content-center">
-    <p class="border rounded-pill border-black p-1 px-3"> <%= @wallet.name %> Wallet <i class="fa-solid fa-chevron-down"></i></p>
 
 
-  </div>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
+
+
+
+  <div class="dropdown d-flex justify-content-center">
+      <p class="border rounded-pill border-black p-1 px-3" type="button" data-bs-toggle="dropdown" aria-expanded="false"> <%= @wallet.name %> Wallet <i class="fa-solid fa-chevron-down"></i></p>
+
+    <ul class="dropdown-menu list-unstyled border border-secondary rounded-5 text-center d">
+    <% @wallets.each do |wallet| %>
+      <li>
+        <p><%= link_to wallet.name, wallet_path(wallet), class:"link-offset-2 link-underline link-underline-opacity-0 text-black" %></p>
+      </li>
+    <% end %>
+      <li>
+        <p><%= link_to 'Add', new_wallet_path, class:"mb-0 link-offset-2 link-underline link-underline-opacity-0 text-black" %></p>
+      </li>
+    </ul></div>
+
 
   <div class="general-info d-flex justify-content-center mt-2 mb-5">
     <div class="balance text-center">
@@ -12,9 +36,9 @@
     </div>
   </div>
 
-    <div class="new-transaction-links d-flex justify-content-center gap-5">
-      <%= link_to "+", new_wallet_transaction_path(@wallet), class:"link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
-      <%= link_to "-", new_wallet_transaction_path(@wallet), class:"link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
+    <div class="new-transaction-links d-flex justify-content-center gap-3">
+      <%= link_to "+", new_wallet_transaction_path(@wallet, transaction_type: 0), class:"px-4 rounded-5 border border-black link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
+      <%= link_to "-", new_wallet_transaction_path(@wallet, transaction_type: 1), class:"px-4 rounded-5 border border-black link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
     </div>
 
   <div class="graph-stats" height="400px">
@@ -24,7 +48,7 @@
   <div class="transactions">
    <div class="headlines d-flex justify-content-between">
     <h4>Recent Activity</h4>
-    <p><%= link_to "See All", wallet_transactions_path(@wallet), class:"link-offset-2 link-underline link-underline-opacity-0" %></p>
+    <p><%= link_to "See All", wallet_transactions_path(@wallet), class:"text-secondary link-offset-2 link-underline link-underline-opacity-0" %></p>
    </div>
     <div class="transaction-cards">
     <ul class="list-unstyled">

@@ -46,7 +46,6 @@ goal2 = Goal.create(title: 'Buy a new phone', amount: 800, date: Date.new(2024, 
 goal3 = Goal.create(title: 'Save for villa', amount: 45000, date: Date.new(2024, 10, 31), completed: false)
 # goal4 = Goal.create(title: 'Buy a new cloths', amount: 8600, date: Date.new(2024, 03, 31), completed: false)
 
-puts "#{Goal.count} goals created"
 
 # Create wallets
 wallet0 = Wallet.create(name: "Main", user_id: user1.id)
@@ -63,6 +62,11 @@ wallet3 = Wallet.create(name: "Checking", user_id: user2.id)
 wallet3_goal = Goal.create(title: 'Main', amount: 0, date: Date.today, completed: false)
 WalletGoal.create(wallet: wallet3, goal: wallet3_goal)
 puts "#{Wallet.count} wallets created"
+
+# Create goals
+goal1 = Goal.create(title: 'Save for vacation', amount: 1000, date: Date.new(2024, 12, 31), completed: false)
+goal2 = Goal.create(title: 'Buy a new phone', amount: 800, date: Date.new(2024, 10, 31), completed: false)
+puts "#{Goal.count} goals created"
 
 # Create transactions
  transaction1 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Salary', description: 'Bought lunch with friends', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 0)

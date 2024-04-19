@@ -12,22 +12,34 @@ end
 def show
   @wallet = Wallet.find(params[:wallet_id])
   @transaction = Transaction.find(params[:id])
+  @wallet = Wallet.find(params[:wallet_id])
+
 end
 
-def new
-  @wallet = Wallet.find(params[:wallet_id])
-  @transaction = Transaction.new
-end
+  def new
+    @wallet = Wallet.find(params[:wallet_id])
+    @transaction = @wallet.transactions.build
+    @transaction.transaction_type = params[:transaction_type]
+    @transaction = Transaction.new
+    @goal = Goal.find(params[:goal_id]) if params[:goal_id].present?
+  end
 
   def create
     @transaction = Transaction.new(transaction_params)
+    @wallet = Wallet.find(params[:wallet_id])
     @transaction.category_id = params[:transaction][:category_id]
     @transaction.goal_id = params[:transaction][:goal_id]
-    @wallet = Wallet.find(params[:wallet_id])
     @transaction.wallet = @wallet
+    @transaction.transaction_type = params[:transaction][:transaction_type]
     # @wallet = @goal.wallets.where(user: current_user).first
     # @goal = @wallet.goals.where(user: current_user).first
     # @transaction.goal = @goal
+
+    # if @transaction.transaction_type == 'expense' && params[:transaction][:goal_id].present?
+    #   @goal = Goal.find(params[:transaction][:goal_id])
+    #   @goal.update(amount: @goal.amount - @transaction.amount)
+    #   redirect_to wallet_goal_path(@wallet, @goal) and return if @goal.save
+    # end
 
     if @transaction.save
       redirect_to wallet_transactions_path(@wallet)

@@ -1,0 +1,96 @@
+// app/assets/stylesheets/pages/global.scss
+$font-poppins: Poppins;
+$font-space-grotesk: "Space Grotesk";
+$font-krona-one: "Krona One";
+
+$font-size-sm: 14px;
+
+$white: #fff;
+$color-gray-100: #888;
+$color-gray-200: #222;
+$black: #101216;
+$color-silver: #bbb;
+$color-dimgray: #666;
+$green: #1bbb9b;
+$color-darkslategray: #454545;
+
+$gap-xl: 20px;
+$gap-3xs: 10px;
+
+$padding-lgi: 19px;
+$padding-12xs: 1px;
+$padding-xl: 20px;
+$padding-smi: 13px;
+$padding-lg: 18px;
+$padding-xs: 12px;
+$padding-11xs: 2px;
+
+$br-6xs: 7px;
+$br-smi: 13px;
+
+
+// app/assets/stylesheets/_global.scss
+
+// Body styles
+body {
+    margin: 0;
+    line-height: normal;
+  }
+  
+  // CSS variables
+  :root {
+    /* fonts */
+    --font-poppins: Poppins;
+    --font-space-grotesk: "Space Grotesk";
+    --font-krona-one: "Krona One";
+  
+    /* font sizes */
+    --font-size-sm: 14px;
+    --font-size-base: 16px;
+    --font-size-11xl: 30px;
+    --font-size-xl: 20px;
+  
+    /* Colors */
+    --white: #fff;
+    --color-gray-100: #888;
+    --color-gray-200: #222;
+    --black: #101216;
+    --color-silver: #bbb;
+    --color-dimgray: #666;
+    --green: #1bbb9b;
+    --color-darkgray: #aaa;
+    --color-darkslategray: #454545;
+  
+    /* Gaps */
+    --gap-9xl: 28px;
+    --gap-xl: 20px;
+    --gap-3xs: 10px;
+    --gap-lg-5: 18.5px;
+    --gap-mini: 15px;
+    --gap-xs: 12px;
+    --gap-8xs: 5px;
+  
+    /* Paddings */
+    --padding-25xl: 44px;
+    --padding-lgi: 19px;
+    --padding-13xl: 32px;
+    --padding-12xs: 1px;
+    --padding-mini: 15px;
+    --padding-xl: 20px;
+    --padding-smi: 13px;
+    --padding-lg: 18px;
+    --padding-xs: 12px;
+    --padding-11xs: 2px;
+    --padding-2xl: 21px;
+    --padding-9xs: 4px;
+    --padding-12xl: 31px;
+    --padding-31xl: 50px;
+    --padding-sm: 14px;
+    --padding-2xs: 11px;
+    --padding-3xs: 10px;
+    --padding-8xs: 5px;
+  
+    /* Border radiuses */
+    --br-6xs: 7px;
+    --br-smi: 13px;
+  }
