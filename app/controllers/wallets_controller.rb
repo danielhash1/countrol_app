@@ -22,7 +22,7 @@ class WalletsController < ApplicationController
 
     if @wallet.save
       flash[:notice] = "Wallet was successfully created."
-      redirect_to wallets_path
+      redirect_to wallet_path(@wallet)
     else
       flash[:alert] = "Failed to create wallet."
       render :new
