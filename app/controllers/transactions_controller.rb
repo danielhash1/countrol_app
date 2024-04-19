@@ -42,7 +42,7 @@ end
     # end
 
     if @transaction.save
-      redirect_to wallet_path(@wallet)
+      redirect_to wallet_transactions_path(@wallet)
     else
       render :new, status: :unprocessable_entity
     end
@@ -57,7 +57,8 @@ end
     @transaction = Transaction.find(params[:id])
     @transaction.category_id = params[:transaction][:category]
     @transaction.update(transaction_params)
-    redirect_to transaction_path(@transaction)
+    @wallet = Wallet.find(params[:wallet_id])
+    redirect_to wallet_transaction_path(@wallet, @transaction)
 
   end
 

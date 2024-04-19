@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
+  root to: "wallets#index"
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   devise_scope :user do
     root 'devise/sessions#new'
   end
