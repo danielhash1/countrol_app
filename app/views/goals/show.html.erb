@@ -3,10 +3,11 @@
 <a href="">Share <i class="fa-solid fa-link"></i></a>
 <h1><%= @goal.title %></h1>
 
-<a href="">Add saving</a>
-
 <p>Goal:<b><%= @goal.amount %></b></p>
+<p>Remaining: <%= @goal.goal_balance %></p>
 <p>End date: <%= @goal.date %></p>
+
+<%= link_to 'Add Transaction', new_wallet_transaction_path(@wallet, transaction_type: 'expense', goal_id: @goal.id), class: 'btn btn-primary' %>
 
 <div class="transaction-links d-flex justify-content-center mt-4">
   <%= link_to "Edit", edit_wallet_goal_path(@wallet), class: "btn btn-warning rounded-0" %>
