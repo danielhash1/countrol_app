@@ -1,6 +1,6 @@
 <div class="container">
 
-<div class="transactions">
+<div class="transactions mt-3">
 
    <div class="headlines d-flex justify-content-between">
 
@@ -24,7 +24,7 @@
 
     <div class="transaction-cards">
     <ul class="list-unstyled">
-      <% @transactions.each do |transaction| %>
+      <% @transactions.reverse.each do |transaction| %>
 
       <%= link_to wallet_transaction_path(@wallet, transaction), class:"link-offset-2 link-underline link-underline-opacity-0" do %>
         <li class="d-flex justify-content-between border align-items-center border-black rounded-5 p-2 px-4 mb-2">
