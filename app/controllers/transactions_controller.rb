@@ -32,14 +32,15 @@ end
     # @wallet = @goal.wallets.where(user: current_user).first
     # @goal = @wallet.goals.where(user: current_user).first
     # @transaction.goal = @goal
-    if @transaction.transaction_type == 'expense' && params[:transaction][:goal_id].present?
-      @goal = Goal.find(params[:transaction][:goal_id])
-      @goal.update(amount: @goal.amount - @transaction.amount)
-      redirect_to goal_path(@goal) and return if @goal.save
-    end
+
+    # if @transaction.transaction_type == 'expense' && params[:transaction][:goal_id].present?
+    #   @goal = Goal.find(params[:transaction][:goal_id])
+    #   @goal.update(amount: @goal.amount - @transaction.amount)
+    #   redirect_to wallet_goal_path(@wallet, @goal) and return if @goal.save
+    # end
 
     if @transaction.save
-      redirect_to transaction_path(@transaction)
+      redirect_to wallet_path(@wallet)
     else
       render :new, status: :unprocessable_entity
     end

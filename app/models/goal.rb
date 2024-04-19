@@ -7,6 +7,7 @@ class Goal < ApplicationRecord
   has_many :transactions, dependent: :destroy
 
   def goal_balance
-    amount - transactions.sum(:amount)
+    @transactions_sum = Transaction.where(goal_id: id).sum(:amount)
+    amount - @transactions_sum
   end
 end

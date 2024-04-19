@@ -3,7 +3,11 @@
 <a href="">Share <i class="fa-solid fa-link"></i></a>
 <h1><%= @goal.title %></h1>
 
-<p>Goal:<b><%= @goal.amount %></b></p>
+<p>Goal:<b><%= @goal.amount %></p>
+<% @goal.transactions.each do |transaction| %>
+<%= transaction.amount %>
+<% end %>
+<%= @goal.id %>
 <p>Remaining: <%= @goal.goal_balance %></p>
 <p>End date: <%= @goal.date %></p>
 
