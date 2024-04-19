@@ -7,6 +7,7 @@ class WalletsController < ApplicationController
   def show
     @wallet = Wallet.find(params[:id])
     @wallets = current_user.wallets
+    @transactions = Transaction.where(wallet: @wallet)
   end
 
   def new

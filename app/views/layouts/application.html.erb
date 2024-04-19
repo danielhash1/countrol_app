@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CountrolApp</title>
+    <title>Countrol</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,8 +10,11 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
-    <%= yield %>
+
+<div class="page-container">
+ <div class="header-container"><%= render "shared/header" %></div>
+ <div class="content-container"><%= yield %></div>
+ <div class="navbar-container"><%= render "shared/navbar" %></div>
+</div>
   </body>
 </html>

@@ -40,21 +40,33 @@ puts "#{Goal.count} goals created"
 
 # Create wallets
 wallet0 = Wallet.create(name: "Main", user_id: user1.id)
+wallet0_goal = Goal.create(title: 'Main', amount: 0, date: Date.today, completed: false)
+WalletGoal.create(wallet: wallet0, goal: wallet0_goal)
 wallet1 = Wallet.create(name: "Savings", user_id: user1.id)
+wallet1_goal = Goal.create(title: 'Main', amount: 0, date: Date.today, completed: false)
+WalletGoal.create(wallet: wallet1, goal: wallet1_goal)
 wallet2 = Wallet.create(name: "Checking", user_id: user2.id)
-
+wallet2_goal = Goal.create(title: 'Main', amount: 0, date: Date.today, completed: false)
+WalletGoal.create(wallet: wallet2, goal: wallet2_goal)
 puts "#{Wallet.count} wallets created"
 
 # Create transactions
 transaction1 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Lunch', description: 'Bought lunch with friends', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 0)
-transaction2 = Transaction.create(goal: goal2, wallet: wallet2, category: category3, title: 'New headphones', description: 'Bought new headphones online', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 1)
+transaction2 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'New headphones', description: 'Bought new headphones online', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 1)
+transaction3 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Plane', description: 'Flights on the biggest plane', amount: 1235, date: Date.new(2024, 4, 10), transaction_type: 0)
+transaction4 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'Freelance', description: 'Customer is happt, I have my money paid', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 0)
+transaction5 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Lunch', description: 'Bought lunch with friends', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 0)
+transaction6 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'New headphones', description: 'Bought new headphones online', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 1)
+transaction7 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Lunch', description: 'Bought lunch with friends', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 0)
+transaction8 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'New headphones', description: 'Bought new headphones online', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 1)
+
+
 
 puts "#{Transaction.count} transactions created"
 
 # Create wallet goals
 wallet_goal1 = WalletGoal.create(wallet: wallet1, goal: goal1)
 wallet_goal2 = WalletGoal.create(wallet: wallet2, goal: goal2)
-
 
 puts "#{WalletGoal.count} Wallet goals created"
 

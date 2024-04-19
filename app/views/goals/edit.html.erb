@@ -1,10 +1,10 @@
 <div class="container">
-  <%= simple_form_for (@goal) do |f| %>
+  <%= simple_form_for ([@wallet, @goal]) do |f| %>
     <%= f.input :title %>
     <%= f.input :amount %>
     <%= f.input :date %>
     <%= f.submit class: "btn btn-success mt-3 lh-lg w-100" %>
   <% end %>
 
-  <%= link_to "Go Back", goals_path(@goal), class: "btn btn-secondary btn-lg mt-3 w-100" %>
+  <%= link_to "Go Back", wallet_goals_path(@goal), class: "btn btn-secondary btn-lg mt-3 w-100" %>
 </div>

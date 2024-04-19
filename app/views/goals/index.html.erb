@@ -9,7 +9,9 @@
 
 
 <ul>
+
 <% @user_goals.each do |goal| %>
   <li> <%= link_to goal.title, wallet_goal_path(@wallet, goal) %> </li>
+
 <% end %>
 </ul>
