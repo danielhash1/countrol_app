@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
+  root to: "wallets#index"
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   devise_scope :user do
     root 'devise/sessions#new'
   end
@@ -17,8 +19,14 @@ Rails.application.routes.draw do
     resources :transactions
     resources :categories
   end
+  resources :transactions, only: [:index, :show, :edit, :new, :create, :update, :destroy]
   resources :goals, only: [:new, :create, :edit, :update, :destroy] do
     resources :transactions, only: [:new, :create]
+  end
+  resources :wallets, only: [ :show, :new, :create, :edit, :update, :destroy] do
+    resources :transactions, only: [:new, :create, :index, :show, :edit, :uodate, :destroy]
+    resources :goals
+    resources :categories, only: [:new, :create, :index, :show, :edit, :update]
   end
   resources :categories, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 end
