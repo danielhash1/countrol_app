@@ -1,6 +1,8 @@
 class CategoriesController < ApplicationController
   def index
     @categories = Category.all
+    @transactions = Transaction.where(wallet: @wallet, category: @category)
+
   end
 
   def show
