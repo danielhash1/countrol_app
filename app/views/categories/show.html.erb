@@ -5,33 +5,18 @@
 
 <p class="text-center text-secondary">Total Balance:<br>$<%= @wallet.balance %></p>
 
-    <%= link_to "Edit", edit_wallet_category_path(@wallet), class: "link-offset-2 link-underline link-underline-opacity-0" %>
+    <%#= link_to "Edit", edit_wallet_category_path(@wallet), class: "link-offset-2 link-underline link-underline-opacity-0" %>
   </div>
 
 
-
-
-  <div class="category-info text-center">
-  <p style="font-size:60px"><%= @category.icon %></p>
-
-    <div class="title-and-link d-flex justify-content-center ">
-      <h1> <%= @category.name %></h1>
-      <%# <i class="fa-solid fa-pen-to-square"></i> %>
-    </div>
-
-    <div class="">
-      <% total_amount = @transactions.sum(&:amount) %>
-      <h2>-$<%= total_amount %></h2>
-    </div>
-  </div>
 
   <div class="category-transactions mt-4">
-
+  <h2 class="mb-0 d-flex justify-content-center" style="font-size: 100px;"><%= @category.name %></h2>
+<h2 class="mb-0 d-flex justify-content-center" style="font-size: 100px;"><%= @category.icon %></h2>
   <h4>Recent Transactions</h4>
+
     <ul class="p-0">
       <% @transactions.each do |transaction| %>
-
-        <%= link_to wallet_transaction_path([@wallet, transaction]), class:"link-offset-2 link-underline link-underline-opacity-0" do %>
           <li class="d-flex justify-content-between border align-items-center border-black rounded-5 p-2 px-4 mb-2">
             <div class="d-flex gap-4 align-items-center">
 
@@ -50,7 +35,7 @@
 
           </li>
           <% end %>
-          <% end %>
+
     </ul>
   </div>
 

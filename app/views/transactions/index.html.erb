@@ -4,6 +4,7 @@
 
    <div class="headlines d-flex justify-content-between">
 
+
     <p><%= link_to "All", wallet_transactions_path(@wallet), class:"link-offset-2 link-underline link-underline-opacity-0" %></p>
     <p><%= link_to "Expense", wallet_transactions_path(@wallet, filter: "expense"), class:"link-offset-2 link-underline link-underline-opacity-0" %></p>
     <p><%= link_to "Income", wallet_transactions_path(@wallet, filter: "income"), class:"link-offset-2 link-underline link-underline-opacity-0" %></p>
@@ -20,6 +21,7 @@
   </ul>
 </div>
    </div>
+
 
 
     <div class="transaction-cards">
