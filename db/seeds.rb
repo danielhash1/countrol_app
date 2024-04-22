@@ -69,24 +69,24 @@ goal2 = Goal.create(title: 'Buy a new phone', amount: 800, date: Date.new(2024, 
 puts "#{Goal.count} goals created"
 
 # Create transactions
- transaction1 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Salary', description: 'Bought lunch with friends', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 0)
-# transaction2 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'New Headphones', description: 'Bought new headphones online', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 1)
+transaction1 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Salary', description: 'Bought lunch with friends', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 0)
+transaction2 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'New Headphones', description: 'Bought new headphones online', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 1)
 transaction3 = Transaction.create(goal: goal1, wallet: wallet1, category: category12, title: 'Plane Ticket', description: 'Flights on the biggest plane', amount: 1235, date: Date.new(2024, 4, 10), transaction_type: 1)
-# transaction4 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'Freelance Work', description: 'Customer is happy, I have my money paid', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 0)
-# transaction5 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Birthday Gift', description: 'I got a birthday gifts', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 0)
-# transaction6 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'Villa House', description: 'Bought new Villa house online', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 1)
-# transaction7 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Trip To Dubai', description: 'Travel to Dubai with friends', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 1)
-# transaction8 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'Salary', description: 'Bought new headphones online', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 0)
+transaction4 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'Freelance Work', description: 'Customer is happy, I have my money paid', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 0)
+transaction5 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Birthday Gift', description: 'I got a birthday gifts', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 0)
+transaction6 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'Villa House', description: 'Bought new Villa house online', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 1)
+transaction7 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Trip To Dubai', description: 'Travel to Dubai with friends', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 1)
+transaction8 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'Salary', description: 'Bought new headphones online', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 0)
 
 
-# transaction1 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Movie Tickets', description: 'Watched a movie with friends', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 1)
-# transaction2 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'Gaming Console', description: 'Purchased a new gaming console', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 0)
-# transaction3 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Dinner', description: 'Had dinner with family', amount: 1235, date: Date.new(2024, 4, 10), transaction_type: 1)
-# transaction4 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'Electronics Accessories', description: 'Bought accessories for electronics', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 0)
-# transaction5 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Concert Tickets', description: 'Attended a live concert', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 0)
-# transaction6 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'Clothing', description: 'Purchased new clothing items', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 1)
-# transaction7 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Groceries', description: 'Bought weekly groceries', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 1)
-# transaction8 = Transaction.create(goal: goal2, wallet: wallet0, category: category1, title: 'Home Decor', description: 'Bought new decorations for home', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 0)
+transaction1 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Movie Tickets', description: 'Watched a movie with friends', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 1)
+transaction2 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'Gaming Console', description: 'Purchased a new gaming console', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 0)
+transaction3 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Dinner', description: 'Had dinner with family', amount: 1235, date: Date.new(2024, 4, 10), transaction_type: 1)
+transaction4 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'Electronics Accessories', description: 'Bought accessories for electronics', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 0)
+transaction5 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Concert Tickets', description: 'Attended a live concert', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 0)
+transaction6 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'Clothing', description: 'Purchased new clothing items', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 1)
+transaction7 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Groceries', description: 'Bought weekly groceries', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 1)
+transaction8 = Transaction.create(goal: goal2, wallet: wallet0, category: category1, title: 'Home Decor', description: 'Bought new decorations for home', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 0)
 
 
 
