@@ -13,9 +13,8 @@
   </div>
 
     <div class="new-transaction-links d-flex justify-content-center gap-5">
-      <%#= link_to "+", new_wallet_transaction_path(@wallet), class:"link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
-      <%= link_to "+", new_wallet_transaction_path(@wallet, transaction_type: 'income'), class:"link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
-      <%= link_to "-", new_wallet_transaction_path(@wallet, transaction_type: 'expense'), class:"link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
+      <%= link_to "+", new_wallet_transaction_path(@wallet), class:"link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
+      <%= link_to "-", new_wallet_transaction_path(@wallet), class:"link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
     </div>
 
   <div class="graph-stats" height="400px">
@@ -31,7 +30,7 @@
     <ul class="list-unstyled">
       <% @transactions.each do |transaction| %>
 
-      <%= link_to wallet_transaction_path(@wallet, transaction), class:"link-offset-2 link-underline link-underline-opacity-0" do %>
+      <%= link_to transaction_path(transaction), class:"link-offset-2 link-underline link-underline-opacity-0" do %>
         <li class="d-flex justify-content-between border align-items-center border-black rounded-5 p-1 px-4 mb-2">
           <div class="d-flex gap-4 align-items-center">
             <span class="text fs-1"><%= transaction.category.icon %></span>
