@@ -1,23 +1,23 @@
 <div class="container">
-<h1>Categories</h1>
+  <h1>Categories</h1>
 
-    <div class="transaction-cards">
+  <div class="transaction-cards">
     <ul class="list-unstyled">
       <% @categories.each do |category| %>
 
       <%= link_to category_path(category), class:"link-offset-2 link-underline link-underline-opacity-0" do %>
-        <li class="d-flex justify-content-between border align-items-center border-black rounded-5 p-2 px-4 mb-2">
-          <div class="d-flex gap-4 align-items-center">
-
-            <div class="name-category">
+        <li class="d-flex justify-content-between border align-items-center border-black rounded-5 p-2 px-4 mb-2 ">
+            <div class="name-category w-100 d-flex justify-content-between">
               <p class="text fs-5 mb-0 text-black"><%= category.name %></p>
+              <p class="text fs-5 mb-0 text-black "><%= @transactions.sum(&:amount) %></p>
+
             </div>
-          </div>
+
 
 
         </li>
         <% end %>
       <% end %>
     </ul>
-    </div>
+  </div>
 </div>
