@@ -9,6 +9,8 @@ def index
   end
 end
 
+
+
 def show
   @wallet = Wallet.find(params[:wallet_id])
   @transaction = Transaction.find(params[:id])
