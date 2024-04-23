@@ -8,7 +8,7 @@
     <%= csrf_meta_tags %>
 
     <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./SignUpPage1.css" />
+    <%= stylesheet_link_tag 'pages/sign_up_page', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Krona One:wght@400&display=swap"
@@ -56,7 +56,7 @@
           </div>
           <div class="form-actions">
             <%= f.button :submit, "Sign up" %>
-          </div>
+          </div>+
         <% end %>
         <%= render "devise/shared/links" %>
         <div class="full-name-input-parent">
@@ -84,7 +84,7 @@
                   />
 
                   <div class="icon-wrapper6">
-                    <img class="icon8" alt="" src="<%= asset_path('icon@2x.png') %>" />
+                    <img class="icon8" alt="" src="<%= asset_path('icon@2xx.png') %>" />
                   </div>
                 </div>
               </div>
@@ -94,7 +94,7 @@
                   <input class="email4" placeholder="Email..." type="text" />
 
                   <div class="icon-wrapper7">
-                    <img class="icon9" alt="" src="<%= asset_path('icon@2x.png') %>" />
+                    <img class="icon9" alt="" src="<%= asset_path('icon@2xx.png') %>" />
                   </div>
                 </div>
               </div>
@@ -131,7 +131,7 @@
           </div>
         </div>
         <div class="sign-up-button">
-          <button class="button3" id="button">
+          <button class="button3" id="button" data-controller="sign-up" data-sign-up-target="button">
             <div class="bg19">
               <div class="background-sign-up-inst"></div>
             </div>
@@ -139,7 +139,7 @@
           </button>
         </div>
         <div class="text-wrapper1">
-          <div class="text7" id="textContainer">
+          <div class="text7" id="textContainer" data-controller="sign-up" data-sign-up-target="textContainer">
             <div class="already-have-an-container1">
               <span class="already-have-an1">Already have an account? </span>
               <span class="sign-in5">Sign In</span>

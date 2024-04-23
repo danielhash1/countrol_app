@@ -4,20 +4,15 @@ export default class extends Controller {
   static targets = ["button", "textContainer"]
 
   connect() {
-    this.buttonTarget.addEventListener('click', this.signUp.bind(this))
-    this.textContainerTarget.addEventListener('click', this.navigateToSignIn.bind(this))
+    this.buttonTarget.addEventListener("click", this.handleButtonClick.bind(this))
+    this.textContainerTarget.addEventListener("click", this.handleTextContainerClick.bind(this))
   }
 
-  signUp() {
-    // Handle the "Sign Up" button click event
-    console.log("Sign Up button clicked")
-    // Add your desired behavior here
+  handleButtonClick() {
+    // Please sync "Mine Page" to the project
   }
 
-  navigateToSignIn() {
-    // Handle the "Already have an account? Sign In" text click event
-    console.log("Sign In text clicked")
+  handleTextContainerClick() {
     window.location.href = "/users/sign_in"
-    // Add your desired behavior here
   }
 }
