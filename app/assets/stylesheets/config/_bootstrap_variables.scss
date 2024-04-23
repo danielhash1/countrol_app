@@ -10,13 +10,22 @@ $headings-font-family:   $headers-font;
 $body-bg:                $light-gray;
 $font-size-base:         1rem;
 
+
 // Colors
-$body-color: $gray;
-$primary:    $blue;
-$success:    $green;
-$info:       $yellow;
-$danger:     $red;
-$warning:    $orange;
+$body-color: $NEUTRAL_600;
+$primary: $SECONDARY_300;
+$success: $SUCCESS_100;
+$info: $SECONDARY_100;
+$danger: $ERORR_100;
+$warning: $ERORR_200;
+// $body-color: $gray;
+// $primary:    $blue;
+// $success:    $green;
+// $info:       $yellow;
+// $danger:     $red;
+// $warning:    $orange;
+
+
 
 // Buttons & inputs' radius
 $border-radius-sm:            .0625rem;
