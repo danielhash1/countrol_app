@@ -1,14 +1,42 @@
-<%= link_to '<i class="fa-solid fa-chevron-left"></i> Back'.html_safe, categories_path %>
+<div class="container">
 
-<h1> <%= @category.name %> </h1>
+  <div class="transaction-links d-flex justify-content-between mt-3 p-2">
+  <p class=""><%= link_to '<i class="fa-solid fa-chevron-left"></i> Back'.html_safe, wallet_categories_path(@wallet), class:"link-offset-2 link-underline link-underline-opacity-0" %></p>
 
-<p><%= @category.icon %></p>
+<p class="text-center text-secondary">Total Balance:<br>$<%= @wallet.balance %></p>
 
-<div class="transaction-links d-flex justify-content-center mt-4">
-  <%= link_to "Edit", edit_category_path, class: "btn btn-warning rounded-0" %>
-  <%= link_to "Delete",
-    category_path(@category),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-    class: "btn btn-secondary rounded-0"
-  %>
+    <%#= link_to "Edit", edit_wallet_category_path(@wallet), class: "link-offset-2 link-underline link-underline-opacity-0" %>
+  </div>
+
+
+
+  <div class="category-transactions mt-4">
+  <h2 class="mb-0 d-flex justify-content-center" style="font-size: 100px;"><%= @category.name %></h2>
+<h2 class="mb-0 d-flex justify-content-center" style="font-size: 100px;"><%= @category.icon %></h2>
+  <h4>Recent Transactions</h4>
+
+    <ul class="p-0">
+      <% @transactions.each do |transaction| %>
+          <li class="d-flex justify-content-between border align-items-center border-black rounded-5 p-2 px-4 mb-2">
+            <div class="d-flex gap-4 align-items-center">
+
+              <div class="name-category">
+                <p class="text mb-0 text-black" style="font-size:18px"><%= transaction.title %></p>
+                <p class="text text-secondary mb-0" style="font-size:14px"><%= transaction.created_at %></p>
+
+              </div>
+            </div>
+
+            <% if transaction.transaction_type == "income" %>
+            <p class="text mb-0 text-success fw-lighter"><strong>+<%= transaction.amount %></strong></p>
+            <% else %>
+            <p class="text mb-0 text-danger fw-lighter"><strong>-<%= transaction.amount %></strong></p>
+            <% end %>
+
+          </li>
+          <% end %>
+
+    </ul>
+  </div>
+
 </div>

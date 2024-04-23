@@ -1,19 +1,62 @@
-<%= link_to '<i class="fa-solid fa-chevron-left"></i> Back'.html_safe, transactions_path %>
-
 <div class="container">
-  <h2><%= @transaction.title %></h2>
-  <p><%= @transaction.transaction_type.capitalize %></p>
-  <p><%= @transaction.description %></p>
-  <p><%= @transaction.date %></p>
-  <p><%= @transaction.amount %></p>
-  <p> <%= @transaction.created_at %></p>
-</div>
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center align-items-center mb-1">
+      <div class="d-flex align-items-center justify-content-between col-md-10 col-10 mx-auto">
+        <%= link_to '<i class="fa-solid fa-chevron-left"></i>'.html_safe, wallet_transactions_path(@wallet), class: "btn btn-primary" %>
+        <span class="text-center flex-grow-1"><h1 class="mb-0">Transaction History</h1></span>
+      </div>
+    </div>
 
-<div class="transaction-links d-flex justify-content-center mt-4">
-  <%= link_to "Edit", edit_transaction_path, class: "btn btn-warning rounded-0" %>
-  <%= link_to "Delete",
-    transaction_path(@transaction),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-    class: "btn btn-secondary rounded-0"
-  %>
+    <div class="col-12 d-flex justify-content-center align-items-center mb-1">
+      <div class="d-flex align-items-center justify-content-center" style="width: 335px; height: 100px;">
+        <div class="balance" style="text-align: center;">
+          <h2 class="mb-0">Total Balance</h2>
+          <h3 class="mb-0"><%= @wallet.balance %></h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center p-0">
+      <div class="card mb-3 mx-3 card-horizontal">
+        <div class="row">
+          <div class="col-sm-4 d-flex justify-content-center align-items-center pv-4 px-0">
+            <h2 class="mb-0" style="font-size: 100px;"><%= @transaction.category.icon %></h2>
+          </div>
+          <div class="col-sm-3 d-flex justify-content-center align-items-center">
+            <div class="card-body">
+              <div class="row">
+                <h3><%= @transaction.title %></h3>
+                <p>Transaction Type</p>
+                <p><%= @transaction.transaction_type %></p>
+                <p>Description</p>
+                <p><%= @transaction.description %></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 d-flex justify-content-center align-items-center">
+            <div class="card-body">
+              <div class="row">
+                <p>Date</p>
+                <p><%= @transaction.date %></p>
+                <p>Amount</p>
+                <p><%= @transaction.amount %></p>
+                <p>Created</p>
+                <p><%= @transaction.created_at %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="transaction-links d-flex justify-content-center mt-4">
+      <div class="d-flex justify-content-between" style="width: 200px;">
+        <p><%= link_to ("<i class='fa fa-pencil'></i> Edit").html_safe, edit_wallet_transaction_path(@wallet), class: "btn btn-warning rounded-0" %></p>
+        <p><%= link_to ("<i class='fa fa-trash'></i> Delete").html_safe,
+          transaction_path(@transaction),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+          class: "btn btn-secondary rounded-0"%></p>
+      </div>
+    </div>
+  </div>
 </div>

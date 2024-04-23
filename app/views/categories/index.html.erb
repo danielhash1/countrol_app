@@ -1,9 +1,26 @@
-<h1>Categories</h1>
+<div class="container">
+  <h1>Categories</h1>
 
-<%= link_to "Add a Category", new_category_path %>
+  <div class="transaction-cards">
+    <ul class="list-unstyled">
+      <% @categories.each do |category| %>
 
-<ul>
-  <% @categories.each do |category| %>
-  <li><%= category.icon %> <%= link_to category.name, category_path(category) %></li>
-  <% end %>
-</ul>
+      <%= link_to wallet_category_path(@wallet, category), class:"link-offset-2 link-underline link-underline-opacity-0" do %>
+        <li class="d-flex justify-content-between border align-items-center border-black rounded-5 p-2 px-4 mb-2 ">
+            <div class="name-category w-100 d-flex justify-content-between">
+              <p class="text fs-5 mb-0 text-black"><%= category.name %></p>
+              <p class="text fs-5 mb-0 text-black "><%= @transactions.sum(&:amount) %></p>
+
+
+
+            </div>
+
+
+
+        </li>
+        <% end %>
+      <% end %>
+      <%= link_to "Go Back", wallet_path(@wallet), class: "btn btn-secondary btn-lg mt-3 w-100" %>
+    </ul>
+  </div>
+</div>

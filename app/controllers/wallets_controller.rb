@@ -2,11 +2,13 @@ class WalletsController < ApplicationController
   before_action :set_wallets, only: [:show, :edit, :update, :destroy]
   def index
     @wallets = current_user.wallets
+    @wallet = Wallet.find(params[:id])
   end
 
   def show
     @wallet = Wallet.find(params[:id])
     @wallets = current_user.wallets
+    @transactions = Transaction.where(wallet: @wallet)
   end
 
   def new
@@ -19,7 +21,7 @@ class WalletsController < ApplicationController
 
     if @wallet.save
       flash[:notice] = "Wallet was successfully created."
-      redirect_to wallets_path
+      redirect_to wallet_path(@wallet)
     else
       flash[:alert] = "Failed to create wallet."
       render :new
