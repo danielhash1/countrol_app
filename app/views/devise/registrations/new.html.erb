@@ -23,146 +23,109 @@
     />
   </head>
   <body>
-    <div class="sign-up-page1">
-      <main class="bg14">
-        <div class="bg-child11"></div>
-        <div class="sign-up-container">
-          <div class="logo-mini-wrapper1">
-            <div class="logo-mini4">
-              <div class="countrol4">Countrol</div>
-            </div>
-          </div>
+    <div class="sign-up-page">
+  <main class="bg4">
+    <div class="bg-child1"></div>
+    <div class="sign-up-container">
+      <div class="logo-mini-container">
+        <div class="logo-mini1">
+          <div class="countrol1">Countrol</div>
         </div>
-        <div class="logo-mini5">
-          <div class="bankist1">
-            <p class="countrol5">Countrol</p>
-          </div>
+      </div>
+    </div>
+    <div class="logo-mini2">
+      <div class="bankist">
+        <p class="countrol2">Countrol</p>
+      </div>
+    </div>
+    <div class="create-account-button">
+      <div class="full-name-input-parent">
+        <div class="full-name-input">
+          <h1 class="create-your-account-container">
+            <p class="create">Create</p>
+            <p class="your-account1">your account</p>
+          </h1>
         </div>
-        <h2>Sign up</h2>
+        <div class="lets-safe-your-container">
+          <p class="lets-safe-your">
+            Let's safe your transfer money our bank.
+          </p>
+          <p class="enter-your-details">Enter your details to sign up.</p>
+        </div>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= f.error_notification %>
-          <div class="form-inputs">
-            <%= f.input :email,
-                        required: true,
-                        autofocus: true,
-                        input_html: { autocomplete: "email" }%>
-            <%= f.input :password,
-                        required: true,
-                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                        input_html: { autocomplete: "new-password" } %>
-            <%= f.input :password_confirmation,
-                        required: true,
-                        input_html: { autocomplete: "new-password" } %>
-          </div>
-          <div class="form-actions">
-            <%= f.button :submit, "Sign up" %>
-          </div>+
-        <% end %>
-        <%= render "devise/shared/links" %>
-        <div class="full-name-input-parent">
-          <div class="full-name-input">
-            <h1 class="create-your-account-container1">
-              <p class="create1">Create</p>
-              <p class="your-account3">your account</p>
-            </h1>
-          </div>
-          <div class="lets-safe-your-container1">
-            <p class="lets-safe-your1">
-              Let's safe your transfer money our bank.
-            </p>
-            <p class="enter-your-details1">Enter your details to sign up.</p>
-          </div>
-          <div class="frame-wrapper4">
+          <div class="frame-container">
             <div class="full-name-container-parent">
               <div class="full-name-container">
-                <div class="bg15">
-                  <div class="bg-child12"></div>
-                  <input
-                    class="full-name1"
-                    placeholder="Full Name"
-                    type="text"
-                  />
-
-                  <div class="icon-wrapper6">
-                    <img class="icon8" alt="" src="<%= asset_path('icon@2xx.png') %>" />
+                <div class="bg5">
+                  <div class="bg-child2"></div>
+                  <%= f.input :full_name,
+                              required: true,
+                              autofocus: true,
+                              label: false,
+                              placeholder: "Full Name",
+                              input_html: { class: "full-name" } %>
+                  <div class="icon-frame">
+                    <%= image_tag 'icon1.svg', class: 'icon2', alt: '' %>
                   </div>
                 </div>
               </div>
               <div class="full-name-container1">
-                <div class="bg16">
-                  <div class="bg-child13"></div>
-                  <input class="email4" placeholder="Email..." type="text" />
-
-                  <div class="icon-wrapper7">
-                    <img class="icon9" alt="" src="<%= asset_path('icon@2xx.png') %>" />
+                <div class="bg6">
+                  <div class="bg-child3"></div>
+                  <%= f.input :email,
+                              required: true,
+                              label: false,
+                              placeholder: "Email...",
+                              input_html: { class: "email1" } %>
+                  <div class="frame-div">
+                    <%= image_tag 'icon.png', class: 'icon3', alt: '' %>
                   </div>
                 </div>
               </div>
               <div class="full-name-container2">
-                <div class="bg17">
-                  <div class="bg-child14"></div>
-                  <input
-                    class="password4"
-                    placeholder="Password"
-                    type="text"
-                  />
-
-                  <div class="icon-wrapper8">
-                    <img class="icon10" alt="" src="<%= asset_path('icon-1.svg') %>" />
+                <div class="bg7">
+                  <div class="bg-child4"></div>
+                  <%= f.input :password,
+                              required: true,
+                              hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                              label: false,
+                              placeholder: "Password",
+                              input_html: { class: "password1" } %>
+                  <div class="icon-wrapper1">
+                    <%= image_tag 'icon-1.svg', class: 'icon4', alt: '' %>
                   </div>
                 </div>
               </div>
-              <div class="bg18">
-                <div class="bg-child15"></div>
-                <input
-                  class="confirm-password2"
-                  placeholder="Confirm Password"
-                  type="text"
-                />
-
+              <div class="bg8">
+                <div class="bg-child5"></div>
+                <%= f.input :password_confirmation,
+                            required: true,
+                            label: false,
+                            placeholder: "Confirm Password",
+                            input_html: { class: "confirm-password" } %>
                 <div class="background-sign-up">
-                  <img class="icon11" alt="" src="<%= asset_path('icon-31.svg') %>" />
+                  <%= image_tag 'icon-3.svg', class: 'icon5', alt: '' %>
                 </div>
               </div>
-              <div class="forgot-password-frame">
-                <div class="forgot-password3">Forgot Password?</div>
+              <div class="forgot-password-container">
+                <div class="forgot-password1">Forgot Password?</div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="sign-up-button">
-          <button class="button3" id="button" data-controller="sign-up" data-sign-up-target="button">
-            <div class="bg19">
-              <div class="background-sign-up-inst"></div>
-            </div>
-            <b class="sign-up3">Sign Up</b>
-          </button>
-        </div>
-        <div class="text-wrapper1">
-          <div class="text7" id="textContainer" data-controller="sign-up" data-sign-up-target="textContainer">
-            <div class="already-have-an-container1">
-              <span class="already-have-an1">Already have an account? </span>
-              <span class="sign-in5">Sign In</span>
+          <div class="sign-up-button">
+            <%= f.button :submit, "Sign Up", class: "button1" %>
+          </div>
+        <% end %>
+        <div class="text-container">
+          <div class="text1" id="textContainer">
+            <div class="already-have-an-container">
+              <span class="already-have-an">Already have an account? </span>
+              <%= link_to "Sign In", new_session_path(resource_name), class: "sign-in2" %>
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </div>
-
-    <script>
-      var button = document.getElementById("button");
-      if (button) {
-        button.addEventListener("click", function (e) {
-          // Please sync "Mine Page" to the project
-        });
-      }
-      
-      var textContainer = document.getElementById("textContainer");
-      if (textContainer) {
-        textContainer.addEventListener("click", function (e) {
-          window.location.href = "./SignInPage1.html";
-        });
-      }
-    </script>
-  </body>
-</html>
+  </main>
+</div>
