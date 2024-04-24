@@ -21,4 +21,12 @@ class Goal < ApplicationRecord
     @transactions_sum = Transaction.where(goal_id: id).sum(:amount)
     amount - @transactions_sum
   end
+
+  def goal_progress_percent
+    ((amount - goal_balance) / amount.to_f) * 100
+  end
+
+  def goal_progress
+    amount - goal_balance
+  end
 end
