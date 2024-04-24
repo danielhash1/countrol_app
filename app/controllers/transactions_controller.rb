@@ -9,8 +9,6 @@ def index
   end
 end
 
-
-
 def show
   @wallet = Wallet.find(params[:wallet_id])
   @transaction = Transaction.find(params[:id])
@@ -64,7 +62,7 @@ end
     @transaction = Transaction.find(params[:id])
     @wallet = @transaction.wallet
     @transaction.destroy
-    redirect_to wallet_transaction_path(@wallet, @transaction)
+    redirect_to wallet_transactions_path(@wallet)
   end
 
   private

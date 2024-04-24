@@ -3,7 +3,14 @@
 <div class="transactions mt-3">
 
 
-      <%= pie_chart @transactions.group_by_day(:created_at).count %>
+   <div class="graph-container d-flex justify-content-between">
+      <div class="income-line-chart line-chart">
+            <%= line_chart @transactions.where(transaction_type: 0).group_by_day(:date).count %>
+      </div>
+      <div class="expense-line-chart line-chart">
+            <%= line_chart @transactions.where(transaction_type: 1).group_by_day(:date).count %>
+      </div>
+    </div>
 
 
 
