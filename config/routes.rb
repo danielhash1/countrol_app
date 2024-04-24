@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :transactions, only: [:new, :create]
   end
   resources :wallets, only: [ :show, :new, :create, :edit, :update, :destroy] do
-    resources :transactions, only: [:new, :create, :index, :show, :edit, :uodate, :destroy]
+    resources :transactions
     resources :goals
     resources :categories, only: [:new, :create, :index, :show, :edit, :update]
   end

@@ -36,20 +36,20 @@ body {
     margin: 0;
     line-height: normal;
   }
-  
+
   // CSS variables
   :root {
     /* fonts */
     --font-poppins: Poppins;
     --font-space-grotesk: "Space Grotesk";
     --font-krona-one: "Krona One";
-  
+
     /* font sizes */
     --font-size-sm: 14px;
     --font-size-base: 16px;
     --font-size-11xl: 30px;
     --font-size-xl: 20px;
-  
+
     /* Colors */
     --white: #fff;
     --color-gray-100: #888;
@@ -60,7 +60,7 @@ body {
     --green: #1bbb9b;
     --color-darkgray: #aaa;
     --color-darkslategray: #454545;
-  
+
     /* Gaps */
     --gap-9xl: 28px;
     --gap-xl: 20px;
@@ -69,7 +69,7 @@ body {
     --gap-mini: 15px;
     --gap-xs: 12px;
     --gap-8xs: 5px;
-  
+
     /* Paddings */
     --padding-25xl: 44px;
     --padding-lgi: 19px;
@@ -89,7 +89,7 @@ body {
     --padding-2xs: 11px;
     --padding-3xs: 10px;
     --padding-8xs: 5px;
-  
+
     /* Border radiuses */
     --br-6xs: 7px;
     --br-smi: 13px;
