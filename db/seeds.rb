@@ -71,7 +71,7 @@ puts "#{Goal.count} goals created"
 # Create transactions
 transaction1 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Salary', description: 'Bought lunch with friends', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 0)
 transaction2 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'New Headphones', description: 'Bought new headphones online', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 1)
-transaction3 = Transaction.create(goal: goal1, wallet: wallet1, category: category12, title: 'Plane Ticket', description: 'Flights on the biggest plane', amount: 1235, date: Date.new(2024, 4, 10), transaction_type: 1)
+transaction3 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Plane Ticket', description: 'Flights on the biggest plane', amount: 1235, date: Date.new(2024, 4, 10), transaction_type: 1)
 transaction4 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'Freelance Work', description: 'Customer is happy, I have my money paid', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 0)
 transaction5 = Transaction.create(goal: goal1, wallet: wallet1, category: category1, title: 'Birthday Gift', description: 'I got a birthday gifts', amount: 20, date: Date.new(2024, 4, 10), transaction_type: 0)
 transaction6 = Transaction.create(goal: goal2, wallet: wallet0, category: category3, title: 'Villa House', description: 'Bought new Villa house online', amount: 50, date: Date.new(2024, 4, 9), transaction_type: 1)
