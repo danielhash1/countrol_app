@@ -1,3 +1,7 @@
+
+@import "../globalG";
+
+
 .bg-child20 {
   width: 23.438rem;
   height: 50.75rem;
@@ -1046,4 +1050,67 @@
   flex-direction: row;
   line-height: normal;
   letter-spacing: normal;
+}
+// app/assets/stylesheets/pages/goals1.scss
+
+
+.frame-wrapper11 {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 0 var(--padding-12xs) 0 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  font-size: var(--font-size-mini);
+}
+
+.frame-parent5 {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+  max-width: 100%;
+}
+
+.goal-card {
+  background-color: var(--color-gray-300);
+  border-radius: var(--br-mini);
+  padding: var(--padding-3xs);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.goal-icon {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.goal-details {
+  flex: 1;
+}
+
+.goal-title {
+  font-size: var(--font-size-lg);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.goal-amount {
+  font-size: var(--font-size-base);
+}
+
+.footer {
+  background-color: var(--color-gray-400);
+  padding: var(--padding-3xs);
+  // Add more styles for the footer as needed
 }
