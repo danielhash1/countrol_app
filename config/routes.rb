@@ -14,14 +14,15 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  resources :transactions, only: [:index, :show, :edit, :new, :create, :update, :destroy]
+
+  resources :transactions, only: :destroy
   resources :goals, only: [:new, :create, :edit, :update, :destroy] do
     resources :transactions, only: [:new, :create]
   end
   resources :wallets, only: [ :show, :new, :create, :edit, :update, :destroy] do
     resources :transactions
     resources :goals
-    resources :categories, only: [:new, :create, :index, :show, :edit, :update]
+    resources :categories, only: [:index, :show]
   end
-  resources :categories, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :categories, only: [:new, :create, :destroy]
 end

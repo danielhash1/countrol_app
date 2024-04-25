@@ -1,12 +1,12 @@
-.bg-child11 {
-  width: 375px;
-  height: 812px;
+.bg-child1 {
+  width: 23.438rem;
+  height: 50.75rem;
   position: relative;
   background-color: var(--black);
   display: none;
   max-width: 100%;
 }
-.countrol4 {
+.countrol1 {
   flex: 1;
   position: relative;
   background: linear-gradient(
@@ -22,34 +22,34 @@
   white-space: nowrap;
   text-shadow: 1px 0 0#000, 0 1px 0#000, -1px 0 0#000, 0-1px 0#000;
 }
-.logo-mini4 {
+.logo-mini1 {
   flex: 1;
   justify-content: flex-start;
   padding: 0 var(--padding-9xs) 0 0;
 }
-.logo-mini-wrapper1,
-.logo-mini4,
+.logo-mini-container,
+.logo-mini1,
 .sign-up-container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
 }
-.logo-mini-wrapper1 {
-  width: 136px;
+.logo-mini-container {
+  width: 8.5rem;
   justify-content: flex-start;
-  padding: var(--padding-3xs);
+  padding: 0.625rem;
   box-sizing: border-box;
   z-index: 2;
 }
 .sign-up-container {
   align-self: stretch;
   justify-content: center;
-  padding: 0 var(--padding-2xs) 0 0;
+  padding: 0 0.687rem 0 0;
 }
-.countrol5 {
+.countrol2 {
   margin: 0;
 }
-.bankist1 {
+.bankist {
   position: absolute;
   top: 6.69%;
   left: 0;
@@ -66,17 +66,17 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.logo-mini5 {
-  width: 116px;
-  height: 29.9px;
+.logo-mini2 {
+  width: 7.25rem;
+  height: 1.869rem;
   position: relative;
   display: none;
 }
-.create1,
-.your-account3 {
+.create,
+.your-account1 {
   margin: 0;
 }
-.create-your-account-container1 {
+.create-your-account-container {
   margin: 0;
   position: relative;
   font-size: var(--font-size-11xl);
@@ -93,11 +93,11 @@
   justify-content: flex-start;
   padding: 0 var(--padding-12xs);
 }
-.enter-your-details1,
-.lets-safe-your1 {
+.enter-your-details,
+.lets-safe-your {
   margin: 0;
 }
-.lets-safe-your-container1 {
+.lets-safe-your-container {
   position: relative;
   font-size: var(--font-size-sm);
   font-family: var(--font-poppins);
@@ -105,9 +105,9 @@
   text-align: left;
   z-index: 1;
 }
-.bg-child12 {
-  height: 50px;
-  width: 335px;
+.bg-child2 {
+  height: 3.125rem;
+  width: 20.938rem;
   position: relative;
   border-radius: var(--br-smi);
   border: 1px solid var(--color-darkslategray);
@@ -115,40 +115,40 @@
   display: none;
   max-width: 100%;
 }
-.full-name1,
-.icon8 {
+.full-name,
+.icon2 {
   position: relative;
   z-index: 2;
 }
-.full-name1 {
+.full-name {
   width: calc(100% - 49.8px);
   border: 0;
   outline: 0;
   font-family: var(--font-poppins);
   font-size: var(--font-size-sm);
   background-color: transparent;
-  height: 21px;
+  height: 1.313rem;
   flex: 1;
   color: var(--color-gray-100);
   text-align: left;
   display: inline-block;
-  min-width: 171px;
+  min-width: 10.688rem;
   padding: 0;
 }
-.icon8 {
-  width: 12.8px;
-  height: 16px;
+.icon2 {
+  width: 0.8rem;
+  height: 1rem;
   object-fit: cover;
 }
-.bg15,
-.icon-wrapper6 {
+.bg5,
+.icon-frame {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   padding: var(--padding-11xs) 0 0;
 }
-.bg15 {
+.bg5 {
   flex: 1;
   border-radius: var(--br-smi);
   border: 1px solid var(--color-darkslategray);
@@ -156,11 +156,11 @@
   flex-wrap: wrap;
   padding: var(--padding-smi) var(--padding-lg) var(--padding-xs)
     var(--padding-lgi);
-  gap: var(--gap-xl);
+  gap: 1.25rem;
   z-index: 1;
 }
-.bg-child13,
-.bg15,
+.bg-child3,
+.bg5,
 .full-name-container {
   box-sizing: border-box;
   max-width: 100%;
@@ -173,59 +173,59 @@
   justify-content: flex-start;
   padding: 0 var(--padding-12xs) var(--padding-8xs) 0;
 }
-.bg-child13 {
-  height: 50px;
-  width: 335px;
+.bg-child3 {
+  height: 3.125rem;
+  width: 20.938rem;
   position: relative;
   border-radius: var(--br-smi);
   border: 1px solid var(--color-darkslategray);
   display: none;
 }
-.email4,
-.icon9 {
+.email1,
+.icon3 {
   position: relative;
   z-index: 2;
 }
-.email4 {
+.email1 {
   width: calc(100% - 57px);
   border: 0;
   outline: 0;
   font-family: var(--font-poppins);
   font-size: var(--font-size-sm);
   background-color: transparent;
-  height: 21px;
+  height: 1.313rem;
   flex: 1;
   color: var(--color-gray-100);
   text-align: left;
   display: inline-block;
-  min-width: 157px;
+  min-width: 9.813rem;
   padding: 0;
 }
-.icon9 {
-  width: 21px;
-  height: 16px;
+.icon3 {
+  width: 1.313rem;
+  height: 1rem;
   object-fit: cover;
 }
-.bg16,
-.icon-wrapper7 {
+.bg6,
+.frame-div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   padding: var(--padding-11xs) 0 0;
 }
-.bg16 {
+.bg6 {
   flex: 1;
   border-radius: var(--br-smi);
   border: 1px solid var(--color-darkslategray);
   flex-direction: row;
   flex-wrap: wrap;
   padding: var(--padding-smi) var(--padding-lg) var(--padding-xs);
-  gap: 35px;
+  gap: 2.187rem;
   z-index: 1;
 }
-.bg-child14,
-.bg16,
+.bg-child4,
+.bg6,
 .full-name-container1 {
   box-sizing: border-box;
   max-width: 100%;
@@ -238,47 +238,47 @@
   justify-content: flex-start;
   padding: 0 var(--padding-12xs) var(--padding-8xs) 0;
 }
-.bg-child14 {
-  height: 50px;
-  width: 335px;
+.bg-child4 {
+  height: 3.125rem;
+  width: 20.938rem;
   position: relative;
   border-radius: var(--br-smi);
   border: 1px solid var(--color-darkslategray);
   display: none;
 }
-.icon10,
-.password4 {
+.icon4,
+.password1 {
   position: relative;
   z-index: 2;
 }
-.password4 {
+.password1 {
   width: calc(100% - 49.8px);
   border: 0;
   outline: 0;
   font-family: var(--font-poppins);
   font-size: var(--font-size-sm);
   background-color: transparent;
-  height: 21px;
+  height: 1.313rem;
   flex: 1;
   color: var(--color-gray-100);
   text-align: left;
   display: inline-block;
-  min-width: 157px;
+  min-width: 9.813rem;
   padding: 0;
 }
-.icon10 {
-  width: 12.8px;
-  height: 16px;
+.icon4 {
+  width: 0.8rem;
+  height: 1rem;
 }
-.bg17,
-.icon-wrapper8 {
+.bg7,
+.icon-wrapper1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   padding: var(--padding-11xs) 0 0;
 }
-.bg17 {
+.bg7 {
   flex: 1;
   border-radius: var(--br-smi);
   border: 1px solid var(--color-darkslategray);
@@ -286,11 +286,11 @@
   flex-wrap: wrap;
   padding: var(--padding-smi) var(--padding-lg) var(--padding-xs)
     var(--padding-lgi);
-  gap: 42px;
+  gap: 2.625rem;
   z-index: 1;
 }
-.bg-child15,
-.bg17,
+.bg-child5,
+.bg7,
 .full-name-container2 {
   box-sizing: border-box;
   max-width: 100%;
@@ -303,46 +303,47 @@
   justify-content: flex-start;
   padding: 0 var(--padding-12xs) var(--padding-8xs) 0;
 }
-.bg-child15 {
-  height: 50px;
-  width: 335px;
+.bg-child5 {
+  height: 3.125rem;
+  width: 20.938rem;
   position: relative;
   border-radius: var(--br-smi);
   border: 1px solid var(--color-darkslategray);
   display: none;
 }
-.confirm-password2 {
+.confirm-password,
+.icon5 {
+  position: relative;
+  z-index: 2;
+}
+.confirm-password {
   width: calc(100% - 53px);
   border: 0;
   outline: 0;
   font-family: var(--font-poppins);
   font-size: var(--font-size-sm);
   background-color: transparent;
-  height: 21px;
+  height: 1.313rem;
   flex: 1;
-  position: relative;
   color: var(--color-gray-100);
   text-align: left;
   display: inline-block;
-  min-width: 145px;
+  min-width: 9.063rem;
   padding: 0;
-  z-index: 2;
 }
-.icon11 {
-  width: 16px;
-  height: 11.2px;
-  position: relative;
-  z-index: 2;
+.icon5 {
+  width: 1rem;
+  height: 0.7rem;
 }
 .background-sign-up,
-.bg18 {
+.bg8 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   padding: var(--padding-9xs) 0 0;
 }
-.bg18 {
+.bg8 {
   align-self: stretch;
   border-radius: var(--br-smi);
   border: 1px solid var(--color-darkslategray);
@@ -350,11 +351,11 @@
   flex-direction: row;
   padding: var(--padding-smi) var(--padding-lg) var(--padding-xs)
     var(--padding-lgi);
-  gap: 39px;
+  gap: 2.437rem;
   max-width: 100%;
   z-index: 1;
 }
-.forgot-password3 {
+.forgot-password1 {
   position: relative;
   font-size: var(--font-size-sm);
   text-decoration: underline;
@@ -362,17 +363,17 @@
   color: var(--color-darkgray);
   text-align: left;
   display: inline-block;
-  min-width: 124px;
+  min-width: 7.75rem;
   z-index: 1;
 }
-.forgot-password-frame {
+.forgot-password-container {
   align-self: stretch;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-end;
 }
-.frame-wrapper4,
+.frame-container,
 .full-name-container-parent,
 .full-name-input-parent {
   display: flex;
@@ -385,11 +386,11 @@
   flex-direction: column;
   gap: var(--gap-3xs);
 }
-.frame-wrapper4,
+.frame-container,
 .full-name-input-parent {
   align-self: stretch;
 }
-.frame-wrapper4 {
+.frame-container {
   flex-direction: row;
   padding: 0 0 0 var(--padding-12xs);
   box-sizing: border-box;
@@ -406,11 +407,11 @@
   background-color: var(--green);
   max-width: 100%;
 }
-.bg19,
-.sign-up3 {
+.bg9,
+.sign-up1 {
   position: absolute;
 }
-.bg19 {
+.bg9 {
   top: 0;
   left: 0;
   width: 100%;
@@ -421,24 +422,24 @@
   justify-content: flex-start;
   max-width: 100%;
 }
-.sign-up3 {
-  top: 15px;
-  left: 141px;
+.sign-up1 {
+  top: 0.938rem;
+  left: 8.813rem;
   font-size: var(--font-size-base);
   display: inline-block;
   font-family: var(--font-space-grotesk);
   color: var(--white);
   text-align: left;
-  min-width: 60px;
+  min-width: 3.75rem;
   white-space: nowrap;
   z-index: 1;
 }
-.button3 {
+.button1 {
   cursor: pointer;
   border: 0;
   padding: 0;
   background-color: transparent;
-  height: 50px;
+  height: 3.125rem;
   flex: 1;
   position: relative;
   max-width: 100%;
@@ -454,32 +455,32 @@
   box-sizing: border-box;
   max-width: 100%;
 }
-.already-have-an1 {
+.already-have-an {
   color: var(--color-dimgray);
 }
-.sign-in5 {
+.sign-in2 {
   color: var(--color-silver);
 }
-.already-have-an-container1 {
+.already-have-an-container {
   position: relative;
   font-size: var(--font-size-sm);
   font-weight: 500;
   font-family: var(--font-poppins);
   text-align: left;
 }
-.text-wrapper1,
-.text7 {
+.text-container,
+.text1 {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.text7 {
+.text1 {
   flex: 1;
   cursor: pointer;
   z-index: 1;
 }
-.text-wrapper1 {
+.text-container {
   align-self: stretch;
   padding: 0 var(--padding-31xl);
 }
@@ -490,26 +491,26 @@
   gap: var(--gap-9xl);
   max-width: 100%;
 }
-.bg14,
+.bg4,
 .create-account-button,
-.sign-up-page1 {
+.sign-up-page {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.bg14 {
+.bg4 {
   flex: 1;
   background-color: var(--black);
   flex-direction: column;
-  padding: var(--padding-12xl) var(--padding-lgi) var(--padding-13xl);
+  padding: 1.937rem var(--padding-lgi) var(--padding-13xl);
   box-sizing: border-box;
-  gap: 133px;
+  gap: 8.312rem;
   max-width: 100%;
   text-align: left;
   font-size: var(--font-size-xl);
   font-family: var(--font-krona-one);
 }
-.sign-up-page1 {
+.sign-up-page {
   width: 100%;
   position: relative;
   background-color: var(--white);
@@ -517,12 +518,4 @@
   flex-direction: row;
   line-height: normal;
   letter-spacing: normal;
-}
-
-// app/assets/stylesheets/SignUpPage1.scss
-.sign-up-page1 {
-  font-family: var(--font-poppins);
-  font-size: var(--font-size-base);
-  color: var(--color-gray-200);
-  // ...
 }

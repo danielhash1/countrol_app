@@ -1,35 +1,73 @@
-// app/assets/stylesheets/pages/global.scss
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+/* fonts */
 $font-poppins: Poppins;
 $font-space-grotesk: "Space Grotesk";
 $font-krona-one: "Krona One";
 
-$font-size-sm: 14px;
+/* font sizes */
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-11xl: 1.875rem;
+$font-size-xl: 1.25rem;
 
+/* Colors */
 $white: #fff;
 $color-gray-100: #888;
-$color-gray-200: #222;
 $black: #101216;
 $color-silver: #bbb;
 $color-dimgray: #666;
+$color-dimgray-200: rgba(102, 102, 102, 0.8);
 $green: #1bbb9b;
+$color-darkgray: #aaa;
 $color-darkslategray: #454545;
+$color-gray-200: #1c1c1c;
 
-$gap-xl: 20px;
-$gap-3xs: 10px;
 
-$padding-lgi: 19px;
-$padding-12xs: 1px;
-$padding-xl: 20px;
-$padding-smi: 13px;
-$padding-lg: 18px;
-$padding-xs: 12px;
-$padding-11xs: 2px;
+/* Gaps */
+$gap-9xl: 1.75rem;
+$gap-lg-5: 1.156rem;
+$gap-3xs: 0.625rem;
+$gap-xl: 1.25rem;
 
-$br-6xs: 7px;
+/* Paddings */
+$padding-lgi: 1.187rem;
+$padding-13xl: 2rem;
+$padding-31xl: 3.125rem;
+$padding-12xs: 0.062rem;
+$padding-smi: 0.812rem;
+$padding-xl: 1.25rem;
+$padding-lg: 1.125rem;
+$padding-xs: 0.75rem;
+$padding-11xs: 0.125rem;
+$padding-9xs: 0.25rem;
+$padding-8xs: 0.312rem;
+$padding-input: 0.75rem;
+$padding-25xl: 2.75rem;
+$padding-12xs: 0.062rem;
+$padding-smi: 0.812rem;
+$padding-mini: 0.937rem;
+$padding-xs: 0.75rem;
+$padding-11xs: 0.125rem;
+$padding-2xl: 1.312rem;
+$padding-8xs: 0.312rem;
+
+
+/* Border radiuses */
 $br-smi: 13px;
+$br-7xs: 6px;
 
+//Goals Index/
 
-// app/assets/stylesheets/_global.scss
+  /* font sizes */
+  $font-size-smi: 0.813rem;
+  $font-size-11xl: 1.875rem;
+  $font-size-xl: 1.25rem;
+  $font-size-sm: 0.875rem;
+  $font-size-base: 1rem;
 
 // Body styles
 body {
@@ -94,3 +132,49 @@ body {
     --br-6xs: 7px;
     --br-smi: 13px;
   }
+  /* Colors */
+  $white: #fff;
+  $color-gray-100: #888;
+  $color-gray-200: #222;
+  $grey-deep: #212121;
+  $color-gray-300: #1c1c1c;
+  $black: #101216;
+  $color-gray-400: #101010;
+  $color-dimgray: #666;
+  $color-dimgray-100: rgba(102, 102, 102, 0.8);
+  $color-darkgray: #aaa;
+  $color-silver: #bbb;
+  $color-darkslategray: #454545;
+  $color-darkslategray-100: #333;
+  $green: #1bbb9b;
+
+  /* Gaps */
+  $gap-mini: 0.937rem;
+  $gap-xl: 1.25rem;
+  $gap-base-3: 0.956rem;
+  $gap-3xs: 0.625rem;
+  $gap-9xl: 1.75rem;
+  $gap-lg-5: 1.156rem;
+
+  /* Paddings */
+  $padding-25xl: 2.75rem;
+  $padding-lg: 1.125rem;
+  $padding-2xs: 0.687rem;
+  $padding-lgi: 1.187rem;
+  $padding-3xs: 0.625rem;
+  $padding-xl: 1.25rem;
+  $padding-11xs: 0.125rem;
+  $padding-12xs: 0.062rem;
+  $padding-2xl: 1.312rem;
+  $padding-8xs: 0.312rem;
+  $padding-13xl: 2rem;
+  $padding-31xl: 3.125rem;
+  $padding-smi: 0.812rem;
+  $padding-mini: 0.937rem;
+  $padding-xs: 0.75rem;
+  $padding-9xs: 0.25rem;
+
+  /* Border radiuses */
+  $br-21xl: 40px;
+  $br-smi: 13px;
+  $br-7xs: 6px;

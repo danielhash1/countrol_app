@@ -1,23 +1,79 @@
-<%= link_to '<i class="fa-solid fa-chevron-left"></i> Back'.html_safe, wallet_goals_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center align-items-center px-0 py-2">
+      <div class="d-flex align-items-center justify-content-between col-md-10 col-10 mx-auto">
+        <%= link_to '<i class="fa-solid fa-chevron-left"></i>'.html_safe, wallet_goals_path, class: "btn btn-primary" %>
+        <span class="text-center flex-grow-1"><h1 class="mb-0">Goal</h1></span>
+        <a href="" class="btn btn-primary"><i class="fas fa-link"></i></a>
+      </div>
+    </div>
 
-<a href="">Share <i class="fa-solid fa-link"></i></a>
-<h1><%= @goal.title %></h1>
+    <div class="d-flex justify-content-center">
+      <div class="card card-horizontal col-12 border-black rounded-5 p-1 px-4 mb-2">
+        <div class="row">
+          <div class="d-flex justify-content-center align-items-center py-2 px-0">
+            <div class="d-flex flex-column align-items-center mb-3">
+              <h1><%= @goal.title %></h1>
+              <p class="mb-3"><%= @goal.goal_balance %> / <%= @goal.amount %></p>
+              <%= link_to '<i class="fas fa-plus"></i> Transaction'.html_safe, new_wallet_transaction_path(@wallet, transaction_type: 'expense', goal_id: @goal.id), class: 'btn btn-primary' %>
+            </div>
+          </div>
 
-<p>Goal:<b><%= @goal.amount %></p>
-<% @goal.transactions.each do |transaction| %>
-<%= transaction.amount %>
-<% end %>
-<%= @goal.id %>
-<p>Remaining: <%= @goal.goal_balance %></p>
-<p>End date: <%= @goal.date %></p>
+          <%= render 'shared/goal_progress' %>
 
-<%= link_to 'Add Transaction', new_wallet_transaction_path(@wallet, transaction_type: 'expense', goal_id: @goal.id), class: 'btn btn-primary' %>
+          <div class="d-flex justify-content-between align-items-center py-2 px-1">
+            <div class="row">
+              <div class="text-center">
+                <p>Monthly payment:</p>
+                <p><%= @goal.goal_balance / @goal.current_month_progress[:remaining_months]%></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="text-center">
+                <p>Months:</p>
+                <p><%= @goal.current_month_progress[:months_past]%> of <%= @goal.current_month_progress[:total_months] %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<div class="transaction-links d-flex justify-content-center mt-4">
-  <%= link_to "Edit", edit_wallet_goal_path(@wallet), class: "btn btn-warning rounded-0" %>
-  <%= link_to "Delete",
-    wallet_goal_path(@goal, wallet_id: @wallet.id),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-    class: "btn btn-secondary rounded-0"
-  %>
+    <div class="transactions">
+      <div class="headlines d-flex justify-content-between content-center align-items-center mb-1">
+        <h2>Goal Transactions</h2>
+      </div>
+      <div class="transaction-cards">
+        <% if @goal.transactions.any? %>
+          <ul class="list-unstyled">
+            <% @goal.transactions.each do |transaction| %>
+              <%= link_to wallet_transaction_path(@wallet.id, transaction.id), class:"link-offset-2 link-underline link-underline-opacity-0" do %>
+                <li class="d-flex justify-content-between border align-items-center border-black rounded-5 p-1 px-4 mb-2">
+                  <div class="d-flex gap-4 align-items-center">
+                    <span class="text fs-1"><%= transaction.category.icon %></span>
+                    <div class="name-category">
+                      <p class="text fs-5 mb-0 text-black"><%= transaction.title %></p>
+                      <p class="text-secondary"><%= transaction.category.name %></p>
+                    </div>
+                  </div>
+                      <p class="text fs-6 mb-0 text-success fw-lighter"><strong><%= transaction.amount %></strong></p>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="transaction-links d-flex justify-content-center mt-4">
+      <div class="d-flex justify-content-between" style="width: 200px;">
+        <p><%= link_to ("<i class='fa fa-pencil'></i> Edit").html_safe, edit_goal_path(@goal, wallet_id: @wallet.id), class: "btn btn-warning rounded-0" %></p>
+        <p><%= link_to ("<i class='fa fa-trash'></i> Delete").html_safe,
+          wallet_goals_path(@wallet),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+          class: "btn btn-secondary rounded-0"%></p>
+      </div>
+    </div>
+
+  </div>
 </div>

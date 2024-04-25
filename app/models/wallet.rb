@@ -9,4 +9,12 @@ class Wallet < ApplicationRecord
     expense = transactions.where(transaction_type: 'expense').sum(:amount)
     income - expense
   end
+
+  def balance_income
+    income = transactions.where(transaction_type: 'income').sum(:amount)
+  end
+
+  def balance_expense
+    expense = transactions.where(transaction_type: 'expense').sum(:amount)
+  end
 end

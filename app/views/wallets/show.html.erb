@@ -45,6 +45,8 @@
       <%= link_to "-", new_wallet_transaction_path(@wallet, transaction_type: "expense"), class:"px-4 rounded-5 border border-black link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
     </div>
 
+      <%= line_chart Transaction.group_by_month(:date).sum(:amount), colors: ["orange"], download: {background: "#000000"}%>
+
   <div class="graph-stats" height="400px">
   <p></p>
   </div>
@@ -58,7 +60,7 @@
     <ul class="list-unstyled">
       <% @transactions.reverse.each do |transaction| %>
 
-      <%= link_to transaction_path(transaction), class:"link-offset-2 link-underline link-underline-opacity-0" do %>
+      <%= link_to wallet_transaction_path(@wallet, transaction), class:"link-offset-2 link-underline link-underline-opacity-0" do %>
         <li class="d-flex justify-content-between border align-items-center border-black rounded-5 p-1 px-4 mb-2">
           <div class="d-flex gap-4 align-items-center">
             <span class="text fs-1"><%= transaction.category.icon %></span>

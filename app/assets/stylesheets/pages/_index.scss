@@ -428,9 +428,9 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.text {
-  cursor: pointer;
-}
+// .text {
+//   cursor: pointer;
+// }
 .text-wrapper {
   padding: 0 49px;
   box-sizing: border-box;
@@ -490,4 +490,35 @@
   flex-direction: row;
   letter-spacing: normal;
   line-height: normal;
+}
+
+.graph-container > :only-child {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  .button {
+    width: 100%;
+    max-width: 335px;
+  }
+}
+
+.forgot-password-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+
+  .forgot-password {
+    color: #bbb;
+    text-decoration: underline;
+  }
+}
+
+// ...
 }

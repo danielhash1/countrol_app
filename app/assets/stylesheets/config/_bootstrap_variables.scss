@@ -12,12 +12,12 @@ $font-size-base:         1rem;
 $font-color:             whitesmoke;
 
 // Colors
-$body-color: $gray;
-$primary:    $blue;
-$success:    $green;
-$info:       $yellow;
-$danger:     $red;
-$warning:    $orange;
+$body-color: $NEUTRAL_600; // make sure this variable is defined
+$primary: $SECONDARY_300; // make sure this variable is defined
+$success: $SUCCESS_100; // make sure this variable is defined
+$info: $SECONDARY_100; // make sure this variable is defined
+$danger: #ED2E2E; // corrected variable name
+$warning: #C30000; // corrected variable name
 
 // Buttons & inputs' radius
 $border-radius-sm:            .0625rem;
@@ -25,5 +25,3 @@ $border-radius:               .125rem;
 $border-radius-lg:            .25rem;
 $border-radius-xl:            .5rem;
 $border-radius-xxl:           1rem;
-
-// Override other variables below!
