@@ -3,7 +3,6 @@ class WalletsController < ApplicationController
   def index
     @wallets = current_user.wallets
     @wallet = Wallet.find(params[:id])
-
   end
 
   def show

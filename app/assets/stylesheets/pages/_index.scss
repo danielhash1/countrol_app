@@ -497,3 +497,28 @@
   margin-right: auto;
   width: 100%;
 }
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  .button {
+    width: 100%;
+    max-width: 335px;
+  }
+}
+
+.forgot-password-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+
+  .forgot-password {
+    color: #bbb;
+    text-decoration: underline;
+  }
+}
+
+// ...
+}

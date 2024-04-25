@@ -8,6 +8,21 @@
 
       <div class="income-line-chart line-chart m-16">
         <p class="income d-flex justify-content-center">Income</p>
+<div class="transactions mt-3">
+
+
+   <div class="graph-container d-flex justify-content-between">
+      <div class="income-line-chart line-chart">
+            <%= line_chart @transactions.where(transaction_type: 0).group_by_day(:date).count %>
+      </div>
+      <div class="expense-line-chart line-chart">
+            <%= line_chart @transactions.where(transaction_type: 1).group_by_day(:date).count %>
+      </div>
+    </div>
+
+
+
+   <div class="headlines d-flex justify-content-between">
 
       <p class="text fs-1 justify-content-end">$<%= @wallet.balance_income %></p>
 
