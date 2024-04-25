@@ -1,0 +1,7 @@
+<div class="progress-container">
+    <progress id='file' value="<%= @goal.goal_progress %>" max="<%= @goal.amount %>" ></progress>
+  <div class="progress-flag">
+    <i class="fas fa-flag"></i>
+  </div>
+  <div class="progress-percent"><%= @goal.goal_progress_percent %>%</div>
+</div>
