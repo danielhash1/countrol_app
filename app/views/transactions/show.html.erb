@@ -68,14 +68,13 @@
 
 
     <div class="transaction-links d-flex justify-content-center mt-4">
-      <div class="d-flex justify-content-between" style="width: 200px;">
-        <p><%= link_to ("<i class='fa fa-pencil'></i> Edit").html_safe, edit_wallet_transaction_path(@wallet), class: "btn btn-warning rounded-0" %></p>
-        <p><%= link_to ("<i class='fa fa-trash'></i> Delete").html_safe,
-          wallet_transaction_path(@wallet),
+      <div class="d-flex justify-content-center" style="width: 200px;">
+        <p><%= link_to wallet_transaction_path(@wallet),
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
           class: "btn btn-dark rounded-5 text-danger" do %>
-            <i class='fa fa-trash'></i>Delete
+            <i class='fa fa-trash'></i><span>  </span> Delete
           <% end %>
+        </p>
       </div>
     </div>
 </div>
