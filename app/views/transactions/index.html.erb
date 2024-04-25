@@ -1,5 +1,12 @@
 <div class="container">
-
+<h1 class="transactions d-flex justify-content-center">List of Transactions</h1>
+  <div class="transactions mt-3">
+  <div class="d-flex">
+  </div>
+    <div class="graph-container d-flex justify-content-between">
+      <% if @income %>
+      <div class="income-line-chart line-chart m-16">
+        <p class="income d-flex justify-content-center">Income</p>
 <div class="transactions mt-3">
 
 
@@ -16,54 +23,65 @@
 
    <div class="headlines d-flex justify-content-between">
 
+      <p class="text fs-1 justify-content-center">$<%= @wallet.balance_income %></p>
 
-    <p><%= link_to "All", wallet_transactions_path(@wallet), class:"link-offset-2 link-underline link-underline-opacity-0" %></p>
-    <p><%= link_to "Expense", wallet_transactions_path(@wallet, filter: "expense"), class:"link-offset-2 link-underline link-underline-opacity-0" %></p>
-    <p><%= link_to "Income", wallet_transactions_path(@wallet, filter: "income"), class:"link-offset-2 link-underline link-underline-opacity-0" %></p>
+            <%= area_chart @transactions.where(transaction_type: 0).group_by_month(:date).sum(:amount), colors: ["grey"], download: {background: "#000000"} %>
+      </div>
+      <% end %>
+  <% if @expense %>
+      <div class="expense-line-chart line-chart">
+  <p class="expense d-flex justify-content-center">Expense</p>
+      <p class="text fs-1 justify-content-center">$<%= @wallet.balance_expense %></p>
+            <%= area_chart @transactions.where(transaction_type: 1).group_by_day(:date).sum(:amount), colors: ["orange"], download: {background: "#000000"} %>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="headlines d-flex justify-content-between">
+
+      <p><%= link_to "All", wallet_transactions_path(@wallet), class:"link-offset-2 link-underline link-underline-opacity-0" %></p>
+      <p><%= link_to "Expense", wallet_transactions_path(@wallet, filter: "expense"), class:"link-offset-2 link-underline link-underline-opacity-0" %></p>
+      <p><%= link_to "Income", wallet_transactions_path(@wallet, filter: "income"), class:"link-offset-2 link-underline link-underline-opacity-0" %></p>
 
 
-<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle p-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Filter By
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" link_to, wallet_transactions_path>Day</a></li>
-    <li><a class="dropdown-item" link_to, wallet_transactions_path>Month</a></li>
-    <li><a class="dropdown-item" link_to, wallet_transactions_path>Year</a></li>
-  </ul>
-</div>
-   </div>
-
-
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle p-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Filter By
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" link_to, wallet_transactions_path>Day</a></li>
+          <li><a class="dropdown-item" link_to, wallet_transactions_path>Month</a></li>
+          <li><a class="dropdown-item" link_to, wallet_transactions_path>Year</a></li>
+        </ul>
+      </div>
+    </div>
 
     <div class="transaction-cards">
-    <ul class="list-unstyled">
-      <% @transactions.reverse.each do |transaction| %>
+      <ul class="list-unstyled">
+        <% @transactions.reverse.each do |transaction| %>
 
-      <%= link_to wallet_transaction_path(@wallet, transaction), class:"link-offset-2 link-underline link-underline-opacity-0" do %>
-        <li class="d-flex justify-content-between border align-items-center border-black rounded-5 p-2 px-4 mb-2">
-          <div class="d-flex gap-4 align-items-center">
-            <span class="text fs-1"><%= transaction.category.icon %></span>
+        <%= link_to wallet_transaction_path(@wallet, transaction), class:"link-offset-2 link-underline link-underline-opacity-0" do %>
+          <li class="d-flex justify-content-between border align-items-center border-black rounded-5 p-2 px-4 mb-2">
+            <div class="d-flex gap-4 align-items-center">
+              <span class="text fs-1"><%= transaction.category.icon %></span>
 
-            <div class="name-category">
-              <p class="text fs-5 mb-0 text-black"><%= transaction.title %></p>
-              <p class="text-secondary"><%= transaction.category.name %></p>
+              <div class="name-category">
+                <p class="text fs-5 mb-0 text-black"><%= transaction.title %></p>
+                <p class="text-secondary"><%= transaction.category.name %></p>
+              </div>
             </div>
-          </div>
 
-          <% if transaction.transaction_type == "income" %>
-          <p class="text fs-6 mb-0 text-success fw-lighter"><strong>+<%= transaction.amount %></strong></p>
-          <% else %>
-          <p class="text fs-6 mb-0 text-danger fw-lighter"><strong>-<%= transaction.amount %></strong></p>
+            <% if transaction.transaction_type == "income" %>
+            <p class="text fs-6 mb-0 text-success fw-lighter"><strong>+<%= transaction.amount %></strong></p>
+            <% else %>
+            <p class="text fs-6 mb-0 text-danger fw-lighter"><strong>-<%= transaction.amount %></strong></p>
+            <% end %>
+
+          </li>
           <% end %>
-
-        </li>
         <% end %>
-      <% end %>
-    </ul>
+      </ul>
     </div>
-  </div>
 
-</div>
-</div>
+  </div>
 </div>

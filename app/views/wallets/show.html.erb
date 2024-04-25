@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container bg-info">
 
 <p>
 <script>
@@ -44,6 +44,8 @@
       <%= link_to "+", new_wallet_transaction_path(@wallet, transaction_type: "income"), class:"px-4 rounded-5 border border-black link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
       <%= link_to "-", new_wallet_transaction_path(@wallet, transaction_type: "expense"), class:"px-4 rounded-5 border border-black link-offset-2 link-underline link-underline-opacity-0 fs-1 text-black" %>
     </div>
+
+      <%= line_chart Transaction.group_by_month(:date).sum(:amount), colors: ["orange"], download: {background: "#000000"}%>
 
   <div class="graph-stats" height="400px">
   <p></p>

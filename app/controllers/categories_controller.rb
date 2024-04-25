@@ -1,8 +1,12 @@
 class CategoriesController < ApplicationController
   def index
     @categories = Category.all
-    @transactions = Transaction.where(wallet: @wallet, category: @category)
     @wallet = Wallet.find(params[:wallet_id])
+    @transactions = Transaction.where(wallet: @wallet, category: @category)
+
+    # For Chartkick
+   @transactions_by_category = Transaction.where(wallet: @wallet).group(:category_id).sum(:amount)
+   @categories_for_chart = Category.all.map { |category| [category.name, @transactions_by_category[category.id]] }
   end
 
   def show

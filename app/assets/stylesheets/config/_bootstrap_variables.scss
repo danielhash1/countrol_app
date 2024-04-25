@@ -7,8 +7,9 @@
 // General style
 $font-family-sans-serif: $body-font;
 $headings-font-family:   $headers-font;
-$body-bg:                $NEUTRAL_300; // make sure this variable is defined
+$body-bg:                $TAILWIND_GRAY_950;
 $font-size-base:         1rem;
+$font-color:             whitesmoke;
 
 // Colors
 $body-color: $NEUTRAL_600; // make sure this variable is defined

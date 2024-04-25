@@ -11,6 +11,7 @@
 
   <body>
 
+
   <div class="page-container">
 
     <% if controller_name == "wallets" && action_name == "show" %>
@@ -18,7 +19,7 @@
     <% elsif controller_name == "transactions" %>
     <div class="header-container"><%= render "shared/header" %></div>
 
-    <% end %>
+
 
     <div class="content-container"><%= yield %></div>
 
@@ -30,5 +31,6 @@
 
     <% end %>
   </div>
+
   </body>
 </html>

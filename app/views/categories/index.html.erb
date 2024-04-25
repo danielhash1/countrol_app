@@ -1,5 +1,11 @@
 <div class="container">
   <h1>Categories</h1>
+<div class="balance text-center">
+      <p>Total Balance</p>
+      <p class="text fs-1 d-flex justify-content-center">$<%= @wallet.balance %></p>
+
+    </div>
+<%= pie_chart @categories_for_chart, library: { plugins: { legend: { display: false }}, animation: { animateScale: true }}, download: {background: "#000000"} %>
 
   <div class="transaction-cards">
     <ul class="list-unstyled">
@@ -9,15 +15,10 @@
         <li class="d-flex justify-content-between border align-items-center border-black rounded-5 p-2 px-4 mb-2 ">
             <div class="name-category w-100 d-flex justify-content-between">
               <p class="text fs-5 mb-0 text-black"><%= category.name %></p>
-              <p class="text fs-5 mb-0 text-black "><%= @transactions.sum(&:amount) %></p>
-
-
-
+              <p class="text fs-5 mb-0 text-black "><%= category.transactions.where(wallet: @wallet).sum(&:signed_amount) %></p>
             </div>
-
-
-
         </li>
+
         <% end %>
       <% end %>
       <%= link_to "Go Back", wallet_path(@wallet), class: "btn btn-secondary btn-lg mt-3 w-100" %>

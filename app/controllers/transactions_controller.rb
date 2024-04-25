@@ -2,10 +2,14 @@ class TransactionsController < ApplicationController
 def index
   @wallet = Wallet.find(params[:wallet_id])
   @transactions = Transaction.where(wallet: @wallet)
+  @expense = true
+  @income = true
   if params[:filter] == "expense"
     @transactions = @transactions.where(transaction_type: 1)
+    @income = false
   elsif params[:filter] == "income"
     @transactions = @transactions.where(transaction_type: 0)
+    @expense = false
   end
 end
 
@@ -13,7 +17,6 @@ def show
   @wallet = Wallet.find(params[:wallet_id])
   @transaction = Transaction.find(params[:id])
   @wallet = Wallet.find(params[:wallet_id])
-
 end
 
   def new
@@ -59,8 +62,9 @@ end
   end
 
   def destroy
+    p "Hello"
     @transaction = Transaction.find(params[:id])
-    @wallet = @transaction.wallet
+    @wallet = Wallet.find(params[:wallet_id])
     @transaction.destroy
     redirect_to wallet_transactions_path(@wallet)
   end
