@@ -1,20 +1,26 @@
 <% if user_signed_in? %>
-  <ul class="d-flex gap-5 list-unstyled justify-content-center">
+    <ul class="navbar-icons d-flex gap-5 list-unstyled justify-content-center">
 
-    <li><%= link_to wallet_transactions_path(@wallet), class:"fs-2 link-offset-2 link-underline link-underline-opacity-0 text-black" do %>
-      <i class="fa-solid fa-chart-bar"></i>
-      <% end %>
-    </li>
+      <li><%= link_to wallet_transactions_path(@wallet), class:"fs-2 link-offset-2 link-underline link-underline-opacity-0 text-black" do %>
+        <div>
+          <i class="fa-solid fa-chart-bar"></i>
+        </div>
+        <% end %>
+      </li>
 
-    <li><%= link_to wallet_path(@wallet), class:"fs-2 link-offset-2 link-underline link-underline-opacity-0 text-black" do %>
-      <i class="fa-solid fa-house"></i>
-      <% end %>
-    </li>
+      <li><%= link_to wallet_path(@wallet), class:"fs-2 link-offset-2 link-underline link-underline-opacity-0 text-black" do %>
+        <div>
+          <i class="fa-solid fa-house"></i>
+        </div>
+        <% end %>
+      </li>
 
-    <li><%= link_to wallet_goals_path(@wallet), class:"fs-2 link-offset-2 link-underline link-underline-opacity-0 text-black" do %>
-      <i class="fa-solid fa-chart-pie"></i>
-      <% end %>
-    </li>
+      <li><%= link_to wallet_goals_path(@wallet), class:"fs-2 link-offset-2 link-underline link-underline-opacity-0 text-black" do %>
+        <div>
+          <i class="fa-solid fa-chart-pie"></i>
+        </div>
+        <% end %>
+      </li>
 
-  </ul>
+    </ul>
 <% end %>
