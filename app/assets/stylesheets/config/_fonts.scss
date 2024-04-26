@@ -16,3 +16,7 @@ $headers-font: "Space Grotesk", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+.amount-font {
+  font-family: $headers-font;
+}

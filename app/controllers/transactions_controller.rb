@@ -42,7 +42,7 @@ end
     @transaction.transaction_type = params[:transaction][:transaction_type]
 
     if @transaction.save
-      redirect_to wallet_transactions_path(@wallet)
+      redirect_to wallet_path(@wallet)
     else
       render :new, status: :unprocessable_entity
     end
