@@ -4,6 +4,9 @@ class GoalsController < ApplicationController
     @wallet = Wallet.find(params[:wallet_id])
     # @user_goals = Goal.joins(:wallet_goals).where(wallet_goals: { wallet_id: @wallet.id })
     @user_goals = @wallet.goals
+
+    # Calculate the total balance
+    @total_balance = @wallet.balance
   end
 
   def show

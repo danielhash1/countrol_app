@@ -1,3 +1,5 @@
-// goals.scss
+// app/assets/stylesheets/pages/goals.scss
+
 @import "globalG";
-@import "Goals1";
+@import "goals1";
+@import "../components/goal_progress";

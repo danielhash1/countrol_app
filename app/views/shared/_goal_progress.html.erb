@@ -1,0 +1,15 @@
+<div class="goal-progress">
+  <div class="bg-parent6">
+    <div class="bg28">
+      <!-- Goal progress content -->
+      <ul>
+        <% @user_goals.each do |goal| %>
+          <% unless goal == @user_goals.first %>
+            <li><%= link_to goal.title, wallet_goal_path(@wallet, goal) %></li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+    <!-- ... (rest of the goal progress HTML) -->
+  </div>
+</div>

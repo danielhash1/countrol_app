@@ -3,3 +3,25 @@
  min-height: 100vh;
  grid-template-rows: auto 1fr auto;
 }
+
+.navbar-container {
+  position: sticky;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 219px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 30px 30px 30px 30px;
+  opacity: 1;
+  padding: 10px 0;
+  border: 1px solid $BLACK;
+}
+
+.navbar-icons {
+  margin-bottom: 4px;
+}
