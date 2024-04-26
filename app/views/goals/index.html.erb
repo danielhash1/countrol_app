@@ -12,33 +12,26 @@
               <%= image_tag asset_path('Goals_index/arrow.svg'), alt: '', loading: 'lazy' %>
             <% end %>
           </div>
-        <div class="icon10">
-          <div class="icon-inner">
-            <div class="notification-parent">
-              <div class="notification">
-                <div class="balance">
-                  <div class="goals-wrapper">
-                    <b class="goals3">Goals</b>
+          <div class="icon10">
+            <div class="icon-inner">
+              <div class="notification-parent">
+                <div class="notification">
+                  <div class="balance">
+                    <div class="goals-wrapper">
+                      <b class="goals3">Goals</b>
+                    </div>
                   </div>
-                  <%= image_tag asset_path('Goals_index/notification@2x.png'), class: 'notification-icon', alt: '', loading: 'lazy' %>
                 </div>
               </div>
-              <div class="balance1">Balance</div>
             </div>
           </div>
-          <b class="b5"><%= number_to_currency(@total_balance) %></b>
-        </div>
         </div>
         <div class="frame-wrapper10">
           <div class="bg-parent5">
-            <%= link_to new_wallet_goal_path(@wallet), class: 'bg26' do %>
+            <%= link_to new_wallet_goal_path(@wallet), class: 'bg26 add-icon-container' do %>
               <div class="bg-child22"></div>
               <%= image_tag asset_path('Goals_index/add.svg'), class: 'add-icon1', alt: '' %>
             <% end %>
-            <div class="bg27">
-              <div class="bg-child23"></div>
-              <%= image_tag asset_path('Goals_index/minus.svg'), class: 'minus-icon1', alt: '', loading: 'lazy' %>
-            </div>
           </div>
         </div>
       </div>
@@ -46,16 +39,12 @@
     <section class="frame-parent4">
       <div class="my-goals-group">
         <b class="my-goals1">My goals</b>
-        <div class="see-all-wrapper">
-          <%= link_to "See All", wallet_path(@wallet), class: 'see-all' %>
-        </div>
       </div>
       <div class="frame-wrapper11">
         <div class="frame-parent5">
           <% @user_goals.each do |goal| %>
             <div class="goal-card">
               <div class="goal-icon">
-                <!-- Replace with the appropriate goal icon -->
                 <%= image_tag asset_path('Goals_index/goal_icon.svg'), alt: '' %>
               </div>
               <div class="goal-details">
