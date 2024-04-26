@@ -18,5 +18,6 @@
 @import "pages/login";
 @import "pages/forgotPassword";
 @import 'pages/Goals1';
-@import "pages/transaction_show";
-@import "pages/goal_show";
+@import 'components/goal_progress';
+@import 'pages/goals';
+@import 'pages/goals1';

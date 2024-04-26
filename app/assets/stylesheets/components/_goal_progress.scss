@@ -1,0 +1,49 @@
+// app/assets/stylesheets/components/_goal_progress.scss
+
+.goal-progress {
+        .bg-parent6 {
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 0 0 0 var(--padding-10xs);
+            box-sizing: border-box;
+            max-width: 100%;
+        }
+        .goal-item {
+                background-color: var(--color-gray-300);
+                border-radius: var(--br-mini);
+                padding: var(--padding-3xs);
+                margin-bottom: 1rem;
+        
+                a {
+                    color: var(--white);
+                    text-decoration: none;
+                }
+        } // This closing brace was missing
+
+        .bg28 {
+            align-self: stretch;
+            border-radius: var(--br-mini);
+            background-color: var(--color-gray-300);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: var(--padding-3xs) var(--padding-lgi) var(--padding-3xs) var(--padding-3xs);
+            box-sizing: border-box;
+            max-width: 100%;
+            gap: var(--gap-xl);
+            z-index: 1;
+    
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+    
+                li {
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+}
