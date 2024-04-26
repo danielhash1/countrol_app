@@ -1,3 +1,8 @@
+@import "home";
+@import "login";
+@import "sign_up_page";
+@import "global";
+
 .bg-child {
   width: 375px;
   height: 812px;
@@ -13,7 +18,7 @@
     rgba(255, 255, 255, 0.3),
     rgba(255, 255, 255, 0.91) 48.84%,
     rgba(255, 255, 255, 0.3)
-  );
+);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   overflow: hidden;
@@ -490,6 +495,13 @@
   flex-direction: row;
   letter-spacing: normal;
   line-height: normal;
+}
+
+.graph-container > :only-child {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
 
 .button-wrapper {
   display: flex;
@@ -511,7 +523,4 @@
     color: #bbb;
     text-decoration: underline;
   }
-}
-
-// ...
 }

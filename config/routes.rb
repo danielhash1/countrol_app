@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  devise_scope :user do
+    root to: 'devise/sessions#new'
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # devise_scope :user do
   #   root 'devise/sessions#new'
@@ -20,7 +22,7 @@ Rails.application.routes.draw do
     resources :transactions, only: [:new, :create]
   end
   resources :wallets, only: [ :show, :new, :create, :edit, :update, :destroy] do
-    resources :transactions, only: [:new, :create, :index, :show, :edit, :update, :destroy]
+    resources :transactions
     resources :goals
     resources :categories, only: [:index, :show]
   end
