@@ -19,9 +19,21 @@
   border-radius: 30px 30px 30px 30px;
   opacity: 1;
   padding: 10px 0;
-  border: 1px solid $BLACK;
+  border: 1px solid $NEUTRAL_600;
+  background-color: $NEUTRAL_600;
 }
 
 .navbar-icons {
-  margin-bottom: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.navbar-icons img {
+  transform: scale(1.25);
+}
+
+.navbar-icons img:hover {
+  filter: brightness(75%);
 }

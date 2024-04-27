@@ -1,23 +1,23 @@
 <% if user_signed_in? %>
     <ul class="navbar-icons d-flex gap-5 list-unstyled justify-content-center">
 
-      <li><%= link_to wallet_transactions_path(@wallet), class:"fs-2 link-offset-2 link-underline link-underline-opacity-0 text-black" do %>
+      <li><%= link_to wallet_transactions_path(@wallet), class:"fs-2 link-offset-2 link-underline link-underline-opacity-0" do %>
         <div>
-          <i class="fa-solid fa-chart-bar"></i>
+          <img src="<%= asset_path('navbar-icon/transctions.svg') %>" alt='transaction'>
         </div>
         <% end %>
       </li>
 
-      <li><%= link_to wallet_path(@wallet), class:"fs-2 link-offset-2 link-underline link-underline-opacity-0 text-black" do %>
+      <li><%= link_to wallet_path(@wallet), class:"fs-2 link-offset-2 link-underline link-underline-opacity-0" do %>
         <div>
-          <i class="fa-solid fa-house"></i>
+          <img src="<%= asset_path('navbar-icon/Home.svg') %>" alt='Home'>
         </div>
         <% end %>
       </li>
 
-      <li><%= link_to wallet_goals_path(@wallet), class:"fs-2 link-offset-2 link-underline link-underline-opacity-0 text-black" do %>
+      <li><%= link_to wallet_goals_path(@wallet), class:"fs-2 link-offset-2 link-underline link-underline-opacity-0" do %>
         <div>
-          <i class="fa-solid fa-chart-pie"></i>
+          <img src="<%= asset_path('navbar-icon/Goals.svg') %>" alt='Goals'>
         </div>
         <% end %>
       </li>
