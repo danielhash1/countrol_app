@@ -1,76 +1,60 @@
-<div class="goals">
-  <main class="bg">
-    <div class="bg-child"></div>
-    <section class="bg-inner">
-      <div class="frame-parent">
-        <div class="arrow-parent">
-          <div class="arrow">
-            <div class="bg1">
-              <div class="bg-item"></div>
+<div class="goals2">
+  <main class="bg24">
+    <div class="bg-child20"></div>
+    <section class="bg-inner2">
+      <div class="frame-parent3">
+        <div class="arrow-container">
+          <div class="arrow2">
+            <div class="bg25">
+              <div class="bg-child21"></div>
             </div>
-            <%= image_tag asset_path('Goals_index/icon@2x.png'), class: 'icon', alt: '' %>
+            <%= link_to wallet_path(@wallet), class: 'icon9' do %>
+              <%= image_tag asset_path('Goals_index/arrow.svg'), alt: '', loading: 'lazy' %>
+            <% end %>
           </div>
-          <div class="balance-label">
-            <div class="balance-label-inner">
-              <div class="frame-group">
-                <div class="frame-wrapper">
-                  <div class="goals-parent">
-                    <div class="goals1">
-                      <b class="goals2">Goals</b>
+          <div class="icon10">
+            <div class="icon-inner">
+              <div class="notification-parent">
+                <div class="notification">
+                  <div class="balance">
+                    <div class="goals-wrapper">
+                      <b class="goals3">Goals</b>
                     </div>
-                    <img
-                      class="notification-icon"
-                      loading="lazy"
-                      alt=""
-                      src="<%= asset_path('Goals_index/notification@2x.png') %>"
-                    />
                   </div>
                 </div>
-                <div class="balance">Balance</div>
               </div>
             </div>
-            <b class="b"><%= number_to_currency(@total_balance) %></b>
           </div>
         </div>
-        <div class="frame-container">
-          <div class="bg-parent">
-            <%= link_to new_wallet_goal_path(@wallet), class: 'bg2' do %>
-              <div class="rectangle-div"></div>
-              <%= image_tag asset_path('Goals_index/add.svg'), class: 'add-icon', alt: '' %>
+        <div class="frame-wrapper10">
+          <div class="bg-parent5">
+            <%= link_to new_wallet_goal_path(@wallet), class: 'bg26 add-icon-container' do %>
+              <div class="bg-child22"></div>
+              <%= image_tag asset_path('Goals_index/add.svg'), class: 'add-icon1', alt: '' %>
             <% end %>
-            <div class="bg3">
-              <div class="bg-child1"></div>
-              <%= image_tag asset_path('Goals_index/minus.svg'), class: 'minus-icon', alt: '' %>
-            </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="frame-section">
-      <div class="my-goals-parent">
-        <b class="my-goals">My goals</b>
-        <div class="see-all-wrapper">
-          <%= link_to wallet_path(@wallet), class: 'see-all' do %>
-            <i class="fa-solid fa-chevron-left"></i> Back
+    <section class="frame-parent4">
+      <div class="my-goals-group">
+        <b class="my-goals1">My goals</b>
+      </div>
+      <div class="frame-wrapper11">
+        <div class="frame-parent5">
+          <% @user_goals.each do |goal| %>
+            <div class="goal-card">
+              <div class="goal-icon">
+                <%= image_tag asset_path('Goals_index/goal_icon.svg'), alt: '' %>
+              </div>
+              <div class="goal-details">
+                <div class="goal-title"><%= goal.title %></div>
+                <div class="goal-amount"><%= number_to_currency(goal.amount) %></div>
+              </div>
+            </div>
           <% end %>
         </div>
       </div>
-
-      <!-- Your existing code starts here -->
-      <ul>
-        <% @user_goals.each do |goal| %>
-          <% unless goal == @user_goals.first %>
-            <%= link_to goal.title, wallet_goal_path(@wallet, goal) %>
-          <% end %>
-        <% end %>
-      </ul>
-      <!-- Your existing code ends here -->
-
-      <!-- Add the goal progress partial here -->
-      <%= render 'shared/goal_progress' %>
-
-      <!-- Rest of the HTML structure -->
-      <!-- ... -->
     </section>
   </main>
 </div>
