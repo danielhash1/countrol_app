@@ -19,9 +19,9 @@
 
 
           <% if @transaction.transaction_type == "income" %>
-          <p class="fw-bold text-success" style='font-size:40px'><strong>+$<%= @transaction.amount %></strong></p>
+          <p class="fw-bold text-success" style='font-size:40px'><strong>+<%= @transaction.formatted_amount %></strong></p>
           <% else %>
-          <p class="fw-bold text-danger" style='font-size:40px'><strong>-$<%= @transaction.amount %></strong></p>
+          <p class="fw-bold text-danger" style='font-size:40px'><strong>-<%= @transaction.formatted_amount %></strong></p>
           <% end %>
 
       <div class="transactions-head justify-content-center mb-3">
