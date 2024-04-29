@@ -45,18 +45,20 @@
         <div class="frame-wrapper11">
           <div class="frame-parent5">
             <% @user_goals.each do |goal| %>
+            <%= link_to wallet_goal_path(@wallet, goal), class:"link-offset-2 link-underline link-underline-opacity-0" do %>
               <div class="goal-card d-flex justify-content-between border bg-dark align-items-center border-black rounded-5 p-3 px-4 mb-2">
                 <div class="d-flex gap-4 align-items-center">
                   <div class="goal-icon text fs-1">
                     <%= image_tag asset_path('Goals_index/goal_icon.svg'), alt: '' %>
                   </div>
                   <div class="goal-details">
-                    <div class="goal-title text mb-0 text-white" style="font-size:18px"><%= goal.title %></div>
+                    <div class="goal-title text mb-0 fw-normal text-white" style="font-size:18px"><%= goal.title %></div>
                   </div>
                 </div>
                 <div class="goal-amount text amount-font mb-0 fw-lighter" style='font-size:18px; color:#1bbb9b'><strong><%= number_to_currency(goal.amount) %></strong></div>
-                
+
               </div>
+              <% end %>
             <% end %>
           </div>
         </div>
