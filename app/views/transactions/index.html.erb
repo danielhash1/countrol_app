@@ -18,24 +18,9 @@
             <p class="text fs-1 justify-content-center">$<%= @wallet.balance_income %></p>
             <%= area_chart @transactions.where(transaction_type: 0).group_by_month(:date).sum(:amount), colors: ["black"], download: {background: "#000000"} %>
           </div>
-
-   <div class="headlines d-flex justify-content-between">
-
-      <p class="text fs-1 justify-content-center"><%= @wallet.balance_income %></p>
-
-            <%= area_chart @transactions.where(transaction_type: 0).group_by_month(:date).sum(:amount), colors: ["grey"], download: {background: "#000000"} %>
-      </div>
-      <% end %>
-  <% if @expense %>
-      <div class="expense-line-chart line-chart">
-  <p class="expense d-flex justify-content-center">Expense</p>
-      <p class="text fs-1 justify-content-center"><%= @wallet.balance_expense %></p>
-            <%= area_chart @transactions.where(transaction_type: 1).group_by_day(:date).sum(:amount), colors: ["orange"], download: {background: "#000000"} %>
-      </div>
       <% end %>
     </div>
   </div>
-
 
   <div class="headlines d-flex justify-content-between">
     <p><%= link_to "All", wallet_transactions_path(@wallet), class:"link-offset-2 link-underline link-underline-opacity-0" %></p>
@@ -70,9 +55,6 @@
               <p class="text fs-6 mb-0 text-success fw-lighter"><strong>+<%= transaction.amount %></strong></p>
             <% else %>
               <p class="text fs-6 mb-0 text-danger fw-lighter"><strong>-<%= transaction.amount %></strong></p>
-            <p class="text fs-6 mb-0 text-success fw-lighter"><strong>+<%= transaction.formatted_amount %></strong></p>
-            <% else %>
-            <p class="text fs-6 mb-0 text-danger fw-lighter"><strong>-<%= transaction.formatted_amount %></strong></p>
             <% end %>
           </li>
         <% end %>
