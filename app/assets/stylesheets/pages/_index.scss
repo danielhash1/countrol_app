@@ -503,6 +503,14 @@
   width: 100%;
 }
 
+.expense-line-chart,.income-line-chart {
+  width: 45%;
+}
+
+.graph-border {
+  border-radius: 40px;
+  padding: 100px;
+}
 .button-wrapper {
   display: flex;
   justify-content: center;
