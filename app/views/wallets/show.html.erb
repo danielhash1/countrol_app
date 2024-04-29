@@ -35,7 +35,7 @@
     </div>
   </div>
 
-    <div class="new-transaction-links d-flex justify-content-center gap-3">
+    <div class="new-transaction-links d-flex justify-content-center gap-3 mb-4">
       <%= link_to new_wallet_transaction_path(@wallet, transaction_type: "income"), class:"px-5 py-2 rounded-5 border border-white link-offset-2 link-underline link-underline-opacity-0 fs-1 text-white" do %>
         <i class="fa-solid fa-plus"></i>
       <% end %>
@@ -45,7 +45,7 @@
     </div>
 
 
-  <div class="graph-stats mb-5" height="400px">
+  <div class="graph-stats mb-5 bg-dark bg-opacity-50 wallet-border">
       <%= line_chart Transaction.group_by_day(:date).sum(:amount), colors: ["#1bbb9b"], download: {background: "#000000"}%>
   <p></p>
   </div>
