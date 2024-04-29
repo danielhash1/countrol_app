@@ -46,7 +46,7 @@
 
 
   <div class="graph-stats mb-5 bg-dark bg-opacity-50 wallet-border">
-      <%= line_chart Transaction.group_by_day(:date).sum(:amount), colors: ["#1bbb9b"], download: {background: "#000000"}%>
+      <%= line_chart @transactions.group_by_day(:date).sum(:amount), colors: ["#1bbb9b"], download: {background: "#000000"}%>
   <p></p>
   </div>
 

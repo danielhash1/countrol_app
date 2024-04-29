@@ -17,7 +17,11 @@ class WalletsController < ApplicationController
   end
 
   def create
-    @wallet = current_user.wallets.new(wallet_params)
+    @wallet = Wallet.new(wallet_params)
+    @wallet.user = current_user
+
+    goal = Goal.create(title: 'Main', amount: 0, date: Date.today, completed: false)
+    WalletGoal.create(wallet: @wallet, goal: goal)
 
     if @wallet.save
       flash[:notice] = "Wallet was successfully created."
