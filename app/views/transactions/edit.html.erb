@@ -1,4 +1,7 @@
 <div class="container">
+    <%= link_to wallet_transaction_path(@wallet), class:'link-offset-2 link-underline link-underline-opacity-0' do %>
+      <i class="fa-solid fa-chevron-left mb-3 mt-4"></i> Back
+    <% end %>
 <%= simple_form_for ([@wallet, @transaction]) do |f| %>
   <%= f.input :title %>
   <%= f.input :description%>
@@ -7,5 +10,4 @@
   <%= f.input :category, collection: Category.all%>
   <%= f.submit class: "btn btn-success mt-3 lh-lg w-100" %>
 <% end %>
-<%= link_to "Go Back", wallet_transaction_path(@transaction), class: "btn btn-secondary btn-lg mt-3 w-100" %>
 </div>

@@ -1,6 +1,6 @@
 <div class="container txt-box">
   <div class="d-flex justify-content-between">
-    <%= link_to '<i class="fa-solid fa-chevron-left"></i> Back'.html_safe, wallet_transactions_path(@wallet), class:'link-offset-2 link-underline link-underline-opacity-0' %>
+    <%= link_to '<i class="fa-solid fa-chevron-left"></i> Back'.html_safe, :back, class:'link-offset-2 link-underline link-underline-opacity-0' %>
     <p>Transaction Details</p>
     <p><%= link_to ("Edit <i class='fa fa-pencil'></i>").html_safe, edit_wallet_transaction_path(@wallet), class:'link-offset-2 link-underline link-underline-opacity-0' %></p>
   </div>
@@ -19,9 +19,9 @@
 
 
           <% if @transaction.transaction_type == "income" %>
-          <p class="fw-bold text-success" style='font-size:40px'><strong>+$<%= @transaction.amount %></strong></p>
+          <p class="fw-bold text-success" style='font-size:40px'><strong>+<%= @transaction.formatted_amount %></strong></p>
           <% else %>
-          <p class="fw-bold text-danger" style='font-size:40px'><strong>-$<%= @transaction.amount %></strong></p>
+          <p class="fw-bold text-danger" style='font-size:40px'><strong>-<%= @transaction.formatted_amount %></strong></p>
           <% end %>
 
       <div class="transactions-head justify-content-center mb-3">

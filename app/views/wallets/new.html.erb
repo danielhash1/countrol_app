@@ -1,13 +1,24 @@
-<h1>New Wallet</h1>
+<div class="container">
+  <%= link_to :back, class:'link-offset-2 link-underline link-underline-opacity-0' do %>
+    <i class="fa-solid fa-chevron-left mt-3"></i> Back
+  <% end %>
+  <div class="row justify-content-center" style="height: calc(100vh - 72px);"> <!-- Subtracting the height of the navbar -->
+    <div class="col-md-6 align-self-center">
+      <div class="bg-dark rounded-5 p-4 mb-5">
 
-<%= simple_form_for @wallet, url: wallets_path do |f| %>
-  <div class="form-inputs">
-    <%= f.input :name, required: true, autofocus: true %>
+        <h2 class='text-light text-center mb-4'>New Wallet</h2>
+
+        <%= simple_form_for @wallet, url: wallets_path do |f| %>
+          <div class="form-inputs rounded-pill">
+            <%= f.input :name, placeholder: 'Wallet name', required: true, autofocus: true, label: false, label_html: { class: 'm' }, input_html: { class: 'form-control rounded-pill bg-dark text-white text-center px-3', autocomplete: 'off' } %>
+          </div>
+
+          <div class="form-action text-center">
+            <%= f.button :submit, "Create Wallet", class:'btn p-2 bg-light rounded-4 text-black ' %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Create Wallet" %>
-  </div>
-<% end %>
-
-<%= link_to 'Back', wallets_path %>
+</div>
