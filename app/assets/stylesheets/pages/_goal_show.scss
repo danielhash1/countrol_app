@@ -44,3 +44,26 @@ progress::-moz-progress-bar {
   background-color: $SECONDARY_300;
   border-radius: 5px;
 }
+
+h2 {
+  width: 100%;
+  height: 30px;
+  top: 121px;
+  left: 123px;
+  gap: 0px;
+  opacity: 1;
+}
+
+.goal-prog-amount {
+  display: inline-block;
+
+  color: $color-silver;
+  font-size: 200px; // This will double the text size
+  height: 200px;
+
+  width: 100%;
+  top: 121px;
+  left: 123px;
+  gap: 0px;
+  opacity: 1;
+}

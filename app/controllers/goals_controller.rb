@@ -11,6 +11,7 @@ class GoalsController < ApplicationController
 
   def show
     @goal = Goal.find(params[:id])
+    @goals = Goal.all
     @wallet = Wallet.find(params[:wallet_id])
     @transaction = Transaction.new
   end
