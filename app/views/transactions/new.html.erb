@@ -1,13 +1,25 @@
 <div class="container">
+    <%= link_to :back, class:'link-offset-2 link-underline link-underline-opacity-0' do %>
+      <i class="fa-solid fa-chevron-left mb-3 mt-4"></i> Back
+    <% end %>
+  <div class="row justify-content-center align-items-center p-3" style='height:80vh'>
+
+    <h1 class='text-light text-center'>New Transaction</h1>
+    <div class="bg-dark rounded-5 p-4 col-md-6" style='max-width:450px'>
+
+
   <%= simple_form_for [@wallet, @transaction] do |f| %>
-    <%= f.input :title, input_html: { value: @transaction.title } %>
-    <%= f.input :description%>
-    <%= f.input :date%>
-    <%= f.input :amount%>
-    <%= f.input :category_id, collection: Category.all, label_method: :name, value_method: :id %>
+    <%= f.input :amount, placeholder: '0.00', label: false, label_html: { class:'m text-light' }, input_html: { class:'border py-3 bg-dark text-center text-light rounded-pill border-top-0 border-end-0 border-start-0', style:'font-size:35px; font-family:"Space Grotesk"', required: 'true', maxlength: 10 } %>
+    <%= f.input :title, label_html: { class:'text-secondary' }, input_html: { value: @transaction.title, class:'rounded-4 border-0 text-light', autocomplete: 'off', required: 'true', maxlength: 22 } %>
+    <%= f.input :category_id, label_html: {class:'text-secondary'}, input_html: { class:'border-0 rounded-4 text-light text-secondary' }, collection: Category.all, label_method: :name, value_method: :id %>
+
+    <%= f.input :description, label_html: { class:'text-secondary' }, input_html: { class:'border-0 rounded-4 text-secondary', autocomplete: 'off', style: 'height:80px', maxlength: 70 } %>
+    <%= f.input :date, label_html: { class:'text-secondary' }, input_html: { class:'border-0 rounded-4 text-light' } %>
     <%= f.hidden_field :transaction_type, value: params[:transaction_type] %>
     <%= f.hidden_field :goal_id, value: @goal&.id || @wallet.goals.where(title: "Main").first&.id %>
-    <%= f.submit class: "btn btn-success mt-3 lh-lg w-100" %>
+    <%= f.submit class: "btn rounded-4 mt-3 lh-lg text-center bg-light w-100" %>
   <% end %>
-  <%= link_to "Go Back", wallet_path(@wallet), class: "btn btn-secondary btn-lg mt-3 w-100" %>
+
+    </div>
+  </div>
 </div>
