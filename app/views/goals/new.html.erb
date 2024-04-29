@@ -1,10 +1,23 @@
-<%= link_to '<i class="fa-solid fa-chevron-left"></i> Back'.html_safe, wallet_goals_path %>
+<div class="container">
+  <h1 class="text-center mb-4">Set a New Goal</h1>
 
-<h1>Set a New Goal</h1>
+  <%= simple_form_for([@wallet, @goal]) do |f| %>
+    <div class="form-group">
+      <%= f.input :title, input_html: { class: 'form-control' } %>
+    </div>
 
-<%= simple_form_for([@wallet, @goal]) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :amount %>
-  <%= f.input :date %>
-  <%= f.button :submit %>
-<% end %>
+    <div class="form-group">
+      <%= f.input :amount, input_html: { class: 'form-control' } %>
+    </div>
+
+    <div class="form-group">
+      <%= f.input :date, input_html: { class: 'form-control' } %>
+    </div>
+
+    <%= f.button :submit, class: "btn btn-success mt-3 lh-lg w-100" %>
+  <% end %>
+
+  <div class="mt-3">
+    <%= link_to '<i class="fa-solid fa-chevron-left"></i> Back'.html_safe, wallet_goals_path, class: "btn btn-secondary btn-lg w-100" %>
+  </div>
+</div>
