@@ -1,13 +1,13 @@
 <div class="container">
-  <h1>Categories</h1>
-<div class="balance text-center">
-      <p>Total Balance</p>
-      <p class="text fs-1 d-flex justify-content-center"><%= @wallet.balance %></p>
+  <h1 class="transactions d-flex justify-content-center text-white m-3" >Categories</h1>
 
-    </div>
-<%= pie_chart @categories_for_chart, library: { plugins: { legend: { display: false }}, animation: { animateScale: true }}, download: {background: "#000000"} %>
+  <div class="category-border bg-dark bg-opacity-50">
+    <p class='text-center'>Total Balance</p>
+    <p class="text fs-1 justify-content-center text-white"><%= @wallet.balance %></p>
+    <%= pie_chart @categories_for_chart, library: { plugins: { legend: { display: false }}, animation: { animateScale: true }}, download: {background: "#000000"} %>
+  </div>
 
-  <div class="transaction-cards">
+  <div class="transaction-cards m-4">
     <ul class="list-unstyled">
       <% @categories.each do |category| %>
 

@@ -7,7 +7,7 @@
       <% if @expense %>
         <div class="expense-line-chart line-chart bg-dark mb-5 graph-border">
           <p class="expense d-flex justify-content-center">Expense</p>
-          <p class="text fs-1 justify-content-center">$<%= @wallet.balance_expense %></p>
+          <p class="text fs-1 justify-content-center"><%= @wallet.balance_expense %></p>
           <%= area_chart @transactions.where(transaction_type: 1).group_by_day(:date).sum(:amount), colors: ["orange"], download: {background: "#000000"}%>
         </div>
       <% end %>
@@ -15,7 +15,7 @@
       <% if @income %>
           <div class="income-line-chart line-chart bg-dark mb-5 graph-border">
             <p class="income d-flex justify-content-center">Income</p>
-            <p class="text fs-1 justify-content-center">$<%= @wallet.balance_income %></p>
+            <p class="text fs-1 justify-content-center"><%= @wallet.balance_income %></p>
             <%= area_chart @transactions.where(transaction_type: 0).group_by_month(:date).sum(:amount), colors: ["black"], download: {background: "#000000"} %>
           </div>
       <% end %>
