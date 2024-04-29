@@ -5,6 +5,14 @@ class Transaction < ApplicationRecord
 
   enum transaction_type: [:income, :expense]
 
+  def formatted_to_currency(param)
+    ActionController::Base.helpers.number_to_currency(param)
+  end
+
+  def formatted_amount
+    formatted_to_currency(amount)
+  end
+
   def signed_amount
     expense? ? -amount : amount
   end
