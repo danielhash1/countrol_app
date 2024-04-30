@@ -31,7 +31,7 @@
   <div class="general-info d-flex justify-content-center mt-2 mb-3">
     <div class=" text-center">
       <p>Total Balance</p>
-      <h3 class="text text-white " style='font-size:40px'><%= @wallet.balance %></h3>
+      <h3 class="text text-white" style='font-size:40px'><%= @wallet.balance %></h3>
     </div>
   </div>
 
@@ -66,12 +66,12 @@
 
             <div class="name-category">
               <p class="text mb-0 text-white" style="font-size:18px"><%= transaction.title %></p>
-              <p class="text-dark-emphasis mb-0 "><%= transaction.category.name %></p>
+              <p class="text-dark-emphasis mb-0"><%= transaction.category.name %></p>
             </div>
           </div>
 
           <% if transaction.transaction_type == "income" %>
-          <p class="text amount-font mb-0 fw-lighter" style='font-size:18px; color:#1bbb9b'><strong>+<%= transaction.formatted_amount %></strong></p>
+          <p class="text amount-font mb-0 fw-lighter " style='font-size:18px; color:#1bbb9b'><strong>+<%= transaction.formatted_amount %></strong></p>
           <% else %>
           <p class="text amount-font mb-0 text-danger fw-lighter" style='font-size:18px'><strong>-<%= transaction.formatted_amount %></strong></p>
           <% end %>

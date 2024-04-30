@@ -7,16 +7,16 @@
       <% if @expense %>
         <div class="expense-line-chart line-chart bg-dark mb-5 rounded-5">
           <p class="expense d-flex justify-content-center">Expense</p>
-          <p class="text fs-1 justify-content-center"><%= @wallet.balance_expense %></p>
-          <%= area_chart @transactions.where(transaction_type: 1).group_by_day(:date).sum(:amount), colors: ["orange"], download: {background: "#000000"}%>
+          <p class="text fs-1 justify-content-center amount-font"><%= @wallet.balance_expense %></p>
+          <%= area_chart @transactions.where(transaction_type: 1).group_by_day(:date).sum(:amount), colors: ["red"], download: {background: "#000000"}%>
         </div>
       <% end %>
 
       <% if @income %>
           <div class="income-line-chart line-chart bg-dark mb-5 rounded-5">
             <p class="income d-flex justify-content-center">Income</p>
-            <p class="text fs-1 justify-content-center"><%= @wallet.balance_income %></p>
-            <%= area_chart @transactions.where(transaction_type: 0).group_by_month(:date).sum(:amount), colors: ["black"], download: {background: "#000000"} %>
+            <p class="text fs-1 justify-content-center amount-font"><%= @wallet.balance_income %></p>
+            <%= area_chart @transactions.where(transaction_type: 0).group_by_month(:date).sum(:amount), colors: ["#1bbb9b"], download: {background: "#000000"} %>
           </div>
       <% end %>
     </div>
@@ -43,18 +43,18 @@
     <ul class="list-unstyled">
       <% @transactions.reverse.each do |transaction| %>
         <%= link_to wallet_transaction_path(@wallet, transaction), class:"link-offset-2 link-underline link-underline-opacity-0" do %>
-          <li class="d-flex justify-content-between border align-items-center border-black rounded-5 p-2 px-4 mb-2">
+          <li class="d-flex justify-content-between border bg-dark align-items-center border-black rounded-5 p-3 px-4 mb-2">
             <div class="d-flex gap-4 align-items-center">
               <span class="text fs-1"><%= transaction.category.icon %></span>
               <div class="name-category">
-                <p class="text fs-5 mb-0 text-black"><%= transaction.title %></p>
-                <p class="text-secondary"><%= transaction.category.name %></p>
+                <p class="text mb-0 text-white" style="font-size:18px"><%= transaction.title %></p>
+                <p class="text-dark-emphasis mb-0"><%= transaction.category.name %></p>
               </div>
             </div>
             <% if transaction.transaction_type == "income" %>
-              <p class="text fs-6 mb-0 text-success fw-lighter"><strong>+<%= transaction.amount %></strong></p>
+              <p class="text amount-font mb-0 fw-lighter" style='font-size:18px; color:#1bbb9b'><strong>+<%= transaction.formatted_amount %></strong></p>
             <% else %>
-              <p class="text fs-6 mb-0 text-danger fw-lighter"><strong>-<%= transaction.amount %></strong></p>
+          <p class="text amount-font mb-0 text-danger fw-lighter" style='font-size:18px'><strong>-<%= transaction.formatted_amount %></strong></p>
             <% end %>
           </li>
         <% end %>

@@ -3,12 +3,10 @@
   <div class="transaction-links d-flex justify-content-between mt-3 p-2">
   <p class=""><%= link_to '<i class="fa-solid fa-chevron-left"></i> Back'.html_safe, wallet_categories_path(@wallet), class:"link-offset-2 link-underline link-underline-opacity-0" %></p>
 
-<p class="text-center text-secondary">Total Balance:<br>$<%= @wallet.balance %></p>
+<p class="text-center text-secondary amount-font ">Total Balance:<br><%= @wallet.balance %></p>
 
     <%#= link_to "Edit", edit_wallet_category_path(@wallet), class: "link-offset-2 link-underline link-underline-opacity-0" %>
   </div>
-
-
 
   <div class="category-transactions mt-4">
   <h2 class="mb-0 d-flex justify-content-center" style="font-size: 100px;"><%= @category.name %></h2>
@@ -17,20 +15,20 @@
 
     <ul class="p-0">
       <% @transactions.each do |transaction| %>
-          <li class="d-flex justify-content-between border align-items-center border-black rounded-5 p-2 px-4 mb-2">
+          <li class="d-flex justify-content-between border bg-dark align-items-center border-black rounded-5 p-3 px-4 mb-2">
             <div class="d-flex gap-4 align-items-center">
 
               <div class="name-category">
-                <p class="text mb-0 text-black" style="font-size:18px"><%= transaction.title %></p>
-                <p class="text text-secondary mb-0" style="font-size:14px"><%= transaction.created_at %></p>
+                <p class="text mb-0 text-white" style="font-size:18px"><%= transaction.title %></p>
+                <p class="text-dark-emphasis mb-0"><%= transaction.created_at %></p>
 
               </div>
             </div>
 
             <% if transaction.transaction_type == "income" %>
-            <p class="text mb-0 text-success fw-lighter"><strong>+<%= transaction.amount %></strong></p>
+            <p class="text mb-0 text-success fw-lighter amount-font "><strong>+<%= transaction.formatted_amount %></strong></p>
             <% else %>
-            <p class="text mb-0 text-danger fw-lighter"><strong>-<%= transaction.amount %></strong></p>
+            <p class="text mb-0 text-danger fw-lighter amount-font "><strong>-<%= transaction.formatted_amount %></strong></p>
             <% end %>
 
           </li>
