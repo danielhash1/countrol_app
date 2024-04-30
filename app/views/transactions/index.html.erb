@@ -28,7 +28,7 @@
     <p><%= link_to "Income", wallet_transactions_path(@wallet, filter: "income"), class:"link-offset-2 link-underline link-underline-opacity-0" %></p>
 
     <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle p-1 btn-filter" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <button class="btn btn-primary dropdown-toggle p-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Filter By
       </button>
       <ul class="dropdown-menu">
@@ -47,7 +47,7 @@
             <div class="d-flex gap-4 align-items-center">
               <span class="text fs-1"><%= transaction.category.icon %></span>
               <div class="name-category">
-                <p class="text fs-5 mb-0 text-black"><%= transaction.title %></p>
+                <p class="text fs-5 mb-0 text-white"><%= transaction.title %></p>
                 <p class="text-secondary"><%= transaction.category.name %></p>
               </div>
             </div>
