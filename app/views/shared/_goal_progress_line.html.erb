@@ -3,5 +3,5 @@
   <div class="progress-flag">
     <i class="fas fa-flag"></i>
   </div>
-  <div class="progress-percent"><%= @goal.goal_progress_percent %>%</div>
+  <div class="progress-percent"><%= @goal.goal_progress_percent.round(2) %>%</div>
 </div>

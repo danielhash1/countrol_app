@@ -1,7 +1,7 @@
 <div class="container">
 
 <div class="dropdown d-flex justify-content-center" id="walletDropdown">
-  <span class="border border-secondary bg-dark text-secondary rounded-pill p-1 px-3" onclick="toggleDropdown()" aria-expanded="false"> <%= @wallet.name %> Wallet <i class="fa-solid fa-chevron-down"></i></span>
+  <span class="border border-secondary bg-dark text-primary rounded-pill p-1 px-3" onclick="toggleDropdown()" aria-expanded="false"> <%= @wallet.name %> Wallet <i class="fa-solid fa-chevron-down"></i></span>
 
   <ul class="dropdown-menu bg-dark list-unstyled border border-secondary rounded-5 text-center" id="walletDropdownMenu">
     <% @wallets.each do |wallet| %>

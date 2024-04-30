@@ -11,3 +11,11 @@
 .txt-box {
   color: $font-color;
 }
+
+.btn-filter {
+  color: $SECONDARY_300;
+
+  &:hover {
+    color: $SECONDARY_200;
+  }
+}
