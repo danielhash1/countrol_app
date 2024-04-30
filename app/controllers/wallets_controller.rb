@@ -9,6 +9,9 @@ class WalletsController < ApplicationController
     @wallet = Wallet.find(params[:id])
     @wallets = current_user.wallets
     @transactions = Transaction.where(wallet: @wallet)
+    @transactions_for_chart = @transactions.group_by_day(:date).sum(:amount)
+    @transactions = Transaction.where(wallet: @wallet).order(date: :desc)
+
   end
 
   def new

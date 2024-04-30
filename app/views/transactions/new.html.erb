@@ -5,11 +5,20 @@
   <div class="row justify-content-center align-items-center p-3" style='height:80vh'>
 
     <h1 class='text-light text-center'>New Transaction</h1>
-    <div class="bg-dark rounded-5 p-4 col-md-6" style='max-width:450px'>
+    <div class="bg-dark bg-opacity-50 rounded-5 p-4 col-md-6" style='max-width:450px'>
 
 
   <%= simple_form_for [@wallet, @transaction] do |f| %>
-    <%= f.input :amount, placeholder: '0.00', label: false, label_html: { class:'m text-light' }, input_html: { class:'border py-3 bg-dark text-center text-light rounded-pill border-top-0 border-end-0 border-start-0', style:'font-size:35px; font-family:"Space Grotesk"', required: 'true', maxlength: 10 } %>
+    <%= f.input :amount,
+          required: true,
+          placeholder: '0.00',
+          label: false,
+          label_html:
+            { class:'m text-light' },
+          input_html:
+            { class:'border py-3 text-center text-light rounded-pill border-top-0 border-bottom-0 border-end-0 border-start-0',
+            style:'font-size:35px; font-family:"Space Grotesk"',
+            maxlength: 10 } %>
     <%= f.input :title, label_html: { class:'text-secondary' }, input_html: { value: @transaction.title, class:'rounded-4 border-0 text-light', autocomplete: 'off', required: 'true', maxlength: 22 } %>
     <%= f.input :category_id, label_html: {class:'text-secondary'}, input_html: { class:'border-0 rounded-4 text-light text-secondary' }, collection: Category.all, label_method: :name, value_method: :id %>
 
