@@ -3,7 +3,7 @@
 
   <div class="category-border bg-dark bg-opacity-50">
     <p class='text-center'>Total Balance</p>
-    <p class="text fs-1 justify-content-center text-white"><%= @wallet.balance %></p>
+    <p class="text fs-1 justify-content-center text-white amount-font "><%= @wallet.balance %></p>
     <%= pie_chart @categories_for_chart, library: { plugins: { legend: { display: false }}, animation: { animateScale: true }}, download: {background: "#000000"} %>
   </div>
 
@@ -12,7 +12,7 @@
       <% @categories.each do |category| %>
 
       <%= link_to wallet_category_path(@wallet, category), class:"link-offset-2 link-underline link-underline-opacity-0" do %>
-        <li class="d-flex justify-content-between border bg-dark align-items-center border-black rounded-5 p-3 px-4 mb-2">
+        <li class="d-flex justify-content-between border bg-dark align-items-center border-black rounded-5 p-3 px-4 mb-2 amount-font ">
           <div class="d-flex gap-4 align-items-center">
             <span class="text fs-1"><%= category.icon %></span>
 
