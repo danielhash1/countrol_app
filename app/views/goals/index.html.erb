@@ -19,15 +19,6 @@
               </div>
             </div>
           </div>
-          <div class="frame-wrapper10">
-            <div class="bg-parent5">
-              <div class="new-transaction-links d-flex justify-content-center gap-3">
-                <%= link_to new_wallet_goal_path(@wallet), class:"px-5 py-2 rounded-5 border border-white link-offset-2 link-underline link-underline-opacity-0 fs-1 text-white" do %>
-                  <i class="fa-solid fa-plus"></i>
-                <% end %>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
       <section class="frame-parent4">
@@ -35,6 +26,15 @@
           <div class="d-flex justify-content-between">
             <%= link_to '<i class="fa-solid fa-chevron-left"></i> Back'.html_safe, wallet_path(@wallet), class:'link-offset-2 link-underline link-underline-opacity-0' %>
             <p>My Goals</p>
+          </div>
+        </div>
+        <div class="frame-wrapper10">
+          <div class="bg-parent5">
+            <div class="new-transaction-links d-flex justify-content-center gap-3">
+              <%= link_to new_wallet_goal_path(@wallet), class:"px-5 py-2 rounded-5 border border-white link-offset-2 link-underline link-underline-opacity-0 fs-1 text-white" do %>
+                <i class="fa-solid fa-plus"></i>
+              <% end %>
+            </div>
           </div>
         </div>
         <div class="frame-wrapper11">
