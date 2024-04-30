@@ -19,9 +19,25 @@
   border-radius: 30px 30px 30px 30px;
   opacity: 1;
   padding: 10px 0;
-  border: 1px solid $BLACK;
+  border: 1px solid $NEUTRAL_600;
+
+  background: rgb(0,0,0);
+  background: linear-gradient(15deg, rgba(0,0,0,1) 24%, rgba(71,71,71,1) 100%);
+
 }
 
+
 .navbar-icons {
-  margin-bottom: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.navbar-icons img {
+  transform: scale(1.25);
+}
+
+.navbar-icons img:hover {
+  filter: brightness(75%);
 }

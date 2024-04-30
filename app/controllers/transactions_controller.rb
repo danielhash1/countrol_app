@@ -66,7 +66,7 @@ end
     @transaction = Transaction.find(params[:id])
     @wallet = Wallet.find(params[:wallet_id])
     @transaction.destroy
-    redirect_to wallet_transactions_path(@wallet)
+    redirect_to wallet_path(@wallet)
   end
 
   private

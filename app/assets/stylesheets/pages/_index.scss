@@ -503,6 +503,21 @@
   width: 100%;
 }
 
+.expense-line-chart,.income-line-chart {
+  width: 48%;
+
+}
+
+.wallet-border {
+  border-radius: 40px;
+  padding: 5%;
+}
+
+.category-border {
+  border-radius: 40px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 .button-wrapper {
   display: flex;
   justify-content: center;
@@ -514,6 +529,9 @@
   }
 }
 
+.text {
+  color: #F9FAFB;
+}
 .forgot-password-wrapper {
   display: flex;
   justify-content: flex-end;

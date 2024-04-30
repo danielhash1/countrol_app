@@ -1,26 +1,33 @@
 <div class="container">
-  <h1>Categories</h1>
-<div class="balance text-center">
-      <p>Total Balance</p>
-      <p class="text fs-1 d-flex justify-content-center">$<%= @wallet.balance %></p>
+  <h1 class="transactions d-flex justify-content-center text-white m-3" >Categories</h1>
 
-    </div>
-<%= pie_chart @categories_for_chart, library: { plugins: { legend: { display: false }}, animation: { animateScale: true }}, download: {background: "#000000"} %>
+  <div class="category-border bg-dark bg-opacity-50">
+    <p class='text-center'>Total Balance</p>
+    <p class="text fs-1 justify-content-center text-white amount-font "><%= @wallet.balance %></p>
+    <%= pie_chart @categories_for_chart, library: { plugins: { legend: { display: false }}, animation: { animateScale: true }}, download: {background: "#000000"} %>
+  </div>
 
-  <div class="transaction-cards">
+  <div class="transaction-cards m-4">
     <ul class="list-unstyled">
       <% @categories.each do |category| %>
 
       <%= link_to wallet_category_path(@wallet, category), class:"link-offset-2 link-underline link-underline-opacity-0" do %>
-        <li class="d-flex justify-content-between border align-items-center border-black rounded-5 p-2 px-4 mb-2 ">
-            <div class="name-category w-100 d-flex justify-content-between">
-              <p class="text fs-5 mb-0 text-black"><%= category.name %></p>
-              <p class="text fs-5 mb-0 text-black "><%= category.transactions.where(wallet: @wallet).sum(&:signed_amount) %></p>
-            </div>
-        </li>
+        <li class="d-flex justify-content-between border bg-dark align-items-center border-black rounded-5 p-3 px-4 mb-2 amount-font ">
+          <div class="d-flex gap-4 align-items-center">
+            <span class="text fs-1"><%= category.icon %></span>
 
+            <div class="name-category">
+              <p class="text mb-0 text-white" style="font-size:18px"><%= category.name %></p>
+            </div>
+          </div>
+
+          <p class="text fs-5 mb-0 text-white ">$<%= category.transactions.where(wallet: @wallet).sum(&:signed_amount) %></p>
+
+        </li>
         <% end %>
       <% end %>
+
+
       <%= link_to "Go Back", wallet_path(@wallet), class: "btn btn-secondary btn-lg mt-3 w-100" %>
     </ul>
   </div>

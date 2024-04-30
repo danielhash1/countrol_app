@@ -9,6 +9,9 @@ class WalletsController < ApplicationController
     @wallet = Wallet.find(params[:id])
     @wallets = current_user.wallets
     @transactions = Transaction.where(wallet: @wallet)
+    @transactions_for_chart = @transactions.group_by_day(:date).sum(:amount)
+    @transactions = Transaction.where(wallet: @wallet).order(date: :desc)
+
   end
 
   def new
@@ -17,7 +20,11 @@ class WalletsController < ApplicationController
   end
 
   def create
-    @wallet = current_user.wallets.new(wallet_params)
+    @wallet = Wallet.new(wallet_params)
+    @wallet.user = current_user
+
+    goal = Goal.create(title: 'Main', amount: 0, date: Date.today, completed: false)
+    WalletGoal.create(wallet: @wallet, goal: goal)
 
     if @wallet.save
       flash[:notice] = "Wallet was successfully created."

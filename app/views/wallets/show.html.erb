@@ -1,16 +1,16 @@
 <div class="container">
 
 <div class="dropdown d-flex justify-content-center" id="walletDropdown">
-  <span class="border border-secondary bg-dark text-secondary rounded-pill p-1 px-3" onclick="toggleDropdown()" aria-expanded="false"> <%= @wallet.name %> Wallet <i class="fa-solid fa-chevron-down"></i></span>
+  <span class="global-effect-cursor border border-secondary bg-dark text-white-50 rounded-pill p-1 px-3" onclick="toggleDropdown()" aria-expanded="false"> <%= @wallet.name %> Wallet <i class="fa-solid fa-chevron-down"></i></span>
 
   <ul class="dropdown-menu bg-dark list-unstyled border border-secondary rounded-5 text-center" id="walletDropdownMenu">
     <% @wallets.each do |wallet| %>
     <li>
-      <p><a href="<%= wallet_path(wallet) %>" class="link-offset-2 link-underline link-underline-opacity-0 text-secondary"><%= wallet.name %></a></p>
+      <p class='global-effect-cursor'><a href="<%= wallet_path(wallet) %>" class="link-offset-2 link-underline link-underline-opacity-0 text-white-50"><%= wallet.name %></a></p>
     </li>
     <% end %>
     <li>
-      <p><a href="<%= new_wallet_path %>" class="mb-0 link-offset-2 link-underline link-underline-opacity-0 text-secondary">Add wallet</a></p>
+      <p><a href="<%= new_wallet_path %>" class="mb-0 link-offset-2 link-underline link-underline-opacity-0 text-white-50">Add wallet</a></p>
     </li>
   </ul>
 </div>
@@ -30,23 +30,23 @@
 
   <div class="general-info d-flex justify-content-center mt-2 mb-3">
     <div class=" text-center">
-      <p>Total Balance</p>
-      <h3 class="text text-white " style='font-size:40px'>$<%= @wallet.balance %></h3>
+      <p class='text-white-50'>Total Balance</p>
+      <h3 class="text text-white " style='font-size:40px'><%= @wallet.balance %></h3>
     </div>
   </div>
 
-    <div class="new-transaction-links d-flex justify-content-center gap-3">
-      <%= link_to new_wallet_transaction_path(@wallet, transaction_type: "income"), class:"px-5 py-2 rounded-5 border border-white link-offset-2 link-underline link-underline-opacity-0 fs-1 text-white" do %>
+    <div class="new-transaction-links d-flex justify-content-center gap-3 mb-4">
+      <%= link_to new_wallet_transaction_path(@wallet, transaction_type: "income"), class:"px-5 py-2 rounded-5 border border-2 border-white link-offset-2 link-underline link-underline-opacity-0 fs-1 text-white" do %>
         <i class="fa-solid fa-plus"></i>
       <% end %>
-      <%= link_to new_wallet_transaction_path(@wallet, transaction_type: "expense"), class:"px-5 py-2 rounded-5 border border-white link-offset-2 link-underline link-underline-opacity-0 fs-1 text-white" do %>
+      <%= link_to new_wallet_transaction_path(@wallet, transaction_type: "expense"), class:"px-5 py-2 rounded-5 border border-2 border-white link-offset-2 link-underline link-underline-opacity-0 fs-1 text-white" do %>
         <i class="fa-solid fa-minus"></i>
       <% end %>
     </div>
 
 
-  <div class="graph-stats mb-5" height="400px">
-      <%= line_chart Transaction.group_by_day(:date).sum(:amount), colors: ["#1bbb9b"], download: {background: "#000000"}%>
+  <div class="graph-stats mb-5 bg-dark bg-opacity-50 wallet-border">
+      <%= line_chart @transactions_for_chart, colors: ["#1bbb9b"], download: {background: "#0000"}%>
   <p></p>
   </div>
 
@@ -57,7 +57,7 @@
    </div>
     <div class="transaction-cards ">
     <ul class="list-unstyled">
-      <% @transactions.reverse.each do |transaction| %>
+      <% @transactions.each do |transaction| %>
 
       <%= link_to wallet_transaction_path(@wallet, transaction), class:"link-offset-2 link-underline link-underline-opacity-0" do %>
         <li class="d-flex justify-content-between border bg-dark align-items-center border-black rounded-5 p-3 px-4 mb-2">
@@ -66,14 +66,14 @@
 
             <div class="name-category">
               <p class="text mb-0 text-white" style="font-size:18px"><%= transaction.title %></p>
-              <p class="text-dark-emphasis mb-0 "><%= transaction.category.name %></p>
+              <p class="text-dark-emphasis mb-0"><%= transaction.category.name %></p>
             </div>
           </div>
 
           <% if transaction.transaction_type == "income" %>
-          <p class="text amount-font mb-0 fw-lighter" style='font-size:18px; color:#1bbb9b'><strong>+<%= transaction.amount %></strong></p>
+          <p class="text amount-font mb-0 fw-lighter " style='font-size:18px; color:#1bbb9b'><strong>+<%= transaction.formatted_amount %></strong></p>
           <% else %>
-          <p class="text amount-font mb-0 text-danger fw-lighter" style='font-size:18px'><strong>-<%= transaction.amount %></strong></p>
+          <p class="text amount-font mb-0 text-danger fw-lighter" style='font-size:18px'><strong>-<%= transaction.formatted_amount %></strong></p>
           <% end %>
 
         </li>
