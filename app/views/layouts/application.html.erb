@@ -7,6 +7,7 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+     <%= favicon_link_tag 'logo-white' %>
   </head>
 
     <body>
@@ -20,7 +21,7 @@
           <div class="header-container"><%= render "shared/header" %></div>
         <% elsif controller_name == "goals" && (action_name == "show" || action_name == "index") %>
           <div class="header-container"><%= render "shared/header" %></div>
-        
+
         <% end %>
 
 

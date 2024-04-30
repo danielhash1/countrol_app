@@ -20,8 +20,12 @@
   opacity: 1;
   padding: 10px 0;
   border: 1px solid $NEUTRAL_600;
-  background-color: $NEUTRAL_600;
+
+  background: rgb(0,0,0);
+  background: linear-gradient(15deg, rgba(0,0,0,1) 24%, rgba(71,71,71,1) 100%);
+
 }
+
 
 .navbar-icons {
   display: flex;
