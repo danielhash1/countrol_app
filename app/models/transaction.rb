@@ -3,6 +3,8 @@ class Transaction < ApplicationRecord
   belongs_to :category
   belongs_to :goal, optional: true
 
+  validates :amount, presence: true
+
   enum transaction_type: [:income, :expense]
 
   def formatted_to_currency(param)

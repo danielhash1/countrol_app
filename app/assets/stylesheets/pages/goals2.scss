@@ -55,16 +55,17 @@
   width: 2.188rem;
 }
 .goals3 {
-  display: inline-block;
-  min-width: 3.313rem;
+  text-align: center;
+  width: 100%;
 }
 .goals-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center; 
+  align-items: center; 
   padding: var(--padding-8xs) 0 0;
 }
+
+
 .notification-icon {
   height: 2.188rem;
   width: 4.375rem;

@@ -1,23 +1,34 @@
+
+
 <div class="container">
-  <h1 class="text-center mb-4">Set a New Goal</h1>
+    <%= link_to :back, class:'link-offset-2 link-underline link-underline-opacity-0' do %>
+      <i class="fa-solid fa-chevron-left mb-3 mt-4"></i> Back
+    <% end %>
+  <div class="row justify-content-center align-items-center p-3" style='height:80vh'>
 
-  <%= simple_form_for([@wallet, @goal]) do |f| %>
-    <div class="form-group">
-      <%= f.input :title, input_html: { class: 'form-control' } %>
-    </div>
+    <div class="bg-dark bg-opacity-50 rounded-5 p-4 col-md-6" style='max-width:450px'>
+    <h1 class='text-light text-center mb-4'>New Goal</h1>
 
-    <div class="form-group">
-      <%= f.input :amount, input_html: { class: 'form-control' } %>
-    </div>
 
-    <div class="form-group">
-      <%= f.input :date, input_html: { class: 'form-control' } %>
-    </div>
+  <%= simple_form_for [@wallet, @goal] do |f| %>
+    <%= f.input :title, label_html: { class:'text-secondary' }, input_html: { value: @goal.title, class:'rounded-4 border-0 text-light', autocomplete: 'off', required: 'true', maxlength: 22 } %>
+    <%= f.input :amount,
+          required: true,
+          placeholder: '0.00',
+          label: false,
+          label_html:
+            { class:'m text-light' },
+          input_html:
+            { class:'text-center border py-3 text-center text-light rounded-pill border-top-0 border-bottom-0 border-end-0 border-start-0',
+            style:'font-size:35px; font-family:"Space Grotesk"',
+            maxlength: 10 } %>
 
-    <%= f.button :submit, class: "btn btn-success mt-3 lh-lg w-100" %>
+    <%= f.input :date,
+          :label => "End date",
+          label_html: { class:'text-secondary' }, input_html: { class:'border-0 rounded-4 text-light' } %>
+    <%= f.submit class: "btn rounded-4 mt-3 lh-lg text-center bg-light w-100" %>
   <% end %>
 
-  <div class="mt-3">
-    <%= link_to '<i class="fa-solid fa-chevron-left"></i> Back'.html_safe, wallet_goals_path, class: "btn btn-secondary btn-lg w-100" %>
+    </div>
   </div>
 </div>
