@@ -21,11 +21,13 @@ def show
 end
 
   def new
+
     @wallet = Wallet.find(params[:wallet_id])
     @transaction = @wallet.transactions.build
     @transaction.transaction_type = params[:transaction_type]
     @transaction = Transaction.new
     @goal = Goal.find(params[:goal_id]) if params[:goal_id].present?
+    @source = 'goal' if params[:source] == 'goal'
 
     if @goal
       @transaction.title = @goal.title
@@ -43,7 +45,12 @@ end
     @transaction.transaction_type = params[:transaction][:transaction_type]
 
     if @transaction.save
-      redirect_to wallet_path(@wallet)
+      if params[:transaction][:source] == 'goal'
+
+        redirect_to wallet_goal_path(@wallet, @transaction.goal)
+      else
+        redirect_to wallet_path(@wallet)
+      end
     else
       render :new, status: :unprocessable_entity
     end

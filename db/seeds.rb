@@ -97,6 +97,22 @@ Transaction.create(goal: goal2, wallet: wallet0, category: category5, title: 'Di
 Transaction.create(goal: goal1, wallet: wallet1, category: category8, title: 'Electric Bill', description: 'Paid electricity bill for the month', amount: 2000, date: Date.new(2024, 5, 21), transaction_type: 1)
 Transaction.create(goal: goal2, wallet: wallet0, category: category9, title: 'Fitness Class', description: 'Joined a fitness class', amount: 800, date: Date.new(2024, 5, 22), transaction_type: 1)
 Transaction.create(goal: goal1, wallet: wallet1, category: category10, title: 'Movie Night', description: 'Watched a movie at the cinema', amount: 1500, date: Date.new(2024, 5, 23), transaction_type: 1)
+
+
+Transaction.create(goal: goal1, wallet: wallet1, category: category14, title: 'Freelance Work Payment', description: 'Received payment for freelance work', amount: 2076, date: Date.new(2024, 5, 17), transaction_type: 0)
+Transaction.create(goal: goal2, wallet: wallet0, category: category15, title: 'Investment Dividend', description: 'Received consulting fee', amount: 5720, date: Date.new(2024, 5, 18), transaction_type: 0)
+Transaction.create(goal: goal1, wallet: wallet1, category: category2, title: 'Rental Income', description: 'Received rental income from property', amount: 120, date: Date.new(2024, 5, 19), transaction_type: 0)
+Transaction.create(goal: goal2, wallet: wallet0, category: category16, title: 'Bonus Payment', description: 'Received bonus payment', amount: 3500, date: Date.new(2024, 5, 20), transaction_type: 0)
+Transaction.create(goal: goal1, wallet: wallet1, category: category15, title: 'Investment Return', description: 'Received investment return', amount: 2000, date: Date.new(2024, 5, 21), transaction_type: 0)
+Transaction.create(goal: goal2, wallet: wallet0, category: category2, title: 'Sales Revenue', description: 'Received revenue from sales', amount: 800, date: Date.new(2024, 5, 22), transaction_type: 0)
+Transaction.create(goal: goal1, wallet: wallet1, category: category14, title: 'Freelance Project Payment', description: 'Received payment for freelance project', amount: 1500, date: Date.new(2024, 5, 23), transaction_type: 0)
+Transaction.create(goal: goal2, wallet: wallet0, category: category2, title: 'Online Course Sale', description: 'Received income from online course sale', amount: 3000, date: Date.new(2024, 5, 24), transaction_type: 0)
+Transaction.create(goal: goal1, wallet: wallet1, category: category2, title: 'Commission', description: 'Received commission payment', amount: 4500, date: Date.new(2024, 5, 25), transaction_type: 0)
+Transaction.create(goal: goal2, wallet: wallet0, category: category16, title: 'Royalty Payment', description: 'Received royalty payment', amount: 6000, date: Date.new(2024, 5, 26), transaction_type: 0)
+Transaction.create(goal: goal1, wallet: wallet1, category: category16, title: 'Performance Bonus', description: 'Received performance bonus', amount: 250, date: Date.new(2024, 5, 27), transaction_type: 0)
+
+
+
 Transaction.create(goal: goal1, wallet: wallet0, category: category11, title: 'Car Service', description: 'Serviced the car', amount: 3000, date: Date.new(2024, 5, 24), transaction_type: 1)
 Transaction.create(goal: goal2, wallet: wallet1, category: category6, title: 'Tech Gadgets', description: 'Bought new tech gadgets', amount: 4500, date: Date.new(2024, 5, 25), transaction_type: 1)
 Transaction.create(goal: goal1, wallet: wallet1, category: category6, title: 'Furniture Purchase', description: 'Bought new furniture for the house', amount: 6000, date: Date.new(2024, 5, 26), transaction_type: 1)
@@ -104,6 +120,23 @@ Transaction.create(goal: goal2, wallet: wallet0, category: category4, title: 'Mo
 Transaction.create(goal: goal1, wallet: wallet0, category: category6, title: 'Book Purchase', description: 'Bought new books', amount: 4000, date: Date.new(2024, 5, 28), transaction_type: 1)
 Transaction.create(goal: goal2, wallet: wallet1, category: category8, title: 'Water Bill', description: 'Paid water bill for the month', amount: 1500, date: Date.new(2024, 5, 29), transaction_type: 1)
 Transaction.create(goal: goal1, wallet: wallet1, category: category10, title: 'Yoga Class', description: 'Joined a yoga class', amount: 700, date: Date.new(2024, 5, 30), transaction_type: 1)
+
+
+
+Transaction.create(goal: goal2, wallet: wallet1, category: category16, title: 'Referral Reward', description: 'Received reward for referral', amount: 4000, date: Date.new(2024, 5, 28), transaction_type: 0)
+Transaction.create(goal: goal1, wallet: wallet0, category: category15, title: 'Investment Profit', description: 'Received profit from investment', amount: 1500, date: Date.new(2024, 5, 29), transaction_type: 0)
+Transaction.create(goal: goal2, wallet: wallet0, category: category16, title: 'Grants', description: 'Received grant funding', amount: 700, date: Date.new(2024, 5, 30), transaction_type: 0)
+Transaction.create(goal: goal1, wallet: wallet1, category: category14, title: 'Online Sales', description: 'Received income from online sales', amount: 2500, date: Date.new(2024, 5, 31), transaction_type: 0)
+Transaction.create(goal: goal1, wallet: wallet1, category: category15, title: 'Dividend Income', description: 'Received dividend income from stocks', amount: 2076, date: Date.new(2024, 5, 17), transaction_type: 0)
+Transaction.create(goal: goal2, wallet: wallet0, category: category14, title: 'Freelance Consultation Fee', description: 'Received fee for freelance consultation', amount: 5720, date: Date.new(2024, 5, 1), transaction_type: 0)
+Transaction.create(goal: goal1, wallet: wallet1, category: category2, title: 'Sponsorship Payment', description: 'Received payment from sponsorship', amount: 120, date: Date.new(2024, 5, 2), transaction_type: 0)
+Transaction.create(goal: goal1, wallet: wallet0, category: category16, title: 'Inheritance', description: 'Received inheritance', amount: 3500, date: Date.new(2024, 5, 3), transaction_type: 0)
+Transaction.create(goal: goal2, wallet: wallet1, category: category15, title: 'Investment Dividend', description: 'Received dividend from investment', amount: 2000, date: Date.new(2024, 5, 4), transaction_type: 0)
+Transaction.create(goal: goal1, wallet: wallet0, category: category9, title: 'Fitness Class', description: 'Joined a fitness class', amount: 800, date: Date.new(2024, 5, 5), transaction_type: 0)
+Transaction.create(goal: goal2, wallet: wallet1, category: category16, title: 'Bonus', description: 'Received bonus payment', amount: 1500, date: Date.new(2024, 5, 6), transaction_type: 1)
+Transaction.create(goal: goal1, wallet: wallet1, category: category14, title: 'Freelance Writing Payment', description: 'Received payment for freelance writing', amount: 3000, date: Date.new(2024, 5, 7), transaction_type: 0)
+Transaction.create(goal: goal1, wallet: wallet0, category: category15, title: 'Investment Interest', description: 'Received interest from investment', amount: 4500, date: Date.new(2024, 5, 8), transaction_type: 0)
+
 Transaction.create(goal: goal2, wallet: wallet1, category: category6, title: 'Game Purchase', description: 'Bought a new video game', amount: 2500, date: Date.new(2024, 5, 31), transaction_type: 1)
 Transaction.create(goal: goal1, wallet: wallet0, category: category6, title: 'Pet Supplies', description: 'Bought supplies for the pet', amount: 1000, date: Date.new(2024, 6, 1), transaction_type: 1)
 Transaction.create(goal: goal2, wallet: wallet0, category: category8, title: 'Kitchen Appliances', description: 'Purchased new kitchen appliances', amount: 5720, date: Date.new(2024, 5, 18), transaction_type: 1)
@@ -123,31 +156,6 @@ Transaction.create(goal: goal1, wallet: wallet1, category: category10, title: 'C
 Transaction.create(goal: goal2, wallet: wallet0, category: category4, title: 'Magazine Subscription', description: 'Subscribed to a magazine', amount: 1000, date: Date.new(2024, 5, 14), transaction_type: 1)
 
 
-
-Transaction.create(goal: goal1, wallet: wallet1, category: category14, title: 'Freelance Work Payment', description: 'Received payment for freelance work', amount: 2076, date: Date.new(2024, 5, 17), transaction_type: 0)
-Transaction.create(goal: goal2, wallet: wallet0, category: category15, title: 'Investment Dividend', description: 'Received consulting fee', amount: 5720, date: Date.new(2024, 5, 18), transaction_type: 0)
-Transaction.create(goal: goal1, wallet: wallet1, category: category2, title: 'Rental Income', description: 'Received rental income from property', amount: 120, date: Date.new(2024, 5, 19), transaction_type: 0)
-Transaction.create(goal: goal2, wallet: wallet0, category: category16, title: 'Bonus Payment', description: 'Received bonus payment', amount: 3500, date: Date.new(2024, 5, 20), transaction_type: 0)
-Transaction.create(goal: goal1, wallet: wallet1, category: category15, title: 'Investment Return', description: 'Received investment return', amount: 2000, date: Date.new(2024, 5, 21), transaction_type: 0)
-Transaction.create(goal: goal2, wallet: wallet0, category: category2, title: 'Sales Revenue', description: 'Received revenue from sales', amount: 800, date: Date.new(2024, 5, 22), transaction_type: 0)
-Transaction.create(goal: goal1, wallet: wallet1, category: category14, title: 'Freelance Project Payment', description: 'Received payment for freelance project', amount: 1500, date: Date.new(2024, 5, 23), transaction_type: 0)
-Transaction.create(goal: goal2, wallet: wallet0, category: category2, title: 'Online Course Sale', description: 'Received income from online course sale', amount: 3000, date: Date.new(2024, 5, 24), transaction_type: 0)
-Transaction.create(goal: goal1, wallet: wallet1, category: category2, title: 'Commission', description: 'Received commission payment', amount: 4500, date: Date.new(2024, 5, 25), transaction_type: 0)
-Transaction.create(goal: goal2, wallet: wallet0, category: category16, title: 'Royalty Payment', description: 'Received royalty payment', amount: 6000, date: Date.new(2024, 5, 26), transaction_type: 0)
-Transaction.create(goal: goal1, wallet: wallet1, category: category16, title: 'Performance Bonus', description: 'Received performance bonus', amount: 250, date: Date.new(2024, 5, 27), transaction_type: 0)
-Transaction.create(goal: goal2, wallet: wallet1, category: category16, title: 'Referral Reward', description: 'Received reward for referral', amount: 4000, date: Date.new(2024, 5, 28), transaction_type: 0)
-Transaction.create(goal: goal1, wallet: wallet0, category: category15, title: 'Investment Profit', description: 'Received profit from investment', amount: 1500, date: Date.new(2024, 5, 29), transaction_type: 0)
-Transaction.create(goal: goal2, wallet: wallet0, category: category16, title: 'Grants', description: 'Received grant funding', amount: 700, date: Date.new(2024, 5, 30), transaction_type: 0)
-Transaction.create(goal: goal1, wallet: wallet1, category: category14, title: 'Online Sales', description: 'Received income from online sales', amount: 2500, date: Date.new(2024, 5, 31), transaction_type: 0)
-Transaction.create(goal: goal1, wallet: wallet1, category: category15, title: 'Dividend Income', description: 'Received dividend income from stocks', amount: 2076, date: Date.new(2024, 5, 17), transaction_type: 0)
-Transaction.create(goal: goal2, wallet: wallet0, category: category14, title: 'Freelance Consultation Fee', description: 'Received fee for freelance consultation', amount: 5720, date: Date.new(2024, 5, 1), transaction_type: 0)
-Transaction.create(goal: goal1, wallet: wallet1, category: category2, title: 'Sponsorship Payment', description: 'Received payment from sponsorship', amount: 120, date: Date.new(2024, 5, 2), transaction_type: 0)
-Transaction.create(goal: goal1, wallet: wallet0, category: category16, title: 'Inheritance', description: 'Received inheritance', amount: 3500, date: Date.new(2024, 5, 3), transaction_type: 0)
-Transaction.create(goal: goal2, wallet: wallet1, category: category15, title: 'Investment Dividend', description: 'Received dividend from investment', amount: 2000, date: Date.new(2024, 5, 4), transaction_type: 0)
-Transaction.create(goal: goal1, wallet: wallet0, category: category9, title: 'Fitness Class', description: 'Joined a fitness class', amount: 800, date: Date.new(2024, 5, 5), transaction_type: 0)
-Transaction.create(goal: goal2, wallet: wallet1, category: category16, title: 'Bonus', description: 'Received bonus payment', amount: 1500, date: Date.new(2024, 5, 6), transaction_type: 1)
-Transaction.create(goal: goal1, wallet: wallet1, category: category14, title: 'Freelance Writing Payment', description: 'Received payment for freelance writing', amount: 3000, date: Date.new(2024, 5, 7), transaction_type: 0)
-Transaction.create(goal: goal1, wallet: wallet0, category: category15, title: 'Investment Interest', description: 'Received interest from investment', amount: 4500, date: Date.new(2024, 5, 8), transaction_type: 0)
 Transaction.create(goal: goal2, wallet: wallet0, category: category2, title: 'Consulting Income', description: 'Received income from consulting services', amount: 6000, date: Date.new(2024, 5, 9), transaction_type: 0)
 Transaction.create(goal: goal2, wallet: wallet1, category: category2, title: 'Sales Revenue', description: 'Received revenue from sales', amount: 250, date: Date.new(2024, 5, 10), transaction_type: 0)
 Transaction.create(goal: goal1, wallet: wallet0, category: category14, title: 'Website Ad Revenue', description: 'Received revenue from website advertisements', amount: 4000, date: Date.new(2024, 5, 11), transaction_type: 0)

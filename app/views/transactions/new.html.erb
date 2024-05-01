@@ -25,6 +25,7 @@
     <%= f.input :description, label_html: { class:'text-secondary' }, input_html: { class:'border-0 rounded-4 text-secondary', autocomplete: 'off', style: 'height:80px', maxlength: 70 } %>
     <%= f.input :date, label_html: { class:'text-secondary' }, input_html: { class:'border-0 rounded-4 text-light' } %>
     <%= f.hidden_field :transaction_type, value: params[:transaction_type] %>
+    <%= f.hidden_field :source, value: @source %>
     <%= f.hidden_field :goal_id, value: @goal&.id || @wallet.goals.where(title: "Main").first&.id %>
     <%= f.submit class: "btn rounded-4 mt-3 lh-lg text-center bg-light w-100" %>
   <% end %>
