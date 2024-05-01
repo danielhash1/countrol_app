@@ -1,6 +1,32 @@
 <div class="container">
+<div class="dropdown d-flex justify-content-center" id="walletDropdown">
+  <span class="global-effect-cursor border border-secondary bg-dark text-white-50 rounded-pill p-1 px-3 mb-3" onclick="toggleDropdown()" aria-expanded="false"> <%= @wallet.name %> Wallet <i class="fa-solid fa-chevron-down"></i></span>
+
+  <ul class="dropdown-menu bg-dark list-unstyled border border-secondary rounded-5 text-center" id="walletDropdownMenu">
+    <% @wallets.each do |wallet| %>
+    <li>
+      <p class='global-effect-cursor'><a href="<%= wallet_goals_path(wallet) %>" class="link-offset-2 link-underline link-underline-opacity-0 text-white-50"><%= wallet.name %></a></p>
+    </li>
+    <% end %>
+    <li>
+      <p><a href="<%= new_wallet_path %>" class="mb-0 link-offset-2 link-underline link-underline-opacity-0 text-white-50">Add wallet</a></p>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function toggleDropdown() {
+    var dropdownMenu = document.getElementById("walletDropdownMenu");
+    if (dropdownMenu.style.display === "none") {
+      dropdownMenu.style.display = "block";
+    } else {
+      dropdownMenu.style.display = "none";
+    }
+  }
+</script>
+
   <div class="goals2">
-    <main class="bg24">
+    <main class="bg24 gap-0">
       <div class="bg-child20"></div>
       <section class="bg-inner2">
         <div class="frame-parent3">
@@ -23,9 +49,8 @@
       </section>
       <section class="frame-parent4">
         <div class="container txt-box">
-          <div class="d-flex justify-content-between">
-            <%= link_to '<i class="fa-solid fa-chevron-left"></i> Back'.html_safe, wallet_path(@wallet), class:'link-offset-2 link-underline link-underline-opacity-0' %>
-            <p>My Goals</p>
+          <div class="d-flex justify-content-center text-white">
+            <h1>My Goals</h1>
           </div>
         </div>
         <div class="frame-wrapper10">

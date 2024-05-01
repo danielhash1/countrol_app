@@ -2,6 +2,7 @@ class GoalsController < ApplicationController
   def index
     @goals = Goal.all
     @wallet = Wallet.find(params[:wallet_id])
+    @wallets = Wallet.all
     # @user_goals = Goal.joins(:wallet_goals).where(wallet_goals: { wallet_id: @wallet.id })
     @user_goals = @wallet.goals
 
