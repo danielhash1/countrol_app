@@ -37,17 +37,31 @@
           <div class="frame-parent5">
             <% @user_goals.reject { |goal| goal.title == 'Main' }.each do |goal| %>
               <%= link_to wallet_goal_path(@wallet, goal), class:"link-offset-2 link-underline link-underline-opacity-0" do %>
-                <div class="goal-card d-flex justify-content-between border bg-dark align-items-center border-black rounded-5 p-3 px-4 mb-2">
-                  <div class="d-flex gap-4 align-items-center">
+                <div class="goal-card border bg-dark border-black rounded-5 p-3 px-4 mb-2">
+                  <div class="d-flex gap-4 align-items-center mb-3">
+
                     <div class="goal-icon text fs-1">
                       <%= image_tag asset_path('Goals_index/goal_icon.svg'), alt: '' %>
                     </div>
+
                     <div class="goal-details">
                       <div class="goal-title text mb-0 fw-normal text-white" style="font-size:18px"><%= goal.title %></div>
                     </div>
+
+                    <div class="goal-amount text amount-font mb-0 fw-lighter" style='font-size:18px; color:#1bbb9b'><strong><%= number_to_currency(goal.amount) %></strong></div>
+
                   </div>
-                  <div class="goal-amount text amount-font mb-0 fw-lighter" style='font-size:18px; color:#1bbb9b'><strong><%= number_to_currency(goal.amount) %></strong></div>
+
+                  <div class="progress-container-index mb-2 align-self-end">
+                    <progress id='file' value="<%= goal.goal_progress %>" max="<%= goal.amount %>" ></progress>
+                    <div class="progress-flag">
+                      <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="progress-percent"><%= goal.goal_progress_percent.round(2) %>%</div>
+                  </div>
+
                 </div>
+
               <% end %>
             <% end %>
           </div>

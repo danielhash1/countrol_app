@@ -60,8 +60,8 @@
 }
 .goals-wrapper {
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   padding: var(--padding-8xs) 0 0;
 }
 
@@ -1094,9 +1094,6 @@
   border-radius: var(--br-mini);
   padding: var(--padding-3xs);
   margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   width: 100%;
 }
 
@@ -1113,7 +1110,6 @@
 
 .goal-details {
   flex: 1;
-  margin-left: 1rem;
 }
 
 .goal-title {
