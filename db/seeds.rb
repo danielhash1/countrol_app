@@ -38,6 +38,7 @@ category9 = Category.create(name: 'Entertainment', icon: '🎼')
 category10 = Category.create(name: 'Miscellaneous', icon: '⚽️')
 category11 = Category.create(name: 'Transportation', icon: '🚗')
 category12 = Category.create(name: 'Traveling', icon: '🛩️')
+category13 = Category.create(name: 'Goal', icon: '🥅')
 puts "#{Category.count} categories created"
 
 # Create goals

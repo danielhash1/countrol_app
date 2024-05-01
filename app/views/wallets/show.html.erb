@@ -46,8 +46,7 @@
 
 
   <div class="graph-stats mb-5 bg-dark bg-opacity-50 wallet-border">
-      <%= line_chart @transactions_for_chart, colors: ["#1bbb9b"], download: {background: "#0000"}%>
-  <p></p>
+      <%= column_chart @transactions_for_chart, colors: ["#1bbb9b"], download: {background: "#0000"}%>
   </div>
 
   <div class="transactions">
