@@ -42,7 +42,7 @@
           <div class="income-line-chart line-chart bg-dark mb-5 rounded-5">
             <p class="income d-flex justify-content-center m-0 mt-3">Income</p>
             <p class="text fs-1 justify-content-center amount-font"><%= @wallet.balance_income %></p>
-            <%= area_chart @transactions.where(transaction_type: 0).group_by_month(:date).sum(:amount), colors: ["#1bbb9b"], download: {background: "#000000"} %>
+            <%= area_chart @transactions.where(transaction_type: 0).group_by_day(:date).sum(:amount), colors: ["#1bbb9b"], download: {background: "#000000"} %>
           </div>
       <% end %>
     </div>
