@@ -4,9 +4,13 @@ class CategoriesController < ApplicationController
     @wallet = Wallet.find(params[:wallet_id])
     @transactions = Transaction.where(wallet: @wallet, category: @category)
 
+
+
     # For Chartkick
-   @transactions_by_category = Transaction.where(wallet: @wallet).group(:category_id).sum(:amount)
-   @categories_for_chart = Category.all.map { |category| [category.name, @transactions_by_category[category.id]] }
+    # @expense_transactions = Transaction.where(wallet: @wallet, transaction_type: "expense").sum(:amount)
+  @expense_transactions = ActionController::Base.helpers.number_to_currency(Transaction.where(wallet: @wallet, transaction_type: "expense").sum(:amount))
+  @transactions_by_category = Transaction.where(wallet: @wallet, transaction_type: "expense").group(:category_id).sum(:amount)
+  @categories_for_chart = Category.all.map { |category| [category.name, @transactions_by_category[category.id]] }
   end
 
   def show
