@@ -11,6 +11,8 @@ class WalletsController < ApplicationController
     @transactions = Transaction.where(wallet: @wallet)
     @transactions_for_chart = @transactions.map { |t| [t.date, t.signed_amount]}
     @transactions = Transaction.where(wallet: @wallet).order(date: :desc)
+    balance = 0
+    @balances = Transaction.where(wallet: @wallet).where("date > ?", Date.today.last_week).map { |t| [t.date, balance += t.signed_amount] }
   end
 
   def new
