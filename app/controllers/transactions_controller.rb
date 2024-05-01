@@ -1,6 +1,7 @@
 class TransactionsController < ApplicationController
 def index
   @wallet = Wallet.find(params[:wallet_id])
+  @wallets = Wallet.all
   @transactions = Transaction.where(wallet: @wallet)
   @expense = true
   @income = true

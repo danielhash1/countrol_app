@@ -1,12 +1,38 @@
 <div class="container">
-  <h1 class="transactions d-flex justify-content-center text-white">List of Transactions</h1>
+<div class="dropdown d-flex justify-content-center" id="walletDropdown">
+  <span class="global-effect-cursor border border-secondary bg-dark text-white-50 rounded-pill p-1 px-3 mb-3" onclick="toggleDropdown()" aria-expanded="false"> <%= @wallet.name %> Wallet <i class="fa-solid fa-chevron-down"></i></span>
+
+  <ul class="dropdown-menu bg-dark list-unstyled border border-secondary rounded-5 text-center" id="walletDropdownMenu">
+    <% @wallets.each do |wallet| %>
+    <li>
+      <p class='global-effect-cursor'><a href="<%= wallet_transactions_path(wallet) %>" class="link-offset-2 link-underline link-underline-opacity-0 text-white-50"><%= wallet.name %></a></p>
+    </li>
+    <% end %>
+    <li>
+      <p><a href="<%= new_wallet_path %>" class="mb-0 link-offset-2 link-underline link-underline-opacity-0 text-white-50">Add wallet</a></p>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function toggleDropdown() {
+    var dropdownMenu = document.getElementById("walletDropdownMenu");
+    if (dropdownMenu.style.display === "none") {
+      dropdownMenu.style.display = "block";
+    } else {
+      dropdownMenu.style.display = "none";
+    }
+  }
+</script>
+
+  <h1 class="transactions d-flex justify-content-center text-white">Transactions</h1>
 
   <div class="transactions mt-3">
     <div class="graph-container d-flex justify-content-between">
 
       <% if @expense %>
         <div class="expense-line-chart line-chart bg-dark mb-5 rounded-5">
-          <p class="expense d-flex justify-content-center">Expense</p>
+          <p class="expense d-flex justify-content-center m-0 mt-3">Expense</p>
           <p class="text fs-1 justify-content-center amount-font"><%= @wallet.balance_expense %></p>
           <%= area_chart @transactions.where(transaction_type: 1).group_by_day(:date).sum(:amount), colors: ["red"], download: {background: "#000000"}%>
         </div>
@@ -14,7 +40,7 @@
 
       <% if @income %>
           <div class="income-line-chart line-chart bg-dark mb-5 rounded-5">
-            <p class="income d-flex justify-content-center">Income</p>
+            <p class="income d-flex justify-content-center m-0 mt-3">Income</p>
             <p class="text fs-1 justify-content-center amount-font"><%= @wallet.balance_income %></p>
             <%= area_chart @transactions.where(transaction_type: 0).group_by_month(:date).sum(:amount), colors: ["#1bbb9b"], download: {background: "#000000"} %>
           </div>

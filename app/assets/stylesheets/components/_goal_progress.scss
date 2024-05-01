@@ -16,7 +16,7 @@
                 border-radius: var(--br-mini);
                 padding: var(--padding-3xs);
                 margin-bottom: 1rem;
-        
+
                 a {
                     color: var(--white);
                     text-decoration: none;
@@ -33,14 +33,13 @@
             padding: var(--padding-3xs) var(--padding-lgi) var(--padding-3xs) var(--padding-3xs);
             box-sizing: border-box;
             max-width: 100%;
-            gap: var(--gap-xl);
             z-index: 1;
-    
+
             ul {
                 list-style-type: none;
                 padding: 0;
                 margin: 0;
-    
+
                 li {
                     margin-bottom: 0.5rem;
                 }

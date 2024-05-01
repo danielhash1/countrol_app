@@ -11,7 +11,6 @@ class WalletsController < ApplicationController
     @transactions = Transaction.where(wallet: @wallet)
     @transactions_for_chart = @transactions.map { |t| [t.date, t.signed_amount]}
     @transactions = Transaction.where(wallet: @wallet).order(date: :desc)
-
   end
 
   def new
