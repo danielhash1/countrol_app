@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style='max-width:700px'>
 <div class="dropdown d-flex justify-content-center" id="walletDropdown">
   <span class="global-effect-cursor border border-secondary bg-dark text-white-50 rounded-pill p-1 px-3 mb-3" onclick="toggleDropdown()" aria-expanded="false"> <%= @wallet.name %> Wallet <i class="fa-solid fa-chevron-down"></i></span>
 
@@ -59,11 +59,20 @@
           <% end %>
         </div>
         <div class="frame-wrapper11">
+          <% if @user_goals.length == 1 %>
+          <div class="no-goals-msg text-center">
+            <span><i class="fa-solid fa-angles-up fs-1"></i></span>
+            <p class='fs-3'>Add a new goal here</p>
+          </div>
+          <div class='text-center mt-5'>
+            <p>No goals here yet...</p>
+          </div>
+          <% else %>
           <div class="frame-parent5">
             <% @user_goals.reject { |goal| goal.title == 'Main' }.each do |goal| %>
               <%= link_to wallet_goal_path(@wallet, goal), class:"link-offset-2 link-underline link-underline-opacity-0" do %>
                 <div class="goal-card border bg-dark border-black rounded-5 p-3 px-4 mb-2">
-                  <div class="d-flex gap-4 align-items-center mb-3">
+                  <div class="d-flex gap-4 align-items-center mb-5">
 
                     <div class="goal-icon text fs-1">
                       <%= image_tag asset_path('Goals_index/goal_icon.svg'), alt: '' %>
@@ -77,7 +86,7 @@
 
                   </div>
 
-                  <div class="progress-container-index mb-2 align-self-end">
+                  <div class="progress-container-index mb-3 align-self-end">
                     <progress id='file' value="<%= goal.goal_progress %>" max="<%= goal.amount %>" ></progress>
                     <div class="progress-flag">
                       <i class="fas fa-flag"></i>
@@ -90,6 +99,8 @@
               <% end %>
             <% end %>
           </div>
+          <% end %>
+
         </div>
       </section>
     </main>

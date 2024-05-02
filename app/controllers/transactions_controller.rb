@@ -44,6 +44,8 @@ end
     @transaction.wallet = @wallet
     @transaction.transaction_type = params[:transaction][:transaction_type]
 
+    @transaction_goal_category = Category.find_by(name: "Goal")
+
     if @transaction.save
       if params[:transaction][:source] == 'goal'
 

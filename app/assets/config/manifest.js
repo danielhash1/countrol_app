@@ -5,3 +5,4 @@
 //= link popper.js
 //= link bootstrap.min.js
 //= link_tree ../stylesheets
+//= link favicon/browserconfig.xml
