@@ -1,4 +1,4 @@
-<div class="container txt-box">
+<div class="container txt-box" style='max-width:700px'>
   <div class="d-flex justify-content-between">
     <%= link_to '<i class="fa-solid fa-chevron-left"></i> Back'.html_safe, :back, class:'link-offset-2 link-underline link-underline-opacity-0', style:'font-family:"Space Grotesk"' %>
     <p>Transaction Details</p>
@@ -37,6 +37,7 @@
         </div>
       <% end %>
 
+    <div class="transaction-btns justify">
       <%= link_to wallet_categories_path(@wallet), class:'link-offset-2 link-underline link-underline-opacity-0' do %>
         <div class="category-card p-3 mb-3 bg-dark  text-light rounded-5 category-field d-flex justify-content-between">
           <p class='mb-0'>
@@ -58,6 +59,7 @@
           </div>
         </div>
       <% end %>
+    </div>
 
     <div class="transaction-links d-flex justify-content-center mt-4">
       <div class="d-flex justify-content-center" style="width: 200px;">

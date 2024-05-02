@@ -20,7 +20,7 @@
             style:'font-size:35px; font-family:"Space Grotesk"',
             maxlength: 10 } %>
     <%= f.input :title, label_html: { class:'text-secondary' }, input_html: { value: @transaction.title, class:'rounded-4 border-0 text-light', autocomplete: 'off', required: 'true', maxlength: 22 } %>
-    <%= f.input :category_id, label_html: {class:'text-secondary'}, input_html: { class:'border-0 rounded-4 text-light text-secondary' }, collection: Category.all, label_method: :name, value_method: :id %>
+    <%= f.input :category_id, label_html: {class:'text-secondary'}, input_html: { value: @transaction_goal_category, class:'border-0 rounded-4 text-light text-secondary' }, collection: Category.all, label_method: :name, value_method: :id %>
 
     <%= f.input :description, label_html: { class:'text-secondary' }, input_html: { class:'border-0 rounded-4 text-secondary', autocomplete: 'off', style: 'height:80px', maxlength: 70 } %>
     <%= f.input :date, label_html: { class:'text-secondary' }, input_html: { class:'border-0 rounded-4 text-light' } %>

@@ -66,6 +66,12 @@
   </div>
 
   <div class="transaction-cards">
+    <% if @transactions.length == 0 %>
+      <div class="no-transactions-msg text-center py-5">
+        <span><i class="fa-solid fa-chart-simple fs-2"></i></span>
+        <p class='fs-5'>No transactions yet...</p>
+      </div>
+    <% else %>
     <ul class="list-unstyled">
       <% @transactions.reverse.each do |transaction| %>
         <%= link_to wallet_transaction_path(@wallet, transaction), class:"link-offset-2 link-underline link-underline-opacity-0" do %>
@@ -86,5 +92,6 @@
         <% end %>
       <% end %>
     </ul>
+    <% end %>
   </div>
 </div>
