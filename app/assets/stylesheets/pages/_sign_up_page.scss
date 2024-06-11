@@ -17,6 +17,7 @@
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text; // Add the standard property 'background-clip'
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -60,6 +61,7 @@
     rgba(255, 255, 255, 0.3)
   );
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: none;
   overflow: hidden;

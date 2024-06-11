@@ -6,3 +6,4 @@
 //= link bootstrap.min.js
 //= link_tree ../stylesheets
 //= link favicon/browserconfig.xml
+//= link pages/_sign_up_page.css
